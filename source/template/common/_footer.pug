@@ -1,0 +1,38 @@
+footer.footer.row
+	.row__col-1-3
+		.footer__cont.footer__decor
+			.footer__about
+				| Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+			.footer__author
+				| © Тишук Надежда <br /> Создано с любовью в LoftSchool | 2016
+	.row__col-1-3
+		.footer__cont.footer__decor
+			.footer__nav
+				ul.footer__nav__list
+					mixin footerNavList (name,href)
+						li.footer__nav__item
+							a.footer__nav__link(href=href)= name
+					+footerNavList('Мои работы', 'works.html')
+					+footerNavList('Блог', 'works.html')
+					+footerNavList('Обо мне', 'works.html')
+					+footerNavList('Авторизация', 'works.html')
+
+			ul.socialicons__list
+				mixin socialIconsList (name,href)
+					li.socialicons__item
+						a.socialicons__link(href=href)= name
+							svg.socialicons__icon
+								use(xlink:href="assets/img/sprite.svg#"+name)
+				+socialIconsList('vk', '#')
+				+socialIconsList('github', '#')
+				+socialIconsList('in', '#')
+	.row__col-1-3
+		.footer__cont
+			.footer__contacts
+				ul.footer__contacts__list
+					mixin contactsList (name,href)
+						li.footer__contacts__item= name
+					+contactsList('la_esperanza', '#')
+					+contactsList('tishuknldev@ya.ru', '#')
+					+contactsList('+7 925 864 76 51', '#')
+					+contactsList('Москва, ул. Саратовская, 8/1', '#')

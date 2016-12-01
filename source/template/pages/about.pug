@@ -1,0 +1,126 @@
+extends ../_template
+
+block variables
+	- var title = 'About'
+
+block content
+	include ../common/_header
+
+	.row
+		a.pageanchor(name="screen")
+		.row__about
+			.container
+				.row__col-1-2
+					.title__wrap
+						h1.title.title_big Обо мне
+							.title__icon
+								svg.title__icon__svg
+									use(xlink:href="assets/img/sprite.svg#about_header")
+					.aboutme__box
+						.aboutme__pic
+							img.aboutme__img(src="assets/img/myCoolAvatar.jpg")
+						.title__wrap
+								h3.title.title_mid Кто я
+						.aboutme__cont
+							p Я веб разработчик из Москвы. Мне 31 год. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+							p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+				.row__col-1-2
+					.title__wrap.title__wrap_about
+						h3.title.title_mid Чем я могу быть <br/> вам полезен
+					.skills__cont
+						p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+						.skills
+							.skills__section
+								.skills__name Frontend
+								ul.skills__list
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type HTML 5
+
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type CSS 3
+
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type JavaScript <br/> & jQuery
+
+							.skills__section
+								.skills__name Backend
+								ul.skills__list
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type PHP
+
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type mySQL
+
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type Node.js <br />& npm
+
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type Mongo.db
+
+							.skills__section
+								.skills__name Workflow
+								ul.skills__list
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type Git
+
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type Gulp
+
+									li.skills__circle
+										svg.skills__circle__icon(width="110px" height="110px" viewBox="0 0 110 110")
+											circle(r="45" cx="55" cy="55")
+											circle(r="45" cx="55" cy="55" class="sector" transform="rotate(-90 55 55)")
+										span.skills__circle__type Bower
+
+	section#map.map
+		<iframe id="mapgoogle" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8990.610596963643!2d37.72102935516357!3d55.71240926365175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1480584316836" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		.box.box__map
+			.box__title
+				.box__title__text Контакты
+			.box__cont
+				ul.box__list
+					li.box__list__item
+						svg.box__list__icon
+							use(xlink:href="assets/img/sprite.svg#skype")
+						a.box__list__link(href="skype:la.esperanza") la.esperanza
+					li.box__list__item
+						svg.box__list__icon
+							use(xlink:href="assets/img/sprite.svg#envelope2")
+						a.box__list__link(href="#") tishuknldev@ya.ru
+					li.box__list__item
+						svg.box__list__icon
+							use(xlink:href="assets/img/sprite.svg#phone2")
+						a.box__list__link(href="#") +7 925 864 76 51
+					li.box__list__item
+						svg.box__list__icon
+							use(xlink:href="assets/img/sprite.svg#map_marker")
+						a.box__list__link(href="#") Москва, ул. Саратовская, д. 8/1
+	
+	include ../common/_footer

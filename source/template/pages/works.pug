@@ -1,0 +1,57 @@
+extends ../_template
+
+block variables
+	- var title = 'Works'
+
+block content
+	include ../common/_header
+
+	a(name="screen")
+
+	.title__wrap
+		h1.title.title_big Мои работы
+			.title__icon
+				svg.title__icon__svg
+					use(xlink:href="assets/img/sprite.svg#works_header")
+
+	.title__wrap
+		h2.title.title_big Что обо мне говорят
+			.title__icon
+				svg.title__icon__svg
+					use(xlink:href="assets/img/sprite.svg#about_header")
+
+	.title__wrap
+		h3.title.title_mid Чем я могу быть вам полезен
+
+	.title Самое важное в SASS
+	
+	section.quote
+		.container_sm
+			.row
+				.row__col-1-2
+					.quote__box
+						.quote__cont
+							| Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+						.quote__author
+							.quote__author__pic
+								img.quote__author__img(src="assets/img/kovalchuk.jpg")
+							.quote__author__cont
+								.quote__author__name
+									| Ковальчук Дмитрий
+								.quote__author__who
+									| основатель Loftschool
+
+				.row__col-1-2
+					.quote__box
+						.quote__cont
+							| Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+						.quote__author
+							.quote__author__pic
+								img.quote__author__img(src="assets/img/saharov.jpg")
+							.quote__author__cont
+								.quote__author__name
+									| Зар Захаров
+								.quote__author__who
+									| преподаватель
+	
+	include ../common/_footer

@@ -1,86 +1,82 @@
 extends ../_template
 
 block variables
-	- var title = 'Home page'
+	- var title = 'Welcome'
 
 block content
-	include ../common/_header_welcome
+	.welcome__wrapper
+		include ../common/_header_welcome
 
-	.container
+		.container
 
-		.welcome
-			.userpic
-				img.userpic__img(src="assets/img/myCoolAvatar.jpg")
+			.welcome
+				.userprofile
+					.userprofile__pic
+						img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
+					.userprofile__name Тишук Надежда
+					.userprofile__prof Личный сайт веб разработчика
 
-			.username
-				.username__text
-					| Тишук Надежда
+				.usersocial
+					ul.socialicons__list
+					mixin socialIconsList (name,href)
+						li.socialicons__item
+							a.socialicons__link(href=href)= name
+								svg.socialicons__icon
+									use(xlink:href="assets/img/sprite.svg#"+name)
+					+socialIconsList('vk', '#')
+					+socialIconsList('github', '#')
+					+socialIconsList('in', '#')
 
-			.usertitle
-				.usertitle__text
-					| Личный сайт веб разработчика
+				.usermenu
+					ul.usermenu__list
+						mixin usermenuItems (name,href)
+							li.usermenu__item
+								a.usermenu__link(href=href)= name
+						+usermenuItems('Мои работы','works.html')
+						+usermenuItems('Обо мне','about-me.html')
+						+usermenuItems('Блог','blog.html')
+			// .welcome
 
-			.usersocial
-				.social__list
-					mixin socialItems (name,href)
-						li.social__item
-							a.social__link(href=href)
-								svg(class="social__icon icon__svg-" + name)
-									use(xlink:href="assets/img/sprite.svg#" + name)
-					+socialItems('vk','#1')
-					+socialItems('github','#2')
-					+socialItems('in','#2')
+			.box
+				.box__title
+					.box__title__text Авторизуйтесь
 
-			.usermenu
-				ul.usermenu__list
-					mixin usermenuItems (name,href)
-						li.usermenu__item
-							a.usermenu__link(href=href)= name
-					+usermenuItems('Мои работы','class')
-					+usermenuItems('Обо мне','class')
-					+usermenuItems('Блог','class')
-		// .welcome
+				form.form
+					.form__text--icon
+						input.form__text__input(type="text", placeholder="Логин", id="auth-login")
+						label.form__text__label(for="auth-login")
+							svg(class="form__icon icon__svg-login")
+								use(xlink:href="assets/img/sprite.svg#login")
+					.form__text--icon
+						input.form__text__input(type="text", placeholder="Пароль", id="auth-pass")
+						label.form__text__label(for="auth-pass")
+							svg(class="form__icon icon__svg-password")
+								use(xlink:href="assets/img/sprite.svg#password")
+					.form__check
+						input.form__check__input(type="checkbox", id="auth-check")
+						label.form__check__label(for="auth-check") Я человек
+							span.form__check__style
+							svg(class="form__icon icon__svg-check")
+								use(xlink:href="assets/img/sprite.svg#check")
+					.form__robot
+						| Вы точно не робот?
+					.form__radiogroup
+						label.form__radiogroup__label
+							input.form__radiogroup__radio(type='radio', name='form__radiogroup')
+							span.form__radiogroup__style
+							| Да
+						label.form__radiogroup__label
+							input.form__radiogroup__radio(type='radio', name='form__radiogroup')
+							span.form__radiogroup__style
+							| Не уверен
 
-		.auth
-			.auth__title
-				.title__text Авторизуйтесь
+				.box__menu
+					ul.box__menu__list
+						mixin authmenuItems (name,href)
+							li.box__menu__item
+								a.box__menu__link(href=href)= name
+						+authmenuItems('На главную','index.html')
+						+authmenuItems('Войти','#')
+			// .auth
 
-			form.authform
-				.authform__text--icon
-					label.authform__text__label(for="auth-login")
-					input.authform__text__input(type="text", placeholder="Логин", id="auth-login")
-					svg(class="authform__icon icon__svg-login")
-						use(xlink:href="assets/img/sprite.svg#login")
-				.authform__text--icon
-					label.authform__text__label(for="auth-pass")
-					input.authform__text__input(type="text", placeholder="Пароль", id="auth-pass")
-					svg(class="authform__icon icon__svg-password")
-						use(xlink:href="assets/img/sprite.svg#password")
-				.authform__check
-					input.authform__check__input(type="checkbox", id="auth-check")
-					label.authform__check__label(for="auth-check") Я человек
-						span.authform__check__style
-						svg(class="authform__icon icon__svg-check")
-							use(xlink:href="assets/img/sprite.svg#check")
-				.authform__robot
-					| Вы точно не робот?
-				.authform__radiogroup
-					label.authform__radiogroup__label
-						input.authform__radiogroup__radio(type='radio', name='authform__radiogroup')
-						span.authform__radiogroup__style
-						| Да
-					label.authform__radiogroup__label
-						input.authform__radiogroup__radio(type='radio', name='authform__radiogroup')
-						span.authform__radiogroup__style
-						| Не уверен
-
-			.authmenu
-				ul.authmenu__list
-					mixin authmenuItems (name,href)
-						li.authmenu__item
-							a.authmenu__link(href=href)= name
-					+authmenuItems('На главную','class')
-					+authmenuItems('Войти','class')
-		// .auth
-
-	include ../common/_footer_welcome
+		include ../common/_footer_welcome
