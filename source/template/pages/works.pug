@@ -6,52 +6,72 @@ block variables
 block content
 	include ../common/_header
 
-	a(name="screen")
-
 	.title__wrap
 		h1.title.title_big Мои работы
 			.title__icon
 				svg.title__icon__svg
 					use(xlink:href="assets/img/sprite.svg#works_header")
 
-	.title__wrap
-		h2.title.title_big Что обо мне говорят
-			.title__icon
-				svg.title__icon__svg
-					use(xlink:href="assets/img/sprite.svg#about_header")
-
-	.title__wrap
-		h3.title.title_mid Чем я могу быть вам полезен
-
 	.title Самое важное в SASS
 	
 	section.quote
-		.container_sm
+		.container
+			.title__wrap
+				h2.title.title_big Что обо мне <br/> говорят
+					.title__icon
+						svg.title__icon__svg
+							use(xlink:href="assets/img/sprite.svg#about_header")
+		.container_sm.quotes
 			.row
 				.row__col-1-2
-					.quote__box
-						.quote__cont
+					.quotes__box
+						.quotes__cont
 							| Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-						.quote__author
-							.quote__author__pic
-								img.quote__author__img(src="assets/img/kovalchuk.jpg")
-							.quote__author__cont
-								.quote__author__name
+						.quotes__author
+							.quotes__author__pic
+								img.quotes__author__img(src="assets/img/kovalchuk.jpg")
+							.quotes__author__cont
+								.quotes__author__name
 									| Ковальчук Дмитрий
-								.quote__author__who
+								.quotes__author__who
 									| основатель Loftschool
 
 				.row__col-1-2
-					.quote__box
-						.quote__cont
+					.quotes__box
+						.quotes__cont
 							| Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-						.quote__author
-							.quote__author__pic
-								img.quote__author__img(src="assets/img/saharov.jpg")
-							.quote__author__cont
-								.quote__author__name
+						.quotes__author
+							.quotes__author__pic
+								img.quotes__author__img(src="assets/img/saharov.jpg")
+							.quotes__author__cont
+								.quotes__author__name
 									| Зар Захаров
-								.quote__author__who
+								.quotes__author__who
 									| преподаватель
+		.container.box__mailme
+			.box
+				.box__title
+					.box__title__text.box__title__text_dark Связаться со мной
+
+				form.form
+					.form__text
+						input.form__text__input(type="text", placeholder="Имя", id="mailName")
+					.form__text
+						input.form__text__input(type="text", placeholder="E-mail", id="mailMail")
+					.form__text
+						textarea.form__text__input(placeholder="Ваше сообщение")
+
+				.box__menu
+					ul.box__menu__list
+						mixin authmenuItems (name,href)
+							li.box__menu__item
+								a.box__menu__link(href=href)= name
+						+authmenuItems('Отправить','#')
+						+authmenuItems('Очистить','#')
+			// .box
+			.toparrow
+				a.toparrow__link(href="#top")
+					svg.toparrow__icon
+						use(xlink:href="assets/img/sprite.svg#arrow_down")
 	
 	include ../common/_footer

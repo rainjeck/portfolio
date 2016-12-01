@@ -117,6 +117,9 @@
       text-transform: uppercase;
       text-align: center;
       position: relative;
+      &_dark {
+        color: #5d5a55;
+      }
       &:after,
       &:before {
         content: "";
@@ -183,6 +186,7 @@
       padding-left: 34px;
       margin-bottom: 25px;
       position: relative;
+      color: #fff;
     }
     &__link {
       color: #fff;
@@ -210,13 +214,37 @@
     position: relative;
     border-radius: 4px;
     margin-bottom: 20px;
-    padding: 12px 18px 13px;
+    padding: 0;
     background-color: #fff;
     overflow: hidden;
     .form__icon {
       display: none;
     }
-    &--icon {
+
+    &__input {
+      display: block;
+      width: 100%;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      outline: none;
+      color: #373e42;
+      background: #fff;
+      padding: 12px 18px 13px;
+      box-sizing: border-box;
+      @include placeholder {
+        color: #373e42;
+      }
+      &:focus {
+        @include placeholder {
+          color: transparent;
+        }
+        border-color: #e7a731;
+        & + .form__text__label .form__icon {
+          fill: #e7a731;
+        }
+      }
+    }
+    &_icon {
       position: relative;
       border-radius: 4px;
       margin-bottom: 20px;
@@ -237,28 +265,8 @@
           fill: #555;
         }
       }
-    }
-
-    &__input {
-      display: block;
-      width: 100%;
-      border: 1px solid #fff;
-      border-radius: 0 4px 4px 0;
-      outline: none;
-      color: #373e42;
-      padding: 12px 18px 13px;
-      box-sizing: border-box;
-      @include placeholder {
-        color: #373e42;
-      }
-      &:focus {
-        @include placeholder {
-          color: transparent;
-        }
-        border-color: #e7a731;
-        & + .form__text__label .form__icon {
-          fill: #e7a731;
-        }
+      .form__text__input {
+        border-radius: 0 4px 4px 0;
       }
     }
     &__label {

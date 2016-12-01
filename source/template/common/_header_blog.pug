@@ -1,5 +1,5 @@
 a(name="top")
-header.header__page
+header.header__page.header_blog
 	.header__social
 		ul.socialicons__list
 			mixin socialIconsList (name,href)
@@ -26,32 +26,22 @@ header.header__page
 				+navlistItems('Обо мне', 'about.html')
 				+navlistItems('Авторизация', 'index.html')
 
-	.userprofile__wrap
+	.userprofile_blog
 		.container
 			.userprofile.userprofile_page
 				.userprofile__pic
 					img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
-				.userprofile__name Тишук Надежда
-				.userprofile__prof Личный сайт веб разработчика
-				.userprofile__icon
-					svg(class="userprofile__icon__svg")
-						use(xlink:href="assets/img/sprite.svg#portfolio_header")
-
-	a.header__arrow(href="#screen")
-		svg(class="header__arrow__icon")
-			use(xlink:href="assets/img/sprite.svg#arrow_down")
+				.title__wrap
+					h1.title.title_big.title_light.title_blog Блог
+						.title__icon
+							svg.title__icon__svg
+								use(xlink:href="assets/img/sprite.svg#blog_header")
+					.title__sub Статьи, которые я написала
 	
-	if title == 'About'
-		.traingle__wrap.about__bg
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="traingle">
-				<polygon class = "left" points="0,0   0,85   500,85   500,70"></polygon>
-				<polygon class = "right" points="1000,0   1000,85   500,85   500,70"></polygon>
-			</svg>
-	else
-		.traingle__wrap
-			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="traingle">
-				<polygon class = "left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
-				<polygon class = "right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
-			</svg>
+	.traingle__wrap
+		<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="traingle">
+			<polygon class = "left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+			<polygon class = "right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+		</svg>
 
 a.pageanchor(name="screen")

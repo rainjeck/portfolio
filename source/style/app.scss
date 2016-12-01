@@ -77,6 +77,8 @@ body {
 	height: 100%;
 	font-family: 'Roboto', 'Arial', sans-serif;
 	font-size: 16px;
+	color: #5d5a55;
+	background: #faf8f0;
 }
 
 .container {
@@ -94,10 +96,15 @@ body {
 
 .header {
 	&__page {
-		background: url(../img/sand.jpg) no-repeat 0 0;
-		background-size: cover;
+		background: url(../img/sand.jpg) no-repeat top center;
+		//background-size: cover;
 		height: 100%;
+		min-height: 650px;
 		position: relative;
+	}
+	&_blog {
+		min-height: 400px;
+		height: 400px;
 	}
 	&__social {
 		display: inline-block;
@@ -129,11 +136,19 @@ body {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 110px;
+	height: 115px;
 	overflow: hidden;
 }
 
+.traingle__icon {
+	width: 100%;
+	height: 110px;
+}
+
 .traingle {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	& > .left {
 		fill: #faf8f0;
 	}
@@ -197,6 +212,9 @@ body {
 		transform: translateY(-50%);
 		width: 100%;
 		z-index: 1;
+	}
+	&_blog {
+		position: static;
 	}
 }
 
@@ -371,12 +389,31 @@ body {
 	}
 }
 
+.toparrow {
+	padding: 70px 0;
+	text-align: center;
+	.toparrow__link {
+		display: inline-block;
+	}
+	&__icon {
+		width: 26px;
+		height: 16px;
+		transform: rotate(180deg);
+		fill: #fff;
+		opacity: 0.7;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
 
 /* ---------- HEADERS ---------- */ 
 
 .title {
 	&__wrap {
 		text-align: center;
+		position: relative;
 		&_about {
 			padding-top: 25px;
 		}
@@ -395,9 +432,17 @@ body {
 		position: absolute;
 		top: 50%;
 	}
+	&__sub {
+		font-size: 16px;
+		font-family: 'Roboto', 'Arial', sans-serif;
+		text-transform: none;
+		font-weight: normal;
+		color: #fff;
+	}
 	&__icon {
 		position: absolute;
-		top: 30px;
+		top: 50%;
+  	transform: translateY(-40%);
 		left: 0;
 		width: 100%;
 		height: 100%;
@@ -451,6 +496,23 @@ body {
 			background-position: -183px 0px;
 		}
 	}
+	&_light {
+		color: #fff;
+		&:before {
+			left: 0;
+			background-position: -477px 0px;
+		}
+		&:after {
+			right: 0;
+			background-position: -557px 0px;
+		}
+	}
+	&_blog {
+		padding: 0 70px;
+		.title__icon__svg{
+			transform: translateY(-20%);
+		}
+	}
 }
 
 /* ---------- GRID ---------- */ 
@@ -466,8 +528,13 @@ body {
 	}
 }
 
-/* ---------- QUOTES ---------- */ 
+/* ---------- QUOTES ---------- */
 .quote {
+	background: #f0e6d2 url(../img/sandFooter.jpg) no-repeat bottom center;
+	background-size: 100% auto;
+}
+.quotes {
+	padding: 40px 0 60px;
 	&__box {
 		color: #5d5a55;
 		position: relative;
@@ -647,4 +714,63 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+/* ---------- BLOG ---------- */ 
+.blog {
+	padding: 70px 0;
+	@extend .clearfix;
+	&__left {
+		width: (100%/3);
+		float: left;
+	}
+	&__right {
+		width: ((100%/3)*2);
+		float: left;
+	}
+	&__in {
+		padding: 0 40px;
+	}
+	&__nav {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		&__item {
+			display: block;
+			margin-bottom: 10px;
+			&.active {
+				.blog__nav__link {
+					color: #cd8920;
+					border-right: 3px solid #cd8920;
+				}
+			}
+		}
+		&__link {
+			display: block;
+			padding: 15px 15px;
+			text-align: right;
+			color: #5d5a55;
+			border-right: 3px solid transparent;
+			&:hover {
+				color: #cd8920;
+				border-right: 3px solid #cd8920;
+			}
+		}
+	}
+
+	&__post {
+		padding-bottom: 50px;
+		border-bottom: 5px solid #ecebe4;
+		margin-bottom: 70px;
+		&__date {
+			color: #cd8920;
+		}
+		&__cont {
+			line-height: 26px;
+			p {
+				margin-bottom: 20px;
+			}
+		}
+	}
 }

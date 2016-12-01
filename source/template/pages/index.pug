@@ -33,7 +33,7 @@ block content
 							li.usermenu__item
 								a.usermenu__link(href=href)= name
 						+usermenuItems('Мои работы','works.html')
-						+usermenuItems('Обо мне','about-me.html')
+						+usermenuItems('Обо мне','about.html')
 						+usermenuItems('Блог','blog.html')
 			// .welcome
 
@@ -42,12 +42,12 @@ block content
 					.box__title__text Авторизуйтесь
 
 				form.form
-					.form__text--icon
+					.form__text_icon
 						input.form__text__input(type="text", placeholder="Логин", id="auth-login")
 						label.form__text__label(for="auth-login")
 							svg(class="form__icon icon__svg-login")
 								use(xlink:href="assets/img/sprite.svg#login")
-					.form__text--icon
+					.form__text_icon
 						input.form__text__input(type="text", placeholder="Пароль", id="auth-pass")
 						label.form__text__label(for="auth-pass")
 							svg(class="form__icon icon__svg-password")
@@ -77,6 +77,6 @@ block content
 								a.box__menu__link(href=href)= name
 						+authmenuItems('На главную','index.html')
 						+authmenuItems('Войти','#')
-			// .auth
+			// .box
 
 		include ../common/_footer_welcome
