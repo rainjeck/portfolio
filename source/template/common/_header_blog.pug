@@ -1,4 +1,13 @@
-a(name="top")
+a.pageanchor(name="top")
+.nav__block#nav
+	ul.nav__list
+		mixin navlistItems (name,href)
+			li.nav__item
+				a.nav__link(href=href)= name
+		+navlistItems('Мои работы', 'works.html')
+		+navlistItems('Блог', 'blog.html')
+		+navlistItems('Обо мне', 'about.html')
+		+navlistItems('Авторизация', 'index.html')
 header.header__page.header_blog
 	.header__social
 		ul.socialicons__list
@@ -12,36 +21,34 @@ header.header__page.header_blog
 			+socialIconsList('in', '#')
 
 	nav.nav
-		input.nav__check(type="checkbox", id="nav__check")
-		label.nav__hamburger(for="nav__check")
-			svg(class="nav__icon")
-				use(xlink:href="assets/img/sprite.svg#hamburger")
-		.nav__block
-			ul.nav__list
-				mixin navlistItems (name,href)
-					li.nav__item
-						a.nav__link(href=href)= name
-				+navlistItems('Мои работы', 'works.html')
-				+navlistItems('Блог', 'blog.html')
-				+navlistItems('Обо мне', 'about.html')
-				+navlistItems('Авторизация', 'index.html')
+		span.nav__hamburger#togglenav
+			span.nav__hamburger_line
+		//- input.nav__check(type="checkbox", id="nav__check")
+		//- label.nav__hamburger(for="nav__check")
+		//- 	svg(class="nav__icon")
+		//- 		use(xlink:href="assets/img/sprite.svg#hamburger")
+		//- .nav__block
+		//- 	ul.nav__list
+		//- 		mixin navlistItems (name,href)
+		//- 			li.nav__item
+		//- 				a.nav__link(href=href)= name
+		//- 		+navlistItems('Мои работы', 'works.html')
+		//- 		+navlistItems('Блог', 'blog.html')
+		//- 		+navlistItems('Обо мне', 'about.html')
+		//- 		+navlistItems('Авторизация', 'index.html')
 
 	.userprofile_blog
 		.container
 			.userprofile.userprofile_page
 				.userprofile__pic
 					img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
-				.title__wrap
-					h1.title.title_big.title_light.title_blog Блог
-						.title__icon
-							svg.title__icon__svg
+				h1.titles.titles_big
+					span.titles__txt.titles__txt_big.titles__txt_light Блог
+						span.titles__icon
+							svg.titles__icon__svg
 								use(xlink:href="assets/img/sprite.svg#blog_header")
-					.title__sub Статьи, которые я написала
+					.titles__txt__sub Статьи, которые я написала
 	
-	.traingle__wrap
-		<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="traingle">
-			<polygon class = "left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
-			<polygon class = "right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
-		</svg>
+	.trianglecss
 
 a.pageanchor(name="screen")

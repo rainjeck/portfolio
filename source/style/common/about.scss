@@ -1,0 +1,136 @@
+/* ---------- About Me Box ---------- */
+.about__bg {
+	.traingle {
+		& > .left {
+			fill: #efeee9;
+		}
+		& > .right {
+			fill: #eeebdf;
+		}
+	}
+}
+.section_about {
+	padding-top: 0;
+	position: relative;
+	//overflow: hidden;
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -4;
+	}
+	&:before {
+		width: 50.1%;
+		left: 0;
+		background: #efeee9;
+	}
+	&:after {
+		right: 0;
+		background: #eeebdf;
+	}
+}
+
+.about{
+	&__left {
+		background: #efeee9;
+	}
+	&__right {
+		background: #eeebdf;
+	}
+}
+
+.aboutme {
+	&__box {
+		max-width: 443px;
+		margin: 0 auto;
+	}
+	&__pic {
+		margin-bottom: 40px;
+	}
+	&__img {
+		display: block;
+		width: 100%;
+	}
+	&__cont {
+		color: #5d5a55;
+		margin-bottom: 40px;
+		p {
+			margin: 0;
+			padding: 0 0 20px 0;
+			line-height: 24px;
+		}
+	}
+}
+
+.skills {
+	padding: 50px 0;
+	&__cont {
+		color: #5d5a55;
+		padding: 0 20px 0 30px;
+		p {
+			line-height: 24px;
+		}
+	}
+	&__section {
+		margin-bottom: 40px;
+	}
+	&__name {
+		font-size: 28px;
+		font-family: 'Roboto Medium', 'Arial', sans-serif;
+		margin-bottom: 20px;
+	}
+	&__list {
+		padding: 0;
+		margin: 0;
+	}
+	&__circle {
+		display: inline-block;
+		margin: 0 30px 30px 0;
+		position: relative;
+		&:last-child {
+			margin-right: 0;
+		}
+		&__icon {
+			width: 110px;
+			height: 110px;
+			fill: none;
+			stroke-width: 20;
+			stroke: #dfdcd5;
+			& > .sector {
+				stroke-dasharray: 100 (2*35*3.1415);
+				transition: all 1s;
+				stroke: #e6ab3d;
+			}
+		}
+		&__type {
+			color: #cd8920;
+			font-size: 12px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			left: 0;
+			text-align: center;
+		}
+	}
+}
+
+/* ---------- MAP ---------- */ 
+
+.map {
+	position: relative;
+	height: 100%;
+}
+#map {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}

@@ -43,6 +43,7 @@
 
 .welcome {
   width: 380px;
+  min-width: 300px;
   margin: 0 auto 20px;
   background-color: rgba(215, 191, 155, 0.6);
   padding-top: 10px;
@@ -85,7 +86,7 @@
     display: block;
     background: #e5a731;
     color: #fff;
-    padding: 15px 15px 14px;
+    padding: 15px 5px 14px;
     text-align: center;
     &:hover {
       background: #ce8a20;
@@ -96,7 +97,7 @@
 /* ---------- BOX ---------- */ 
 
 .box {
-  max-width: 380px;
+  width: 380px;
   margin: 0 auto 20px;
   background-color: rgba(215, 191, 155, 0.6);
   padding-top: 35px;
@@ -117,9 +118,6 @@
       text-transform: uppercase;
       text-align: center;
       position: relative;
-      &_dark {
-        color: #5d5a55;
-      }
       &:after,
       &:before {
         content: "";
@@ -137,7 +135,25 @@
         right: -32px;
         background-position: -61px 0px;
       }
+      &_dark {
+        color: #5d5a55;
+        &:before {
+          background-position: -122px 0px;
+        }
+        &:after {
+          background-position: -183px 0px;
+        }
+      }
     }
+  }
+
+  &__map {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(#fff, 0.8);
   }
   &__menu {
     &__list {
@@ -169,7 +185,7 @@
       display: block;
       background: #e5a731;
       color: #fff;
-      padding: 15px 15px 14px;
+      padding: 15px 5px 14px;
       text-align: center;
       &:hover {
         background: #ce8a20;
@@ -186,10 +202,10 @@
       padding-left: 34px;
       margin-bottom: 25px;
       position: relative;
-      color: #fff;
+      color: #5d5a55;
     }
     &__link {
-      color: #fff;
+      color: #5d5a55;
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -209,6 +225,9 @@
 .form {
   padding: 0 20px;
   margin-bottom: 40px;
+  &-mail {
+    margin-bottom: 20px;
+  }
 
   &__text {
     position: relative;
@@ -278,6 +297,10 @@
       left: 0;
       background: #f0efe9;
     }
+  }
+
+  &__textarea {
+    min-height: 140px;
   }
 
   &__check {
@@ -366,4 +389,42 @@
       }
     }
   }
+}
+
+/* ---------- FLIP ---------- */
+.flipcontainer {
+  perspective: 1000px;
+}
+
+//.flipcontainer:hover .flipper,
+.flipcontainer.flip .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -190px;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
 }

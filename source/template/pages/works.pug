@@ -6,20 +6,30 @@ block variables
 block content
 	include ../common/_header
 
-	.title__wrap
-		h1.title.title_big Мои работы
-			.title__icon
-				svg.title__icon__svg
-					use(xlink:href="assets/img/sprite.svg#works_header")
+	// works slider
+	section.section.section_slider
+		h1.titles.titles_big
+			span.titles__txt.titles__txt_big Мои работы
+				span.titles__icon
+					svg.titles__icon__svg
+						use(xlink:href="assets/img/sprite.svg#works_header")
+		.slider__list__wrap
+			ul#slider
+				li.slide__item
+					.slide__pic
+					.slide__desc
+		.slider__controls
+			a.slider__next(href="#")
+			a.slider__prev(href="#")
 
-	.title Самое важное в SASS
 	
-	section.quote
+	// works quotes
+	section.section.section_quote
 		.container
-			.title__wrap
-				h2.title.title_big Что обо мне <br/> говорят
-					.title__icon
-						svg.title__icon__svg
+			h1.titles.titles_big
+				span.titles__txt.titles__txt_big Что обо мне <br/> говорят
+					span.titles__icon
+						svg.titles__icon__svg
 							use(xlink:href="assets/img/sprite.svg#about_header")
 		.container_sm.quotes
 			.row
@@ -48,18 +58,19 @@ block content
 									| Зар Захаров
 								.quotes__author__who
 									| преподаватель
+		// mail form
 		.container.box__mailme
 			.box
 				.box__title
 					.box__title__text.box__title__text_dark Связаться со мной
 
-				form.form
+				form.form.form-mail
 					.form__text
 						input.form__text__input(type="text", placeholder="Имя", id="mailName")
 					.form__text
 						input.form__text__input(type="text", placeholder="E-mail", id="mailMail")
 					.form__text
-						textarea.form__text__input(placeholder="Ваше сообщение")
+						textarea.form__text__input.form__textarea(placeholder="Ваше сообщение")
 
 				.box__menu
 					ul.box__menu__list
@@ -69,9 +80,9 @@ block content
 						+authmenuItems('Отправить','#')
 						+authmenuItems('Очистить','#')
 			// .box
-			.toparrow
-				a.toparrow__link(href="#top")
-					svg.toparrow__icon
-						use(xlink:href="assets/img/sprite.svg#arrow_down")
+		.toparrow
+			a.toparrow__link(href="#top")
+				svg.toparrow__icon
+					use(xlink:href="assets/img/sprite.svg#arrow_down")
 	
 	include ../common/_footer

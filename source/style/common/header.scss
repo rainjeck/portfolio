@@ -1,0 +1,75 @@
+/* ---------- HEADER ---------- */
+
+.header {
+	&__page {
+		background: url(../img/sand.jpg) no-repeat top center;
+		background-size: cover;
+		height: 100%;
+		//min-height: 650px;
+		position: relative;
+		overflow: hidden;
+	}
+	&_blog {
+		min-height: 400px;
+		height: 400px;
+	}
+	&__social {
+		display: inline-block;
+		position: absolute;
+		left: 30px;
+		top: 28px;
+		z-index: 8;
+	}
+	&__arrow {
+		display: inline-block;
+		position: absolute;
+		bottom: 14%;
+		left: 50%;
+		margin-left: -13px;
+		z-index: 5;
+		&__icon {
+			width: 26px;
+			height: 16px;
+			fill: #fff;
+			opacity: 0.7;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.trianglecss {
+	height: 160px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+	&:before, &:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 50%;
+		height: 160px;
+	}
+	&:before {
+		left: 0;
+    background-image: repeating-linear-gradient(to top right, #f9f8f0 0%, #f9f8f0 49.9%, transparent 50.1%, transparent 100%)
+	}
+	&:after {
+		right: 0;
+		background-image: repeating-linear-gradient(to top left, #f9f8f0 0%, #f9f8f0 49.9%, transparent 50.1%, transparent 100%)
+	}
+	&_about {
+		&:before{
+			background-image: repeating-linear-gradient(to top right, #efeee9 0%, #efeee9 49.9%, transparent 50.1%, transparent 100%)
+		}
+		&:after {
+			background-image: repeating-linear-gradient(to top left, #eeebdf 0%, #eeebdf 49.9%, transparent 50.1%, transparent 100%)
+		}
+	}
+}
+
+.pageanchor {
+	font-size: 0;
+}
