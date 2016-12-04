@@ -7,7 +7,7 @@
     background: url(../img/sand.jpg) no-repeat;
     background-size: cover;
     position: relative;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
   }
   &__footer {
     position: absolute;
@@ -210,6 +210,9 @@
       &:hover {
         text-decoration: underline;
       }
+      &:active {
+        color: #e7a731;
+      }
     }
     &__icon {
       position: absolute;
@@ -393,7 +396,12 @@
 
 /* ---------- FLIP ---------- */
 .flipcontainer {
-  perspective: 1000px;
+  perspective: 500px;
+  min-height: 400px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }
 
 //.flipcontainer:hover .flipper,

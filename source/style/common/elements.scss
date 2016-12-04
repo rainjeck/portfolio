@@ -99,6 +99,12 @@
 		background: #f0e6d2 url(../img/sandFooter.jpg) no-repeat bottom center;
 		background-size: 100% auto;
 	}
+	&_slider {
+		padding: 0;
+		min-height: 100%;
+		background: #ede7dd;
+		position: relative;
+	}
 }
 
 .box__mailme {

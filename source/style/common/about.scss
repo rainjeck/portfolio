@@ -45,7 +45,7 @@
 
 .aboutme {
 	&__box {
-		max-width: 443px;
+		padding: 0 80px;
 		margin: 0 auto;
 	}
 	&__pic {
@@ -67,13 +67,16 @@
 }
 
 .skills {
-	padding: 50px 0;
 	&__cont {
 		color: #5d5a55;
-		padding: 0 20px 0 30px;
+		padding: 0 40px;
 		p {
 			line-height: 24px;
+			margin-bottom: 20px;
 		}
+	}
+	&__txt {
+		margin-bottom: 30px;
 	}
 	&__section {
 		margin-bottom: 40px;

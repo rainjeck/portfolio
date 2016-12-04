@@ -1,26 +1,46 @@
 extends ../_template
 
 block variables
-	- var title = 'Works'
+	- var title = 'Мои работы - Тишук Надежда - front-end developer'
+	- var tempName = 'Works'
 
 block content
 	include ../common/_header
 
+	h1.titles.titles_big.titles_works
+		span.titles__txt.titles__txt_big Мои работы
+			span.titles__icon
+				svg.titles__icon__svg
+					use(xlink:href="assets/img/sprite.svg#works_header")
 	// works slider
 	section.section.section_slider
-		h1.titles.titles_big
-			span.titles__txt.titles__txt_big Мои работы
-				span.titles__icon
-					svg.titles__icon__svg
-						use(xlink:href="assets/img/sprite.svg#works_header")
-		.slider__list__wrap
-			ul#slider
-				li.slide__item
-					.slide__pic
-					.slide__desc
-		.slider__controls
-			a.slider__next(href="#")
-			a.slider__prev(href="#")
+		ul.slider__list
+			li.slider__item
+				.slider__pic
+					img.works__img(src="assets/img/slider/florenceguide.png")
+				.slider__desc
+					.works__item
+						.works__title.titles.titles_md
+							span.titles__txt.titles__txt_md Сайт гида по Флоренции
+						.works__tech html, css, CMS GetSimple
+						a.works__link(href="http://florenceguide.ru", target="_blank") Посмотреть сайт
+							svg.works__link__svg
+								use(xlink:href="assets/img/sprite.svg#link")
+		a.slider__prev(href="#") Prev
+			svg.slider__icon
+				use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
+		a.slider__next(href="#") Next
+			svg.slider__icon
+				use(xlink:href="assets/img/sprite.svg#portf_arrow_up")
+		ul.slider__dots
+			li.slider__dot.active
+				a.slider__dot__link(href="#")
+			li.slider__dot
+				a.slider__dot__link(href="#")
+			li.slider__dot
+				a.slider__dot__link(href="#")
+			li.slider__dot
+				a.slider__dot__link(href="#")
 
 	
 	// works quotes
@@ -36,7 +56,7 @@ block content
 				.row__col-1-2
 					.quotes__box
 						.quotes__cont
-							| Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+							| Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
 						.quotes__author
 							.quotes__author__pic
 								img.quotes__author__img(src="assets/img/kovalchuk.jpg")

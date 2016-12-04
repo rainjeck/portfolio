@@ -54,18 +54,18 @@
 	}
 	&:before {
 		left: 0;
-    background-image: repeating-linear-gradient(to top right, #f9f8f0 0%, #f9f8f0 49.9%, transparent 50.1%, transparent 100%)
+    background-image: linear-gradient(to top right, #f9f8f0 0%, #f9f8f0 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
 	}
 	&:after {
 		right: 0;
-		background-image: repeating-linear-gradient(to top left, #f9f8f0 0%, #f9f8f0 49.9%, transparent 50.1%, transparent 100%)
+		background-image: linear-gradient(to top left, #f9f8f0 0%, #f9f8f0 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
 	}
 	&_about {
 		&:before{
-			background-image: repeating-linear-gradient(to top right, #efeee9 0%, #efeee9 49.9%, transparent 50.1%, transparent 100%)
+			background-image: linear-gradient(to top right, #efeee9 0%, #efeee9 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
 		}
 		&:after {
-			background-image: repeating-linear-gradient(to top left, #eeebdf 0%, #eeebdf 49.9%, transparent 50.1%, transparent 100%)
+			background-image: linear-gradient(to top left, #eeebdf 0%, #eeebdf 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
 		}
 	}
 }

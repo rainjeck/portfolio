@@ -30,7 +30,7 @@
 		&__item {
 			display: block;
 			float: left;
-			margin-right: 15px;
+			margin: 0 15px 5px 0;
 			&:last-child {
 				margin-right: 0;
 			}
@@ -72,7 +72,12 @@
 				margin-bottom: 0;
 			}
 		}
-		&__link {}
+		&__link {
+			color: rgba(255,255,255,0.5);
+			&:hover {
+				color: rgba(255,255,255,1);
+			}
+		}
 	}
 }
 

@@ -1,4 +1,4 @@
-a.pageanchor(name="top")
+a.pageanchor#top
 .nav__block#nav
 	ul.nav__list
 		mixin navlistItems (name,href)
@@ -25,19 +25,6 @@ header.header__page
 	nav.nav
 		span.nav__hamburger#togglenav
 			span.nav__hamburger_line
-		//- input.nav__check(type="checkbox", id="nav__check")
-		//- label.nav__hamburger(for="nav__check")
-		//- 	svg(class="nav__icon")
-		//- 		use(xlink:href="assets/img/sprite.svg#hamburger")
-		//- .nav__block
-		//- 	ul.nav__list
-		//- 		mixin navlistItems (name,href)
-		//- 			li.nav__item
-		//- 				a.nav__link(href=href)= name
-		//- 		+navlistItems('Мои работы', 'works.html')
-		//- 		+navlistItems('Блог', 'blog.html')
-		//- 		+navlistItems('Обо мне', 'about.html')
-		//- 		+navlistItems('Авторизация', 'index.html')
 
 	// userprofile
 	.userprofile__wrap
@@ -46,7 +33,7 @@ header.header__page
 				.userprofile__pic
 					img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
 				.userprofile__name Тишук Надежда
-				.userprofile__prof Личный сайт веб разработчика
+				.userprofile__prof Front-End Developer
 				.userprofile__icon
 					svg(class="userprofile__icon__svg")
 						use(xlink:href="assets/img/sprite.svg#portfolio_header")
@@ -55,9 +42,9 @@ header.header__page
 		svg(class="header__arrow__icon")
 			use(xlink:href="assets/img/sprite.svg#arrow_down")
 	
-	if title == 'About'
+	if tempName == 'About'
 		.trianglecss.trianglecss_about
 	else
 		.trianglecss
 
-a.pageanchor(name="screen")
+a.pageanchor(id="screen")

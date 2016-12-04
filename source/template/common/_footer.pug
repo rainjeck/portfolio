@@ -14,14 +14,14 @@ footer.footer.row
 						li.footer__nav__item
 							a.footer__nav__link(href=href)= name
 					+footerNavList('Мои работы', 'works.html')
-					+footerNavList('Блог', 'works.html')
-					+footerNavList('Обо мне', 'works.html')
-					+footerNavList('Авторизация', 'works.html')
+					+footerNavList('Блог', 'blog.html')
+					+footerNavList('Обо мне', 'about.html')
+					+footerNavList('Авторизация', 'index.html')
 
 			ul.socialicons__list
 				mixin socialIconsList (name,href)
 					li.socialicons__item
-						a.socialicons__link(href=href)= name
+						a.socialicons__link(href=href, target="_blank")= name
 							svg.socialicons__icon
 								use(xlink:href="assets/img/sprite.svg#"+name)
 				+socialIconsList('vk', 'https://vk.com/tishukn')
@@ -32,8 +32,10 @@ footer.footer.row
 			.footer__contacts
 				ul.footer__contacts__list
 					mixin contactsList (name,href)
-						li.footer__contacts__item= name
-					+contactsList('la_esperanza', '#')
-					+contactsList('tishuknldev@ya.ru', '#')
-					+contactsList('+7 925 864 76 51', '#')
-					+contactsList('Москва, ул. Саратовская, 8/1', '#')
+						li.footer__contacts__item
+							a.footer__contacts__link(href=href)= name
+					+contactsList('la.esperanza', 'skype:la.esperanza')
+					+contactsList('166507@gmail.com', 'mailto:166507@gmail.com')
+					+contactsList('+7 925 864 76 51', 'tel:+79258647651')
+					li.footer__contacts__item
+						| Москва, ул. Саратовская, 8/1

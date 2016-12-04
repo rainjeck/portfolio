@@ -1,26 +1,26 @@
 extends ../_template
 
 block variables
-	- var title = 'Welcome'
+	- var title = 'Тишук Надежда - front-end developer'
 
 block content
 	.welcome__wrapper
 		include ../common/_header_welcome
 
-		.container.flipcontainer#flip
+		.flipcontainer#flip
 			.flipper
 				.welcome.front
 					.userprofile
 						.userprofile__pic
 							img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
 						.userprofile__name Тишук Надежда
-						.userprofile__prof Личный сайт веб разработчика
+						.userprofile__prof Front-End Developer
 
 					.usersocial
 						ul.socialicons__list
 						mixin socialIconsList (name,href)
 							li.socialicons__item
-								a.socialicons__link(href=href)= name
+								a.socialicons__link(href=href, target="_blank")= name
 									svg.socialicons__icon
 										use(xlink:href="assets/img/sprite.svg#"+name)
 						+socialIconsList('vk', 'https://vk.com/tishukn')
