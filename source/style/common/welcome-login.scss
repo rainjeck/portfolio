@@ -2,28 +2,91 @@
 
 /* ---------- WELCOME & LOGIN ---------- */ 
 .welcome {
-  &__wrapper {
-    min-height: 100%;
-    background: url(../img/sand.jpg) no-repeat;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: url(../img/sand.jpg) no-repeat top left;
     background-size: cover;
+  }
+  &__login {
+    padding: 20px 30px;
+    text-align: right;
+    height: 45px;
+  }
+  &__window {
+    text-align: center;
     position: relative;
-    padding-bottom: 100px;
   }
   &__footer {
-    position: absolute;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
+  }
+  &__box {
+    width: 380px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+  }
+}
+
+.window {
+  &__box {
+    width: 380px;
+    min-width: 300px;
+    display: inline-block;
+    position: relative;
+  }
+  &__menu {
+    &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: stretch;
     width: 100%;
-    bottom: 40px;
-    &__text {
-      text-align: center;
-      color: #fff;
+  }
+  &__item {
+    position: relative;
+    flex-grow:1;
+    flex-basis: 50%;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      height: 100%;
+      width: 2px;
+      background: #e1c58c;
     }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    background: #e5a731;
+    color: #fff;
+    padding: 15px 5px 14px;
+    text-align: center;
+    &:hover {
+      background: #ce8a20;
+    }
+  }
   }
 }
 
 .login {
-  text-align: right;
-  padding: 20px 20px 0;
-  margin-bottom: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  //display: none;
 }
 
 .login__link {
@@ -42,14 +105,10 @@
 /* ---------- WELCOME ---------- */ 
 
 .welcome {
-  width: 380px;
-  min-width: 300px;
-  margin: 0 auto 20px;
   background-color: rgba(215, 191, 155, 0.6);
   padding-top: 10px;
   border-radius: 4px;
   overflow: hidden;
-  //display: none;
 }
 
 .usersocial {
@@ -62,12 +121,16 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    display: table;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: stretch;
     width: 100%;
   }
   &__item {
-    display: table-cell;
     position: relative;
+    flex-grow:1;
     &:after {
       content: "";
       position: absolute;
@@ -103,7 +166,6 @@
   padding-top: 35px;
   border-radius: 4px;
   overflow: hidden;
-  //display: none;
   &__cont {
     padding: 0 20px;
   }
@@ -394,45 +456,4 @@
   }
 }
 
-/* ---------- FLIP ---------- */
-.flipcontainer {
-  perspective: 500px;
-  min-height: 400px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-}
-
-//.flipcontainer:hover .flipper,
-.flipcontainer.flip .flipper {
-    transform: rotateY(180deg);
-  }
-
-.flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-
-  position: relative;
-}
-
-.front, .back {
-  backface-visibility: hidden;
-
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -190px;
-}
-
-/* front pane, placed above back */
-.front {
-  z-index: 2;
-  /* for firefox 31 */
-  transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-  transform: rotateY(180deg);
-}
+@import 'common/flip.scss';

@@ -92,14 +92,14 @@ block content
 					.form__text
 						textarea.form__text__input.form__textarea(placeholder="Ваше сообщение")
 
-				.box__menu
-					ul.box__menu__list
-						mixin authmenuItems (name,href)
-							li.box__menu__item
-								a.box__menu__link(href=href)= name
-						+authmenuItems('Отправить','#')
-						+authmenuItems('Очистить','#')
-			// .box
+				.window__menu
+					ul.window__menu__list
+						li.window__menu__item
+							a.window__menu__link(href="#") Отправить
+						li.window__menu__item
+							a.window__menu__link(href="#") Очистить
+				// .window__menu
+				
 		.toparrow
 			a.toparrow__link(href="#top")
 				svg.toparrow__icon
