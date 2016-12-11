@@ -1,41 +1,13 @@
 // footer
-footer.footer.row
-	.row__col-1-3
-		.footer__cont.footer__decor
-			.footer__about
+footer.footer
+	.footer__item.footer__copyright
+		.copyright
+			.copyright__about
 				| Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.
-			.footer__author
+			.copyright__author
 				| © Тишук Надежда <br /> Создано с любовью в LoftSchool | 2016
-	.row__col-1-3
-		.footer__cont.footer__decor
-			.footer__nav
-				ul.footer__nav__list
-					mixin footerNavList (name,href)
-						li.footer__nav__item
-							a.footer__nav__link(href=href)= name
-					+footerNavList('Мои работы', 'works.html')
-					+footerNavList('Блог', 'blog.html')
-					+footerNavList('Обо мне', 'about.html')
-					+footerNavList('Авторизация', 'index.html')
-
-			ul.socialicons__list
-				mixin socialIconsList (name,href)
-					li.socialicons__item
-						a.socialicons__link(href=href, target="_blank")= name
-							svg.socialicons__icon
-								use(xlink:href="assets/img/sprite.svg#"+name)
-				+socialIconsList('vk', 'https://vk.com/tishukn')
-				+socialIconsList('github', 'https://github.com/rainjeck')
-				+socialIconsList('in', '#')
-	.row__col-1-3
-		.footer__cont
-			.footer__contacts
-				ul.footer__contacts__list
-					mixin contactsList (name,href)
-						li.footer__contacts__item
-							a.footer__contacts__link(href=href)= name
-					+contactsList('la.esperanza', 'skype:la.esperanza')
-					+contactsList('166507@gmail.com', 'mailto:166507@gmail.com')
-					+contactsList('+7 925 864 76 51', 'tel:+79258647651')
-					li.footer__contacts__item
-						| Москва, ул. Саратовская, 8/1
+	.footer__item.footer__links
+		+navMenu('','navigate-footer')
+		+socials('socials-footer')
+	.footer__item.footer__contacts
+		+contacts('contacts-footer')

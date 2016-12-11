@@ -2,5 +2,5 @@
 
 module.exports = [
   './source/js/app.js',
-  //'./source/js/common/*.js'
+  './source/js/modules/*.js'
 ];

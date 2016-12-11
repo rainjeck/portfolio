@@ -1,50 +1,12 @@
 a.pageanchor#top
-.nav__block#nav
-	ul.nav__list
-		mixin navlistItems (name,href)
-			li.nav__item
-				a.nav__link(href=href)= name
-		+navlistItems('Мои работы', 'works.html')
-		+navlistItems('Блог', 'blog.html')
-		+navlistItems('Обо мне', 'about.html')
-		+navlistItems('Авторизация', 'index.html')
+nav.navigate
+	+navMenu('navTop','navigate-top')
 // header
-header.header__page
-	.header__social
-		ul.socialicons__list
-			mixin socialIconsList (name,href)
-				li.socialicons__item
-					a.socialicons__link(href=href)= name
-						svg.socialicons__icon.socialicons__icon_nav
-							use(xlink:href="assets/img/sprite.svg#"+name)
-			+socialIconsList('vk', 'https://vk.com/tishukn')
-			+socialIconsList('github', 'https://github.com/rainjeck')
-			+socialIconsList('in', '#')
-
-	// nav
-	nav.nav
-		span.nav__hamburger#togglenav
-			span.nav__hamburger_line
-
-	// userprofile
-	.userprofile__wrap
-		.container
-			.userprofile.userprofile_page
-				.userprofile__pic
-					img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
-				.userprofile__name Тишук Надежда
-				.userprofile__prof Front-End Developer
-				.userprofile__icon
-					svg(class="userprofile__icon__svg")
-						use(xlink:href="assets/img/sprite.svg#portfolio_header")
-
-	a.header__arrow(href="#screen")
-		svg(class="header__arrow__icon")
-			use(xlink:href="assets/img/sprite.svg#arrow_down")
+if tempName == 'About'
+	header.header.header-page.header-about
+		+headerPage
+else
+	header.header.header-page
+		+headerPage
 	
-	if tempName == 'About'
-		.trianglecss.trianglecss_about
-	else
-		.trianglecss
-
 a.pageanchor(id="screen")

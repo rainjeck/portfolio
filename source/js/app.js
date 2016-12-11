@@ -1,22 +1,36 @@
 'use strict';
 
-(function() {
-  svg4everybody();
+var showMenu = (function (){
+		$('#togglenav').on('click', function(event){
+		$('#navTop').toggleClass('navigate-show');
+		$('#togglenav').toggleClass('hamburger__icon-close');
+		$('html').toggleClass('hideScroll');
+	});
+}());
 
-  $('#auth').on('click', function(event){
+var flip = (function(){
+	$('#auth').on('click', function(event){
   	event.preventDefault();
-  	$('#flip').toggleClass('flip');
-  	$(this).hide();
+  	$('#flip').addClass('flip');
+  	$(this).css('visibility', 'hidden');
 	});
 	$('#flipreturn').on('click', function(event){
 		event.preventDefault();
-		$('#flip').toggleClass('flip');
-		$('#auth').show();
+		$('#flip').removeClass('flip');
+		$('#auth').css('visibility', 'visible');
 	});
-	$('#togglenav').on('click', function(event){
-		$('#nav').toggle();
-		$('#togglenav').toggleClass('nav__hamburger_close');
-		$('html').toggleClass('hideScroll');
+	
+	// переворачиваем форму по клику вне формы
+	$(document).mouseup(function (e) {
+    var container = $('#flip'); // берем нашу форму
+    if (container.has(e.target).length === 0){
+        container.removeClass('flip');
+        $('#auth').css('visibility', 'visible');
+    }
 	});
-  
-})();
+
+}());
+
+var svg4everybody = (function(){
+	svg4everybody();
+}());

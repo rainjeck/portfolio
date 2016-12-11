@@ -5,85 +5,71 @@ block variables
 	- var tempName = 'Works'
 
 block content
+	include ../common/_mixins.pug
 	include ../common/_header
 
-	h1.titles.titles_big.titles_works
-		span.titles__txt.titles__txt_big Мои работы
-			span.titles__icon
-				svg.titles__icon__svg
-					use(xlink:href="assets/img/sprite.svg#works_header")
-	// works slider
-	section.section.section_slider
-		ul.slider__list
-			li.slider__item
-				.slider__pic
-					img.works__img(src="assets/img/slider/florenceguide.png")
-				.slider__desc
-					.works__item
-						.works__title.titles.titles_md
-							span.titles__txt.titles__txt_md Сайт гида по Флоренции
-						.works__tech html, css, CMS GetSimple
-						a.works__link(href="http://florenceguide.ru", target="_blank") Посмотреть сайт
-							svg.works__link__svg
-								use(xlink:href="assets/img/sprite.svg#link")
-		a.slider__prev(href="#") Prev
-			svg.slider__icon
-				use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
-		a.slider__next(href="#") Next
-			svg.slider__icon
-				use(xlink:href="assets/img/sprite.svg#portf_arrow_up")
-		ul.slider__dots
-			li.slider__dot.active
-				a.slider__dot__link(href="#")
-			li.slider__dot
-				a.slider__dot__link(href="#")
-			li.slider__dot
-				a.slider__dot__link(href="#")
-			li.slider__dot
-				a.slider__dot__link(href="#")
+	section.section.section-myworks
+		+titleIcon('h1','title-big','works_header','Мои работы')
 
-	
+		// slider
+		.slider__container
+			ul.slider__items
+				li.slider__item
+					.myworks
+						.myworks__description
+							.myworks__name Сайт школы онлайн образования
+							.myworks__tech HTML , CSS, JAVASCRIPT
+							a.myworks__link(href="#") Посмотреть сайт
+								svg.myworks__link__icon
+									use(xlink:href="assets/img/sprite.svg#link")
+						.myworks__image
+							img.myworks__image__item(src="assets/img/slider/florenceguide.png")
+			button.slider__btn.slider__btn-prev
+				svg.slider__btn__icon
+					use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
+			button.slider__btn.slider__btn-next
+				svg.slider__btn__icon
+					use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
+			ul.slider__dots__items
+				li.slider__dots__item
+					button.slider__dots__btn
+				li.slider__dots__item
+					button.slider__dots__btn
+				li.slider__dots__item
+					button.slider__dots__btn
+
 	// works quotes
-	section.section.section_quote
+	section.section.section-quote
 		.container
-			h1.titles.titles_big
-				span.titles__txt.titles__txt_big Что обо мне <br/> говорят
-					span.titles__icon
-						svg.titles__icon__svg
-							use(xlink:href="assets/img/sprite.svg#about_header")
-		.container_sm.quotes
-			.row
-				.row__col-1-2
-					.quotes__box
-						.quotes__cont
-							| Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-						.quotes__author
-							.quotes__author__pic
-								img.quotes__author__img(src="assets/img/kovalchuk.jpg")
-							.quotes__author__cont
-								.quotes__author__name
-									| Ковальчук Дмитрий
-								.quotes__author__who
-									| основатель Loftschool
+			+titleIcon('h2','title-big','about_header','Что обо мне <br/> говорят')
+		.quotes__items
+			.quotes__item
+				.quotes__content
+					| Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+				.quotes__author
+					.quotes__author__avatar
+						img.quotes__author__img(src="assets/img/kovalchuk.jpg")
+					.quotes__author__item
+						span.quotes__author__name Ковальчук Дмитрий
+						span.quotes__author__desc основатель Loftschool
+			.quotes__item
+				.quotes__content
+					| Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!
+				.quotes__author
+					.quotes__author__avatar
+						img.quotes__author__img(src="assets/img/saharov.jpg")
+					.quotes__author__item
+						span.quotes__author__name Зар Захаров
+						span.quotes__author__desc преподаватель
 
-				.row__col-1-2
-					.quotes__box
-						.quotes__cont
-							| Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-						.quotes__author
-							.quotes__author__pic
-								img.quotes__author__img(src="assets/img/saharov.jpg")
-							.quotes__author__cont
-								.quotes__author__name
-									| Зар Захаров
-								.quotes__author__who
-									| преподаватель
-		// mail form
-		.container.box__mailme
-			.box
-				.box__title
-					.box__title__text.box__title__text_dark Связаться со мной
-
+	// section mailme
+	section.section.section-mailme
+		.blur__background
+			img.blur__img(src="assets/img/sandFooter.jpg")
+		.window__box.blur__wrapper
+			.blur__form
+			.window-mailme
+				+title('div','title-md','Связаться со мной')
 				form.form.form-mail
 					.form__text
 						input.form__text__input(type="text", placeholder="Имя", id="mailName")
@@ -91,18 +77,16 @@ block content
 						input.form__text__input(type="text", placeholder="E-mail", id="mailMail")
 					.form__text
 						textarea.form__text__input.form__textarea(placeholder="Ваше сообщение")
-
 				.window__menu
 					ul.window__menu__list
 						li.window__menu__item
-							a.window__menu__link(href="#") Отправить
+							a.window__menu__link#flipreturn(href="#") Отправить
 						li.window__menu__item
 							a.window__menu__link(href="#") Очистить
-				// .window__menu
-				
-		.toparrow
-			a.toparrow__link(href="#top")
-				svg.toparrow__icon
+
+		.arrow__top
+			a.arrow__top__link(href="#top")
+				svg.arrow__top__icon
 					use(xlink:href="assets/img/sprite.svg#arrow_down")
-	
+
 	include ../common/_footer

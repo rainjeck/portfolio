@@ -1,75 +1,151 @@
 /* ---------- HEADER ---------- */
-
+// блок header
 .header {
-	&__page {
-		background: url(../img/sand.jpg) no-repeat top left;
-		background-size: cover;
+	position: relative;
+	height: 100vh;
+	min-height: 400px;
+	overflow: hidden;
+
+	// картинка
+	&__picture{
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 150%;
+		z-index: 0;
+		// position: relative;
+		& > img {
+			display: block;
+			height: 100%
+		}
+	}
+
+	// блок с юзером
+	&__user{
+		position: absolute;
+		right: 0;
+		left: 0;
+		width: 100%;
 		height: 100%;
-		//min-height: 650px;
-		position: relative;
-		overflow: hidden;
 	}
-	&_blog {
-		min-height: 400px;
-		height: 400px;
-	}
-	&__social {
-		display: inline-block;
+
+	// картинка портфолио
+	&__icon {
 		position: absolute;
-		left: 30px;
-		top: 28px;
-		z-index: 8;
+		text-align: center;
+		left: 0;
+		right: 0;
+		top: 50%;
+		height: 100%;
+		transform: translateY(-50%);
+
+		&__svg {
+			fill: rgba(205,137,32,0.1);
+			position: absolute;
+			width: 100%;
+			height: 50%;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+			right: 0;
+		}
 	}
-	&__arrow {
-		display: inline-block;
-		position: absolute;
-		bottom: 14%;
-		left: 50%;
-		margin-left: -13px;
-		z-index: 5;
-		&__icon {
-			width: 26px;
-			height: 16px;
-			fill: #fff;
-			opacity: 0.7;
-			&:hover {
-				opacity: 1;
+
+		// треугольник в шапке страницы
+	&-page{
+		&:before, &:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width: 50%;
+			height: 160px;
+			z-index: 10;
+		}
+		&:before {
+			left: 0;
+	    background-image: linear-gradient(to top right, #f9f8f0 0%, #f9f8f0 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
+		}
+		&:after {
+			right: 0;
+			background-image: linear-gradient(to top left, #f9f8f0 0%, #f9f8f0 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
+		}
+	}
+
+	// треугольник для страницы about
+	&-about{
+		&:before{
+			background-image: linear-gradient(to top right, #efeee9 0%, #efeee9 50%, transparent 50.5%, transparent 50.5%, transparent 100%);
+		}
+		&:after {
+			background-image: linear-gradient(to top left, #eeebdf 0%, #eeebdf 50%, transparent 50.5%, transparent 50.5%, transparent 100%);
+			@include tablet {
+				background-image: linear-gradient(to top left, #efeee9 0%, #efeee9 50%, transparent 50.5%, transparent 50.5%, transparent 100%);
 			}
 		}
 	}
+
+	// шапка для 'Blog'
+	&-blog {
+		height: 400px;
+	}
 }
 
-.trianglecss {
-	height: 160px;
-	width: 100%;
+// блок социалок в шапке
+.header__socials{
 	position: absolute;
-	bottom: 0;
-	overflow: hidden;
-	&:before, &:after{
+	top: 35px;
+	left: 30px;
+	z-index: 10;
+}
+
+// кнопка гамбургер
+.hamburger__icon{
+	border: none;
+	background: none;
+	font-size: 0;
+	outline: 0;
+	display: block;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	z-index: 20;
+	width: 40px;
+	height: 35px;
+	&:before, &:after, &__line {
 		content: '';
 		position: absolute;
-		top: 0;
-		width: 50%;
-		height: 160px;
-	}
-	&:before {
+		width: 100%;
+		height: 5px;
+		background: #fff;
+		border-radius: 2px;
 		left: 0;
-    background-image: linear-gradient(to top right, #f9f8f0 0%, #f9f8f0 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
 	}
-	&:after {
-		right: 0;
-		background-image: linear-gradient(to top left, #f9f8f0 0%, #f9f8f0 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
+	&:before{
+		top: 0;
 	}
-	&_about {
-		&:before{
-			background-image: linear-gradient(to top right, #efeee9 0%, #efeee9 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
-		}
-		&:after {
-			background-image: linear-gradient(to top left, #eeebdf 0%, #eeebdf 50%, transparent 50.5%, transparent 50.5%, transparent 100%)
-		}
+	&:after{
+		bottom: 0;
 	}
-}
+	&:hover {
+		cursor: pointer;
+	}
+	&__line {
+		top:15px;
+	}
 
-.pageanchor {
-	font-size: 0;
+	&-close {
+		&:before{
+			transform:rotate(-45deg);
+			top:15px;
+			transition: 1s;
+		}
+		&:after{
+			transform:rotate(45deg);
+			top: 15px;
+			transition: 1s;
+		}
+		.hamburger__icon__line {
+			display: none;
+		}
+	}
 }

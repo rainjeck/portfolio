@@ -1,28 +1,32 @@
-// _welcome-login.scss
+ /* --- welcome-login.scss --- */
 
-/* ---------- WELCOME & LOGIN ---------- */ 
+/* ---------- WELCOME & LOGIN ---------- */
 .welcome {
   &__wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    background: url(../img/sand.jpg) no-repeat top left;
-    background-size: cover;
+    min-height: 100vh;
+    // background: url(../img/sand.jpg) no-repeat top left;
+    // background-size: cover;
   }
   &__login {
     padding: 20px 30px;
     text-align: right;
-    height: 45px;
+    position: relative;
+    @include phone {
+      text-align: center;
+    }
   }
   &__window {
     text-align: center;
     position: relative;
   }
   &__footer {
-    padding: 40px 0;
+    padding: 10px 0 40px;
     color: #fff;
     text-align: center;
+    position: relative;
   }
   &__box {
     width: 380px;
@@ -32,60 +36,34 @@
   }
 }
 
-.window {
-  &__box {
-    width: 380px;
-    min-width: 300px;
-    display: inline-block;
-    position: relative;
+/* Desert Animation */
+.desert {
+  animation: desertbg 240s linear infinite;
+  background: #f8e9d2 url(../img/sand.jpg) bottom left;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 6112px;
+  z-index: 0;
+}
+@keyframes desertbg {
+  0% {
+    transform: translate3d(0,0,0);
   }
-  &__menu {
-    &__list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    align-content: stretch;
-    width: 100%;
-  }
-  &__item {
-    position: relative;
-    flex-grow:1;
-    flex-basis: 50%;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0; right: 0;
-      height: 100%;
-      width: 2px;
-      background: #e1c58c;
-    }
-    &:last-child {
-      &:after {
-        display: none;
-      }
-    }
-  }
-  &__link {
-    display: block;
-    background: #e5a731;
-    color: #fff;
-    padding: 15px 5px 14px;
-    text-align: center;
-    &:hover {
-      background: #ce8a20;
-    }
-  }
+  100% {
+    transform: translate3d(-3056px,0,0);
   }
 }
+
 
 .login {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   //display: none;
 }
 
@@ -98,11 +76,12 @@
   &:hover {
     background: #fff;
     color: #cc8820;
+    transition: 0.5s;
   }
 }
 
 
-/* ---------- WELCOME ---------- */ 
+/* ---------- WELCOME PANE ---------- */
 
 .welcome {
   background-color: rgba(215, 191, 155, 0.6);
@@ -153,305 +132,7 @@
     text-align: center;
     &:hover {
       background: #ce8a20;
-    }
-  }
-}
-
-/* ---------- BOX ---------- */ 
-
-.box {
-  width: 380px;
-  margin: 0 auto 20px;
-  background-color: rgba(215, 191, 155, 0.6);
-  padding-top: 35px;
-  border-radius: 4px;
-  overflow: hidden;
-  &__cont {
-    padding: 0 20px;
-  }
-  &__title {
-    text-align: center;
-    margin-bottom: 35px;
-    &__text {
-      display: inline-block;
-      font-family: 'Sansus Webissimo', 'Arial', sans-serif;
-      font-size: 35px;
-      color: #fff;
-      text-transform: uppercase;
-      text-align: center;
-      position: relative;
-      &:after,
-      &:before {
-        content: "";
-        width: 22px;
-        height: 12px;
-        background: url(../img/sprite.png) no-repeat 0 0;
-        position: absolute;
-        top: 50%;
-        margin-top: -3px;
-      }
-      &:before {
-        left: -32px;
-      }
-      &:after {
-        right: -32px;
-        background-position: -61px 0px;
-      }
-      &_dark {
-        color: #5d5a55;
-        &:before {
-          background-position: -122px 0px;
-        }
-        &:after {
-          background-position: -183px 0px;
-        }
-      }
-    }
-  }
-
-  &__map {
-    position: absolute;
-    z-index: 4;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(#fff, 0.8);
-  }
-  &__menu {
-    &__list {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      display: table;
-      width: 100%;
-    }
-    &__item {
-      display: table-cell;
-      position: relative;
-      width: 50%;
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0; right: 0;
-        height: 100%;
-        width: 2px;
-        background: #e1c58c;
-      }
-      &:last-child {
-        &:after {
-          display: none;
-        }
-      }
-    }
-    &__link {
-      display: block;
-      background: #e5a731;
-      color: #fff;
-      padding: 15px 5px 14px;
-      text-align: center;
-      &:hover {
-        background: #ce8a20;
-      }
-    }
-  }
-  &__list {
-    padding: 0;
-    padding-left: 20px;
-    margin: 0 0 10px 0;
-    list-style: none;
-    &__item {
-      display: block;
-      padding-left: 34px;
-      margin-bottom: 25px;
-      position: relative;
-      color: #5d5a55;
-    }
-    &__link {
-      color: #5d5a55;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-      &:active {
-        color: #e7a731;
-      }
-    }
-    &__icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 24px;
-      height: 24px;
-      fill: #e7a731;
-    }
-  }
-}
-
-.form {
-  padding: 0 20px;
-  margin-bottom: 40px;
-  &-mail {
-    margin-bottom: 20px;
-  }
-
-  &__text {
-    position: relative;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    padding: 0;
-    background-color: #fff;
-    overflow: hidden;
-    .form__icon {
-      display: none;
-    }
-
-    &__input {
-      display: block;
-      width: 100%;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      outline: none;
-      color: #373e42;
-      background: #fff;
-      padding: 12px 18px 13px;
-      box-sizing: border-box;
-      @include placeholder {
-        color: #373e42;
-      }
-      &:focus {
-        @include placeholder {
-          color: transparent;
-        }
-        border-color: #e7a731;
-        & + .form__text__label .form__icon {
-          fill: #e7a731;
-        }
-      }
-    }
-    &_icon {
-      position: relative;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      padding-left: 45px;
-      background-color: #fff;
-      overflow: hidden;
-      .form__icon {
-        fill: #c4cbcd;
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        left: 14px;
-        top: 12px;
-        z-index: 9;
-      }
-      &:focus {
-        .form__icon {
-          fill: #555;
-        }
-      }
-      .form__text__input {
-        border-radius: 0 4px 4px 0;
-      }
-    }
-    &__label {
-      display: block;
-      width: 45px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: #f0efe9;
-    }
-  }
-
-  &__textarea {
-    min-height: 140px;
-  }
-
-  &__check {
-    text-align: center;
-    margin-bottom: 20px;
-    &__label {
-      display: inline-block;
-      color: #fff;
-      padding-left: 30px;
-      position: relative;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    &__style {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background: #fff;
-      border: 0;
-      border-radius: 3px;
-      position: absolute;
-      left: 0;
-      top: -2px;
-    }
-    .icon__svg-check {
-      display: none;
-    }
-    &__input {
-      display: none;
-      &:checked {
-        & + .form__check__label > .form__check__style {
-          background: #e7a731;
-        }
-        & + .form__check__label .icon__svg-check {
-          display: block;
-          width: 15px;
-          height: 12px;
-          fill: #fff;
-          position: absolute;
-          top: 2px;
-          left: 2px;
-        }
-
-      }
-    }
-  }
-
-  &__robot {
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  &__radiogroup {
-    text-align: center;
-    &__label {
-      display: inline-block;
-      color: #fff;
-      position: relative;
-      padding-left: 30px;
-      margin: 0 20px;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    &__style {
-      display: block;
-      width: 20px;
-      height: 20px;
-      background: #fff;
-      border: 0;
-      border-radius: 50%;
-      position: absolute;
-      left: 0;
-      top: -2px;
-    }
-    &__radio {
-      display: none;
-      &:checked {
-        & + .form__radiogroup__style {
-          border: 6px solid #fff;
-          background: #e7a731;
-        }
-      }
+      transition: 0.5s;
     }
   }
 }

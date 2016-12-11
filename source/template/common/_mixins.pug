@@ -1,0 +1,92 @@
+-
+	var socialsLinks = [
+		{name: 'vk', href: 'https://vk.com/tishukn'},
+		{name: 'github', href: 'https://github.com/rainjeck'},
+		{name: 'in', href: '#'}]
+
+//- social icons
+mixin socials (id)
+	ul.socials(class= id)
+		for item in socialsLinks
+			li.socials__item
+				a.socials__link(href= item.href)
+					svg.socials__icon
+						use(xlink:href="assets/img/sprite.svg#" + item.name)
+
+//- nav
+-
+	var navLinks = [
+		{name:'Мои работы', href:'works.html'},
+		{name:'Блог', href:'blog.html'},
+		{name:'Обо мне', href:'about.html'},
+		{name:'Авторизация', href:'index.html'}]
+
+mixin navMenu (id, className)
+	ul(class= className, id= id)
+		for item in navLinks
+			li(class= className + '__item')
+				a(class= className + '__link', href= item.href)= item.name
+
+//- contacts
+-
+	var contactsLinks = [
+		{name:'la.esperanza', href:'skype:la.esperanza', icon:'skype'},
+		{name:'166507@gmail.com', href:'mailto:166507@gmail.com',icon:'envelope2'},
+		{name:'+7 925 864 76 51', href:'tel:+79258647651',icon:'phone2'},
+		{name:'Москва, ул. Саратовская, д. 8/1', href:'',icon:'map_marker'}]
+
+mixin contacts (className)
+	ul(class= className)
+		for item in contactsLinks
+			li(class= className + '__item')
+				a(class= className + '__link', href= item.href)= item.name
+
+mixin contactsIcon (className)
+	ul(class= className)
+		for item in contactsLinks
+			li(class= className + '__item')
+				svg(class= className + '__icon')
+					use(xlink:href='assets/img/sprite.svg#' + item.icon)
+				a(class= className + '__link', href= item.href)= item.name
+
+mixin titleIcon (tagName,className,iconName,name)
+	#{tagName}(class="title")
+		span(class= className)!= name
+			svg.title__icon(preserveAspectRatio="none")
+				use(xlink:href='assets/img/sprite.svg#' + iconName)
+
+mixin title (tagName,className,name)
+	#{tagName}(class="title")
+		span(class= className)!= name
+
+mixin skill (skillsType)
+	.myskills__item
+		svg.myskills__item__icon(viewBox="0 0 110 110",preserveAspectRatio="none")
+			circle(r="45" cx="55" cy="55")
+			circle(r="45" cx="55" cy="55" class="sector")
+		span.myskills__item__type!= skillsType
+
+mixin headerPage
+	.header__picture
+		img(src="assets/img/sand.jpg")
+	.header__socials
+			+socials('socials-top')
+	button.hamburger__icon#togglenav menu
+		span.hamburger__icon__line
+	.header__icon
+		svg(class="header__icon__svg", preserveAspectRatio="none meet")
+			use(xlink:href="assets/img/sprite.svg#portfolio_header")
+	.header__user
+		.userprofile.userprofile-page
+			.userprofile__pic
+				img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
+			.userprofile__name Тишук Надежда
+			.userprofile__prof Front-End Developer
+	a.arrow__down(href="#screen")
+		svg(class="arrow__down__icon")
+			use(xlink:href="assets/img/sprite.svg#arrow_down")
+
+//- blog list
+mixin blogItem (name,href)
+	li.blog__nav__item
+		a.blog__nav__link(href= href)= name

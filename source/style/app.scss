@@ -1,13 +1,16 @@
+@import 'common/_mixins';
 @import 'common/base';
+
+@import 'common/elements';
 
 @import 'common/welcome-login';
 @import 'common/header';
 @import 'common/footer';
-@import 'common/headers';
+@import 'common/title';
 @import 'common/nav';
 
-@import 'common/elements';
-
 @import 'common/works';
+@import 'common/blur';
+@import 'common/slider';
 @import 'common/about';
 @import 'common/blog';

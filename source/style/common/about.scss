@@ -1,117 +1,110 @@
 /* ---------- About Me Box ---------- */
-.about__bg {
-	.traingle {
-		& > .left {
-			fill: #efeee9;
-		}
-		& > .right {
-			fill: #eeebdf;
-		}
-	}
-}
-.section_about {
-	padding-top: 0;
-	position: relative;
-	//overflow: hidden;
-	&:before,
-	&:after {
-		content: "";
-		display: block;
-		width: 50%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		z-index: -4;
-	}
-	&:before {
-		width: 50.1%;
-		left: 0;
-		background: #efeee9;
-	}
-	&:after {
-		right: 0;
-		background: #eeebdf;
-	}
-}
+.aboutme{
 
-.about{
-	&__left {
-		background: #efeee9;
+	&__items{
+		display: flex;
+		flex-direction: row;
+		@include laptop {
+			flex-direction: column;
+		}
 	}
-	&__right {
-		background: #eeebdf;
-	}
-}
+	&__item{
+		flex: 1;
+		padding: 0 40px;
 
-.aboutme {
-	&__box {
-		padding: 0 80px;
-		margin: 0 auto;
+		&-leftbox{
+			background: #efeee9;
+		}
+		&-rightbox{
+			background: #eeebdf;
+		}
+
+		&-left{
+			max-width: 600px;
+			margin-left: auto;
+			@include laptop {
+				padding: 40px 0 0;
+				margin: 0 auto;
+			}
+		}
+		&-right{
+			max-width: 600px;
+			margin-rigth: auto;
+			@include laptop {
+				padding: 40px 0 0;
+				margin: 0 auto;
+			}
+		}
 	}
+
+	&__content {
+		color: #5d5a55;
+		margin-bottom: 40px;
+	}
+
 	&__pic {
 		margin-bottom: 40px;
 	}
 	&__img {
-		display: block;
-		width: 100%;
+		max-width: 100%;
 	}
-	&__cont {
-		color: #5d5a55;
-		margin-bottom: 40px;
-		p {
-			margin: 0;
-			padding: 0 0 20px 0;
-			line-height: 24px;
+
+}
+
+.skills{
+	&__items{}
+	&__name{
+		font-size: 28px; // 28px
+		font-family: 'Roboto Medium', 'Arial', sans-serif;
+		margin-bottom: 20px;
+		@include laptop {
+			text-align: center;
 		}
 	}
 }
 
-.skills {
-	&__cont {
-		color: #5d5a55;
-		padding: 0 40px;
-		p {
-			line-height: 24px;
-			margin-bottom: 20px;
-		}
-	}
-	&__txt {
-		margin-bottom: 30px;
-	}
-	&__section {
+// my skills
+.myskills{
+	&__items{
 		margin-bottom: 40px;
-	}
-	&__name {
-		font-size: 28px;
-		font-family: 'Roboto Medium', 'Arial', sans-serif;
-		margin-bottom: 20px;
-	}
-	&__list {
-		padding: 0;
-		margin: 0;
-	}
-	&__circle {
-		display: inline-block;
-		margin: 0 30px 30px 0;
-		position: relative;
-		&:last-child {
-			margin-right: 0;
+		@include laptop {
+			text-align: center;
 		}
-		&__icon {
-			width: 110px;
-			height: 110px;
+	}
+	&__item{
+		display: inline-block;
+		position: relative;
+		margin: 0 40px 40px 0;
+		@include laptop {
+			margin: 0 20px 20px;
+		}
+		&:last-child{
+			margin: 0;
+			@include phone {
+				margin: 0 20px;
+			}
+		}
+		&__icon{
+			width: 125px;
+			height: 125px;
 			fill: none;
 			stroke-width: 20;
 			stroke: #dfdcd5;
+			@include phone {
+				width: 130px;
+				height: 130px;
+			}
 			& > .sector {
 				stroke-dasharray: 100 (2*35*3.1415);
 				transition: all 1s;
 				stroke: #e6ab3d;
+				transform: rotate(-90deg);
+				transform-origin: 50% 50%;
 			}
 		}
-		&__type {
+		&__type{
 			color: #cd8920;
-			font-size: 12px;
+			font-size: 12px; // 12px
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
@@ -126,7 +119,8 @@
 
 .map {
 	position: relative;
-	height: 100%;
+	height: 100vh;
+	overflow: hidden;
 }
 #map {
 	position: absolute;
@@ -136,4 +130,24 @@
 	right: 0;
 	width: 100%;
 	height: 100%;
+	@include phone {
+		position: static;
+	}
+}
+
+.window__box-about{
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	background-color: rgba(#fff, 0.85);
+	border-radius: 4px;
+	padding: 30px;
+	@include phone {
+		position: static;
+		transform: none;
+		width: 100%;
+	}
 }
