@@ -9,6 +9,9 @@
     <!--meta(content="width=device-width" name="viewport")-->
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
     <link rel="stylesheet" href="assets/fonts/roboto.css">
     <link rel="stylesheet" href="assets/fonts/sansus.css">
     <link rel="stylesheet" href="assets/css/foundation.css">
@@ -16,7 +19,9 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body><a class="pageanchor" id="top"></a>
-    <nav class="navigate">
+    <nav class="navigate" id="navigate">
+      <!--.navigate__left.nav-animate-->
+      <!--.navigate__right.nav-animate-->
           <ul class="navigate-top" id="navTop">
             <li class="navigate-top__item"><a class="navigate-top__link" href="works.html">Мои работы</a></li>
             <li class="navigate-top__item"><a class="navigate-top__link" href="blog.html">Блог</a></li>
@@ -44,7 +49,7 @@
                 </ul>
           </div>
           <button class="hamburger__icon" id="togglenav">menu<span class="hamburger__icon__line"></span></button>
-          <div class="header__icon">
+          <div class="header__icon header__icon-parallax">
             <svg class="header__icon__svg" preserveAspectRatio="none meet">
               <use xlink:href="assets/img/sprite.svg#portfolio_header"></use>
             </svg>
@@ -68,16 +73,28 @@
       <!-- slider-->
       <div class="slider__container">
         <ul class="slider__items">
-          <li class="slider__item">
+          <li class="slider__item active">
             <div class="myworks">
               <div class="myworks__description">
-                <div class="myworks__name">Сайт школы онлайн образования</div>
-                <div class="myworks__tech">HTML , CSS, JAVASCRIPT</div><a class="myworks__link" href="#">Посмотреть сайт
+                <div class="myworks__name">Сайт гида по Флоренции</div>
+                <div class="myworks__tech">HTML , CSS, CMS GetSimple</div><a class="myworks__link" href="http://florenceguide.ru" target="_blank">Посмотреть сайт
                   <svg class="myworks__link__icon">
                     <use xlink:href="assets/img/sprite.svg#link"></use>
                   </svg></a>
               </div>
               <div class="myworks__image"><img class="myworks__image__item" src="assets/img/slider/florenceguide.png"></div>
+            </div>
+          </li>
+          <li class="slider__item">
+            <div class="myworks">
+              <div class="myworks__description">
+                <div class="myworks__name">Фан-сайт</div>
+                <div class="myworks__tech">HTML , CSS, CMS GetSimple</div><a class="myworks__link" href="http://v-meladze.ru" target="_blank">Посмотреть сайт
+                  <svg class="myworks__link__icon">
+                    <use xlink:href="assets/img/sprite.svg#link"></use>
+                  </svg></a>
+              </div>
+              <div class="myworks__image"><img class="myworks__image__item" src="assets/img/slider/vmeladze.png"></div>
             </div>
           </li>
         </ul>
@@ -91,74 +108,71 @@
             <use xlink:href="assets/img/sprite.svg#portf_arrow_down"></use>
           </svg>
         </button>
-        <ul class="slider__dots__items">
-          <li class="slider__dots__item">
-            <button class="slider__dots__btn"></button>
-          </li>
-          <li class="slider__dots__item">
-            <button class="slider__dots__btn"></button>
-          </li>
-          <li class="slider__dots__item">
-            <button class="slider__dots__btn"></button>
-          </li>
-        </ul>
+        <ul class="slider__dots__items"></ul>
       </div>
     </section>
     <!-- works quotes-->
-    <section class="section section-quote">
+    <section class="section section-quotes">
       <div class="container">
             <h2 class="title"><span class="title-big">Что обо мне <br/> говорят
                 <svg class="title__icon" preserveAspectRatio="none">
                   <use xlink:href="assets/img/sprite.svg#about_header"></use>
                 </svg></span></h2>
-      </div>
-      <div class="quotes__items">
-        <div class="quotes__item">
-          <div class="quotes__content">Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
-          <div class="quotes__author">
-            <div class="quotes__author__avatar"><img class="quotes__author__img" src="assets/img/kovalchuk.jpg"></div>
-            <div class="quotes__author__item"><span class="quotes__author__name">Ковальчук Дмитрий</span><span class="quotes__author__desc">основатель Loftschool</span></div>
+        <div class="quotes__items">
+          <div class="quotes__item">
+            <div class="quotes__content">Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
+            <div class="quotes__author">
+              <div class="quotes__author__avatar"><img class="quotes__author__img" src="assets/img/kovalchuk.jpg"></div>
+              <div class="quotes__author__item"><span class="quotes__author__name">Ковальчук Дмитрий</span><span class="quotes__author__desc">основатель Loftschool</span></div>
+            </div>
           </div>
-        </div>
-        <div class="quotes__item">
-          <div class="quotes__content">Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!</div>
-          <div class="quotes__author">
-            <div class="quotes__author__avatar"><img class="quotes__author__img" src="assets/img/saharov.jpg"></div>
-            <div class="quotes__author__item"><span class="quotes__author__name">Зар Захаров</span><span class="quotes__author__desc">преподаватель</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- section mailme-->
-    <section class="section section-mailme">
-      <div class="blur__background"><img class="blur__img" src="assets/img/sandFooter.jpg"></div>
-      <div class="window__box blur__wrapper">
-        <div class="blur__form"></div>
-        <div class="window-mailme">
-              <div class="title"><span class="title-md">Связаться со мной</span></div>
-          <form class="form form-mail">
-            <div class="form__text">
-              <input class="form__text__input" type="text" placeholder="Имя" id="mailName">
+          <div class="quotes__item">
+            <div class="quotes__content">Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!</div>
+            <div class="quotes__author">
+              <div class="quotes__author__avatar"><img class="quotes__author__img" src="assets/img/saharov.jpg"></div>
+              <div class="quotes__author__item"><span class="quotes__author__name">Зар Захаров</span><span class="quotes__author__desc">преподаватель</span></div>
             </div>
-            <div class="form__text">
-              <input class="form__text__input" type="text" placeholder="E-mail" id="mailMail">
-            </div>
-            <div class="form__text">
-              <textarea class="form__text__input form__textarea" placeholder="Ваше сообщение"></textarea>
-            </div>
-          </form>
-          <div class="window__menu">
-            <ul class="window__menu__list">
-              <li class="window__menu__item"><a class="window__menu__link" id="flipreturn" href="#">Отправить</a></li>
-              <li class="window__menu__item"><a class="window__menu__link" href="#">Очистить</a></li>
-            </ul>
           </div>
         </div>
       </div>
-      <div class="arrow__top"><a class="arrow__top__link" href="#top">
-          <svg class="arrow__top__icon">
-            <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
-          </svg></a></div>
+      <!-- section mailme-->
+      <div class="section-mailme">
+        <div class="blur__background"><img class="blur__img" src="assets/img/sandFooter.jpg"></div>
+        <div class="window__box blur__wrapper">
+          <div class="blur__form"></div>
+          <div class="window-mailme">
+                <div class="title"><span class="title-md">Связаться со мной</span></div>
+            <form class="form form-mail" id="mailForm" form="mailForm" method="post">
+              <div class="form__text">
+                <label class="form__label" for="mailName">Имя</label>
+                <input class="form__text__input" type="text" placeholder="Имя" id="mailName">
+              </div>
+              <div class="form__text">
+                <label class="form__label" for="mailMail">E-mail</label>
+                <input class="form__text__input" type="text" placeholder="E-mail" id="mailMail">
+              </div>
+              <div class="form__text">
+                <label class="form__label" for="mailMessage">Сообщение</label>
+                <textarea class="form__text__input form__textarea" placeholder="Ваше сообщение" id="mailMessage"></textarea>
+              </div>
+            </form>
+            <div class="window__menu">
+              <ul class="window__menu__list">
+                <li class="window__menu__item">
+                  <input class="window__menu__link" id="submitBtn" type="submit" value="Отправить" form="mailForm">
+                </li>
+                <li class="window__menu__item">
+                  <input class="window__menu__link" type="reset" form="mailForm" value="Очистить">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="arrow__top"><a class="arrow__top__link" href="#top">
+            <svg class="arrow__top__icon">
+              <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
+            </svg></a></div>
+      </div>
     </section>
     <!-- footer-->
     <footer class="footer">

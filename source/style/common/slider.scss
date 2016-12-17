@@ -16,22 +16,34 @@
 		list-style: none;
 		display: block;
 		position: relative;
+		overflow: hidden;
 	}
 	&__item{
-		display: flex;
-		min-height: 570px;
+		display: block;
+		background: #ede7dd;
+		min-height: 400px;
+		position: absolute;
+		bottom: 0;
+		left: 0; right: 0;
+		z-index: 0;
+
+		&.active {
+			position: relative;
+			z-index: 10;
+		}
 	}
 
 	// slider nav
 	&__btn{
 		position: absolute;
 		top: 50%;
-		width: 32px;
-		height: 32px;
+		width: 40px;
+		height: 40px;
 		font-size: 0;
 		border: 0;
 		outline: none;
 		background: none;
+		z-index: 10;
 		&:hover { cursor: pointer; }
 		&__icon {
 			width: 16px;
@@ -69,10 +81,9 @@
 			bottom: 30px;
 			left: 50%;
 			transform: translateX(-50%);
+			z-index: 10;
 		}
-		&__item{
-			display: inline-block;
-		}
+
 		&__btn{
 			display: block;
 			font-size: 0;
@@ -101,7 +112,27 @@
 				background: #fff;
 			}
 		}
+
+		&__item{
+			display: inline-block;
+
+			&.active {
+				.slider__dots__btn {
+					&:before {
+						background: #efab26;
+					}
+				}
+			}
+		}
 	}
+}
+
+// animations
+.hideSlide {
+	animation: hideSlider 0.25s linear 1 forwards;
+}
+.showSlide {
+	animation: showSlider 1s ease 1 forwards;
 }
 
 // my works
@@ -111,6 +142,9 @@
 	align-items: stretch;
 	align-content: stretch;
 	width: 100%;
+	min-height: 640px;
+	//position: absolute;
+	//bottom: 0;
 	@include tablet {
 		flex-direction: column;
 	}
@@ -132,13 +166,16 @@
 		width: 50%;
 		align-self: flex-end;
 		text-align: center;
+		max-height: 650px;
 		@include tablet {
 			order: 2;
 			width: 100%;
 			padding: 0 35px;
 		}
 		&__item {
+			display: block;
 			max-width: 100%;
+			margin: 0 auto;
 		}
 	}
 

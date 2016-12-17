@@ -9,6 +9,9 @@
     <!--meta(content="width=device-width" name="viewport")-->
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
     <link rel="stylesheet" href="assets/fonts/roboto.css">
     <link rel="stylesheet" href="assets/fonts/sansus.css">
     <link rel="stylesheet" href="assets/css/foundation.css">
@@ -16,7 +19,9 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body><a class="pageanchor" id="top"></a>
-    <nav class="navigate">
+    <nav class="navigate" id="navigate">
+      <!--.navigate__left.nav-animate-->
+      <!--.navigate__right.nav-animate-->
           <ul class="navigate-top" id="navTop">
             <li class="navigate-top__item"><a class="navigate-top__link" href="works.html">Мои работы</a></li>
             <li class="navigate-top__item"><a class="navigate-top__link" href="blog.html">Блог</a></li>
@@ -44,7 +49,7 @@
                 </ul>
           </div>
           <button class="hamburger__icon" id="togglenav">menu<span class="hamburger__icon__line"></span></button>
-          <div class="header__icon">
+          <div class="header__icon header__icon-parallax">
             <svg class="header__icon__svg" preserveAspectRatio="none meet">
               <use xlink:href="assets/img/sprite.svg#portfolio_header"></use>
             </svg>

@@ -9,166 +9,171 @@
     <!--meta(content="width=device-width" name="viewport")-->
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
     <link rel="stylesheet" href="assets/fonts/roboto.css">
     <link rel="stylesheet" href="assets/fonts/sansus.css">
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/app.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body><a class="pageanchor" id="top"></a>
-    <nav class="navigate">
-          <ul class="navigate-top" id="navTop">
-            <li class="navigate-top__item"><a class="navigate-top__link" href="works.html">Мои работы</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="blog.html">Блог</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="about.html">Обо мне</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="index.html">Авторизация</a></li>
-          </ul>
-    </nav>
-    <!-- header-->
-    <header class="header header-page header-blog">
-      <div class="header__picture"><img src="assets/img/sand.jpg"></div>
-      <div class="header__socials">
-            <ul class="socials socials-top">
-              <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
-                  <svg class="socials__icon">
-                    <use xlink:href="assets/img/sprite.svg#vk"></use>
-                  </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
-                  <svg class="socials__icon">
-                    <use xlink:href="assets/img/sprite.svg#github"></use>
-                  </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="#">
-                  <svg class="socials__icon">
-                    <use xlink:href="assets/img/sprite.svg#in"></use>
-                  </svg></a></li>
+  <body>
+    <div class="wrapper-blog"><a class="pageanchor" id="top"></a>
+      <nav class="navigate" id="navigate">
+            <ul class="navigate-top" id="navTop">
+              <li class="navigate-top__item"><a class="navigate-top__link" href="works.html">Мои работы</a></li>
+              <li class="navigate-top__item"><a class="navigate-top__link" href="blog.html">Блог</a></li>
+              <li class="navigate-top__item"><a class="navigate-top__link" href="about.html">Обо мне</a></li>
+              <li class="navigate-top__item"><a class="navigate-top__link" href="index.html">Авторизация</a></li>
             </ul>
-      </div>
-      <button class="hamburger__icon" id="togglenav">menu<span class="hamburger__icon__line"></span></button>
-      <div class="header__user">
-        <div class="userprofile userprofile-page">
-          <div class="userprofile__pic"><img class="userprofile__img" src="assets/img/myCoolAvatar.jpg"></div>
-              <h1 class="title"><span class="title-big title-blog">Блог
-                  <svg class="title__icon" preserveAspectRatio="none">
-                    <use xlink:href="assets/img/sprite.svg#blog_header"></use>
-                  </svg></span></h1>
-          <div class="title-blog-in">Статьи, которые я написала</div>
+      </nav>
+      <!-- header-->
+      <header class="header header-page header-blog">
+        <div class="header__picture"><img src="assets/img/sand.jpg"></div>
+        <div class="header__socials">
+              <ul class="socials socials-top">
+                <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
+                    <svg class="socials__icon">
+                      <use xlink:href="assets/img/sprite.svg#vk"></use>
+                    </svg></a></li>
+                <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
+                    <svg class="socials__icon">
+                      <use xlink:href="assets/img/sprite.svg#github"></use>
+                    </svg></a></li>
+                <li class="socials__item"><a class="socials__link" href="#">
+                    <svg class="socials__icon">
+                      <use xlink:href="assets/img/sprite.svg#in"></use>
+                    </svg></a></li>
+              </ul>
         </div>
-      </div>
-    </header>
-    <section class="section section-blog">
-      <div class="container">
-        <div class="blog__items">
-          <!-- blog navigate-->
-          <div class="blog__item blog__nav">
-            <ul class="blog__nav__items">
-                  <li class="blog__nav__item"><a class="blog__nav__link" href="#murlikanie">Мурлыканье</a></li>
-                  <li class="blog__nav__item"><a class="blog__nav__link" href="#zenitnie-bashni-luftvaffe">Зенитные башни люфтваффе</a></li>
-                  <li class="blog__nav__item"><a class="blog__nav__link" href="#antonie-gaudi">Антонио Гауди</a></li>
-                  <li class="blog__nav__item"><a class="blog__nav__link" href="#zenevskoe-ozero">Женевское озеро</a></li>
-                  <li class="blog__nav__item"><a class="blog__nav__link" href="#carlsberg">Carlsberg</a></li>
-            </ul>
-          </div>
-          <!-- blog content-->
-          <div class="blog__item blog__content">
-            <div class="blog__post"><a class="blog__post__link" name="murlikanie"></a>
-              <div class="blog__post__header">Мурлыканье</div>
-              <div class="blog__post__date">12 dec. 2016</div>
-              <div class="blog__post__content">
-                <p>Мурлыканье (урчание) — это, как правило, негромкий ритмичный продолжительный вибрирующий звук, издаваемый всеми кошачьими в момент получения положительных эмоций (ласки, насыщения и т. п.); реже в других случаях. Несмотря на то, что звуки, очень похожие на мурлыканье, издают также мангустовые, циветы, генеты, медведи, барсуки, гиены, традиционно, говоря о мурлыкании, имеют в виду только представителей семейства кошачьих.</p>
-                <p>Механизм мурлыканья долгое время оставался спорным вопросом, так как специального органа, ответственного за производство таких звуков, у кошачьих не обнаружено. Согласно последним исследованиям, механизм мурлыканья следующий: в коре головного мозга возникают электрические импульсы, которые поступают к располагающимся вблизи голосовых связок мышцам и заставляют их сокращаться. Собственно «аппарат мурлыканья» располагается у кошек между основанием черепа и основанием языка и представляет собой тонко связанные подъязычные косточки. Сокращение мышц возле голосовых связок вызывает их вибрацию. Мурлыкающий звук кошка издает ртом и носом, а вибрация распространяется по всему её телу, при этом, во время мурлыканья невозможно прослушать лёгкие и сердце животного.</p>
-                <p>Причины мурлыканья кошки полностью не ясны. Замечено, что кошки мурлыкают, когда получают ласку и чувствуют себя в безопасности; реже, когда едят. Кошки иногда мурлыкают во время родов, а котята умеют мурлыкать уже в возрасте двух дней. Некоторые исследователи предполагают, что с помощью мурлыканья кошки требуют у своего хозяина покормить их или просто обратить внимание, причём типы мурлыканья могут быть разными: оно может выражать удовольствие, скуку, приветствие хозяина, беспокойство, благодарность. Ещё одна теория гласит, что с помощью мурлыканья кошки стимулируют свой мозг на выработку гормона, действующего как расслабляющее, заживляющее и обезболивающее: зафиксированы случаи, когда мурлыкают раненые кошки, которым больно.</p>
-              </div>
-            </div>
-            <div class="blog__post"><a class="blog__post__link" name="zenitnie-bashni-luftvaffe"></a>
-              <div class="blog__post__header">Зенитные башни люфтваффе</div>
-              <div class="blog__post__date">12 dec. 2016</div>
-              <div class="blog__post__content">
-                <p>Зенитные башни люфтваффе (нем. Flakturm - флактурм) — большие наземные бетонные бункеры, вооружённые артиллерией ПВО, использовавшиеся люфтваффе в годы Второй мировой войны для концентрированного размещения групп крупнокалиберных зенитных орудий с целью защиты стратегически важных городов от воздушных бомбардировок антигитлеровской коалиции. Также использовались для координации воздушной обороны и служили бомбоубежищами.</p>
-                <p>Башни строились не отдельными строениями, а комплексом сооружений. Каждый комплекс состоял из двух башен:</p>
-                <ul>
-                  <li>G-башня (нем. Gefechtsturm) или боевая башня, также известная как оружейная башня или большая зенитная башня;</li>
-                  <li>L-башня (нем. Leitturm) или главная башня, также известная как башня управления огнём, командирская башня или малая зенитная башня.</li>
-                </ul>
-                <p>В Вене построены 3 комплекса: один 2-го поколения и два 3-го поколения.</p>
-                <p>Flakturm V — Аренберг парк (2 поколение): G-башня использовалась как хранилище для художественных работ; L-башня осталась пустой.</p>
-                <p>Flakturm VII — Штифтсказернеб (3 поколение): G-башня находится на военной базе австрийской армии; L-башня (в парке Эстерхази) использовалась как аквариум («Haus des Meeres») и имеет скалодром на фасаде.</p>
-                <p>Flakturm VIII — Аугартен (3 поколение): G-башня осталась пустой; L-башня осталась пустой.</p>
-              </div>
-            </div>
-            <div class="blog__post"><a class="blog__post__link" name="antonie-gaudi"></a>
-              <div class="blog__post__header">Антонио Гауди</div>
-              <div class="blog__post__date">12 dec. 2016</div>
-              <div class="blog__post__content">
-                <p>Антони Пласид Гильéм Гауди-и-Корнет  — испанский (каталонский) архитектор, большинство проектов которого возведено в Барселоне.</p>
-                <p>Стиль, в котором творил Гауди, относят к модерну. Однако фактически в своём творчестве он использовал элементы самых различных стилей, подвергая их творческой переработке.</p>
-                <p>Гауди с детства страдал ревматизмом, препятствующим играм с другими детьми, но не мешающим длительным одиночным прогулкам, к которым он питал пристрастие всю свою жизнь. Ограниченная из-за болезни подвижность обострила наблюдательность будущего архитектора, открыла ему мир природы, ставший главным источником вдохновения при решении как художественно-оформительских, так и конструктивных задач.</p>
-                <p>7 июня 1926 года 73-летний Гауди вышел из дома, чтобы отправиться в свой ежедневный путь к церкви Сант-Фелип-Нери, прихожанином которой он был. Идя рассеянно по улице Гран-Виа-де-лас-Кортес-Каталанес между улицами Жирона и Байлен, он был сбит трамваем и потерял сознание. Извозчики отказывались везти в больницу неопрятного, неизвестного старика без денег и документов, опасаясь неуплаты за поездку. В конце концов, Гауди доставили в больницу для нищих, где ему оказали лишь примитивную медицинскую помощь. Лишь на следующий день его нашёл и опознал капеллан храма Саграда-Фамилия Мосен Хиль Парес-и-Виласау. К тому времени состояние Гауди уже ухудшилось настолько, что лучшее лечение не могло ему помочь.</p>
-                <p>Гауди скончался 10 июня 1926 года и был похоронен двумя днями позже в крипте недостроенного им храма.</p>
-              </div>
-            </div>
-            <div class="blog__post"><a class="blog__post__link" name="zenevskoe-ozero"></a>
-              <div class="blog__post__header">Женевское озеро</div>
-              <div class="blog__post__date">12 dec. 2016</div>
-              <div class="blog__post__content">
-                <p>Женевское озеро или Леман (фр. Lac Léman, Le Léman, Lac de Genève) — самое большое озеро Альп и второе по величине (вслед за Балатоном) пресноводное озеро Центральной Европы. Расположено в границах Швейцарии и Франции.</p>
-                <p>Женевское озеро лежит в пойме реки Рона и имеет форму полумесяца, изгибающегося в районе деревни Ивуар. Изгиб естественным образом делит Женевское озеро на Большое (фр. Grand Lac) и Малое озёра (фр. Petit Lac).</p>
-                <p>Северный берег озера усеян фешенебельными курортами — Швейцарская ривьера. В этих краях высится Шильонский замок, прославленный лордом Байроном в одноимённой поэме.</p>
-              </div>
-            </div>
-            <div class="blog__post"><a class="blog__post__link" name="carlsberg"></a>
-              <div class="blog__post__header">Carlsberg</div>
-              <div class="blog__post__date">12 dec. 2016</div>
-              <div class="blog__post__content">
-                <p>Carlsberg (Карлсберг) — датская пивоваренная компания, одна из крупнейших в мире. Штаб-квартира находится в копенгагенском районе Вальбю.</p>
-                <p>Основана в 1847 году датским предпринимателем Якобом Кристианом Якобсеном, который назвал компанию в честь своего сына Карла. Поставки пива на экспорт (в Шотландию) начались с 1868 года; первая зарубежная пивоварня построена в 1968 году в Малави.</p>
-                <p>В 1865 году на заводе Carlsberg начала работу химико-физиологическая лаборатория. Её специалисты (в частности, Эмиль Христиан Хансен) разработали метод культивирования чистых дрожжей, решивший проблему ферментации пива (до этого пивовары использовали нестабильные закваски). Выделенная ими культура дрожжей в честь лаборатории получила наименование Saccharomyces carlsbergensis. С 1901 по 1938 годы лабораторией руководил известный датский биохимик Сёрен Педэр Лауриц Сёренсен, чьё имя чаще всего упоминается в связи с введённым им обозначением водородного показателя pH.</p>
-                <p>Карл Якобсен был не только успешным предпринимателем, но и меценатом и филантропом, основателем Новой глиптотеки Карслберга. Под его руководством архитектор Вильгельм Далеруд застроил квартал Копенгагена, в котором стали размещаться производство и административные здания компании.</p>
-                <p>В 1969—1971 гг. председателем правления компании был известный датский учёный, физиолог Пауль Реберг, который в 1970 году успешно провёл процесс поглощения Carlsberg пивоваренной компании Tuborg.</p>
-              </div>
-            </div>
+        <button class="hamburger__icon" id="togglenav">menu<span class="hamburger__icon__line"></span></button>
+        <div class="header__user">
+          <div class="userprofile userprofile-page">
+            <div class="userprofile__pic"><img class="userprofile__img" src="assets/img/myCoolAvatar.jpg"></div>
+                <h1 class="title"><span class="title-big title-blog">Блог
+                    <svg class="title__icon" preserveAspectRatio="none">
+                      <use xlink:href="assets/img/sprite.svg#blog_header"></use>
+                    </svg></span></h1>
+            <div class="title-blog-in">Статьи, которые я написала</div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- footer-->
-    <footer class="footer">
-      <div class="footer__item footer__copyright">
-        <div class="copyright">
-          <div class="copyright__about">Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</div>
-          <div class="copyright__author">© Тишук Надежда <br /> Создано с любовью в LoftSchool | 2016</div>
+      </header>
+      <section class="section section-blog">
+        <div class="container">
+          <div class="blog__items">
+            <!-- blog navigate-->
+            <div class="blog__item blog__nav"><span class="js-mobButton"></span>
+              <ul class="blog__nav__items">
+                    <li class="blog__nav__item"><a class="blog__nav__link" href="#murlikanie">Мурлыканье</a></li>
+                    <li class="blog__nav__item"><a class="blog__nav__link" href="#zenitnie-bashni-luftvaffe">Зенитные башни люфтваффе</a></li>
+                    <li class="blog__nav__item"><a class="blog__nav__link" href="#antonie-gaudi">Антонио Гауди</a></li>
+                    <li class="blog__nav__item"><a class="blog__nav__link" href="#zenevskoe-ozero">Женевское озеро</a></li>
+                    <li class="blog__nav__item"><a class="blog__nav__link" href="#carlsberg">Carlsberg</a></li>
+              </ul>
+            </div>
+            <!-- blog content-->
+            <div class="blog__item blog__content">
+              <div class="blog__post" data-section="murlikanie"><a class="blog__post__link" name="murlikanie"></a>
+                <div class="blog__post__header">Мурлыканье</div>
+                <div class="blog__post__date">12 dec. 2016</div>
+                <div class="blog__post__content">
+                  <p>Мурлыканье (урчание) — это, как правило, негромкий ритмичный продолжительный вибрирующий звук, издаваемый всеми кошачьими в момент получения положительных эмоций (ласки, насыщения и т. п.); реже в других случаях. Несмотря на то, что звуки, очень похожие на мурлыканье, издают также мангустовые, циветы, генеты, медведи, барсуки, гиены, традиционно, говоря о мурлыкании, имеют в виду только представителей семейства кошачьих.</p>
+                  <p>Механизм мурлыканья долгое время оставался спорным вопросом, так как специального органа, ответственного за производство таких звуков, у кошачьих не обнаружено. Согласно последним исследованиям, механизм мурлыканья следующий: в коре головного мозга возникают электрические импульсы, которые поступают к располагающимся вблизи голосовых связок мышцам и заставляют их сокращаться. Собственно «аппарат мурлыканья» располагается у кошек между основанием черепа и основанием языка и представляет собой тонко связанные подъязычные косточки. Сокращение мышц возле голосовых связок вызывает их вибрацию. Мурлыкающий звук кошка издает ртом и носом, а вибрация распространяется по всему её телу, при этом, во время мурлыканья невозможно прослушать лёгкие и сердце животного.</p>
+                  <p>Причины мурлыканья кошки полностью не ясны. Замечено, что кошки мурлыкают, когда получают ласку и чувствуют себя в безопасности; реже, когда едят. Кошки иногда мурлыкают во время родов, а котята умеют мурлыкать уже в возрасте двух дней. Некоторые исследователи предполагают, что с помощью мурлыканья кошки требуют у своего хозяина покормить их или просто обратить внимание, причём типы мурлыканья могут быть разными: оно может выражать удовольствие, скуку, приветствие хозяина, беспокойство, благодарность. Ещё одна теория гласит, что с помощью мурлыканья кошки стимулируют свой мозг на выработку гормона, действующего как расслабляющее, заживляющее и обезболивающее: зафиксированы случаи, когда мурлыкают раненые кошки, которым больно.</p>
+                </div>
+              </div>
+              <div class="blog__post" data-section="zenitnie-bashni-luftvaffe"><a class="blog__post__link" name="zenitnie-bashni-luftvaffe"></a>
+                <div class="blog__post__header">Зенитные башни люфтваффе</div>
+                <div class="blog__post__date">12 dec. 2016</div>
+                <div class="blog__post__content">
+                  <p>Зенитные башни люфтваффе (нем. Flakturm - флактурм) — большие наземные бетонные бункеры, вооружённые артиллерией ПВО, использовавшиеся люфтваффе в годы Второй мировой войны для концентрированного размещения групп крупнокалиберных зенитных орудий с целью защиты стратегически важных городов от воздушных бомбардировок антигитлеровской коалиции. Также использовались для координации воздушной обороны и служили бомбоубежищами.</p>
+                  <p>Башни строились не отдельными строениями, а комплексом сооружений. Каждый комплекс состоял из двух башен:</p>
+                  <ul>
+                    <li>G-башня (нем. Gefechtsturm) или боевая башня, также известная как оружейная башня или большая зенитная башня;</li>
+                    <li>L-башня (нем. Leitturm) или главная башня, также известная как башня управления огнём, командирская башня или малая зенитная башня.</li>
+                  </ul>
+                  <p>В Вене построены 3 комплекса: один 2-го поколения и два 3-го поколения.</p>
+                  <p>Flakturm V — Аренберг парк (2 поколение): G-башня использовалась как хранилище для художественных работ; L-башня осталась пустой.</p>
+                  <p>Flakturm VII — Штифтсказернеб (3 поколение): G-башня находится на военной базе австрийской армии; L-башня (в парке Эстерхази) использовалась как аквариум («Haus des Meeres») и имеет скалодром на фасаде.</p>
+                  <p>Flakturm VIII — Аугартен (3 поколение): G-башня осталась пустой; L-башня осталась пустой.</p>
+                </div>
+              </div>
+              <div class="blog__post" data-section="antonie-gaudi"><a class="blog__post__link" name="antonie-gaudi"></a>
+                <div class="blog__post__header">Антонио Гауди</div>
+                <div class="blog__post__date">12 dec. 2016</div>
+                <div class="blog__post__content">
+                  <p>Антони Пласид Гильéм Гауди-и-Корнет  — испанский (каталонский) архитектор, большинство проектов которого возведено в Барселоне.</p>
+                  <p>Стиль, в котором творил Гауди, относят к модерну. Однако фактически в своём творчестве он использовал элементы самых различных стилей, подвергая их творческой переработке.</p>
+                  <p>Гауди с детства страдал ревматизмом, препятствующим играм с другими детьми, но не мешающим длительным одиночным прогулкам, к которым он питал пристрастие всю свою жизнь. Ограниченная из-за болезни подвижность обострила наблюдательность будущего архитектора, открыла ему мир природы, ставший главным источником вдохновения при решении как художественно-оформительских, так и конструктивных задач.</p>
+                  <p>7 июня 1926 года 73-летний Гауди вышел из дома, чтобы отправиться в свой ежедневный путь к церкви Сант-Фелип-Нери, прихожанином которой он был. Идя рассеянно по улице Гран-Виа-де-лас-Кортес-Каталанес между улицами Жирона и Байлен, он был сбит трамваем и потерял сознание. Извозчики отказывались везти в больницу неопрятного, неизвестного старика без денег и документов, опасаясь неуплаты за поездку. В конце концов, Гауди доставили в больницу для нищих, где ему оказали лишь примитивную медицинскую помощь. Лишь на следующий день его нашёл и опознал капеллан храма Саграда-Фамилия Мосен Хиль Парес-и-Виласау. К тому времени состояние Гауди уже ухудшилось настолько, что лучшее лечение не могло ему помочь.</p>
+                  <p>Гауди скончался 10 июня 1926 года и был похоронен двумя днями позже в крипте недостроенного им храма.</p>
+                </div>
+              </div>
+              <div class="blog__post" data-section="zenevskoe-ozero"><a class="blog__post__link" name="zenevskoe-ozero"></a>
+                <div class="blog__post__header">Женевское озеро</div>
+                <div class="blog__post__date">12 dec. 2016</div>
+                <div class="blog__post__content">
+                  <p>Женевское озеро или Леман (фр. Lac Léman, Le Léman, Lac de Genève) — самое большое озеро Альп и второе по величине (вслед за Балатоном) пресноводное озеро Центральной Европы. Расположено в границах Швейцарии и Франции.</p>
+                  <p>Женевское озеро лежит в пойме реки Рона и имеет форму полумесяца, изгибающегося в районе деревни Ивуар. Изгиб естественным образом делит Женевское озеро на Большое (фр. Grand Lac) и Малое озёра (фр. Petit Lac).</p>
+                  <p>Северный берег озера усеян фешенебельными курортами — Швейцарская ривьера. В этих краях высится Шильонский замок, прославленный лордом Байроном в одноимённой поэме.</p>
+                </div>
+              </div>
+              <div class="blog__post" data-section="carlsberg"><a class="blog__post__link" name="carlsberg"></a>
+                <div class="blog__post__header">Carlsberg</div>
+                <div class="blog__post__date">12 dec. 2016</div>
+                <div class="blog__post__content">
+                  <p>Carlsberg (Карлсберг) — датская пивоваренная компания, одна из крупнейших в мире. Штаб-квартира находится в копенгагенском районе Вальбю.</p>
+                  <p>Основана в 1847 году датским предпринимателем Якобом Кристианом Якобсеном, который назвал компанию в честь своего сына Карла. Поставки пива на экспорт (в Шотландию) начались с 1868 года; первая зарубежная пивоварня построена в 1968 году в Малави.</p>
+                  <p>В 1865 году на заводе Carlsberg начала работу химико-физиологическая лаборатория. Её специалисты (в частности, Эмиль Христиан Хансен) разработали метод культивирования чистых дрожжей, решивший проблему ферментации пива (до этого пивовары использовали нестабильные закваски). Выделенная ими культура дрожжей в честь лаборатории получила наименование Saccharomyces carlsbergensis. С 1901 по 1938 годы лабораторией руководил известный датский биохимик Сёрен Педэр Лауриц Сёренсен, чьё имя чаще всего упоминается в связи с введённым им обозначением водородного показателя pH.</p>
+                  <p>Карл Якобсен был не только успешным предпринимателем, но и меценатом и филантропом, основателем Новой глиптотеки Карслберга. Под его руководством архитектор Вильгельм Далеруд застроил квартал Копенгагена, в котором стали размещаться производство и административные здания компании.</p>
+                  <p>В 1969—1971 гг. председателем правления компании был известный датский учёный, физиолог Пауль Реберг, который в 1970 году успешно провёл процесс поглощения Carlsberg пивоваренной компании Tuborg.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="footer__item footer__links">
-            <ul class="navigate-footer" id="">
-              <li class="navigate-footer__item"><a class="navigate-footer__link" href="works.html">Мои работы</a></li>
-              <li class="navigate-footer__item"><a class="navigate-footer__link" href="blog.html">Блог</a></li>
-              <li class="navigate-footer__item"><a class="navigate-footer__link" href="about.html">Обо мне</a></li>
-              <li class="navigate-footer__item"><a class="navigate-footer__link" href="index.html">Авторизация</a></li>
-            </ul>
-            <ul class="socials socials-footer">
-              <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
-                  <svg class="socials__icon">
-                    <use xlink:href="assets/img/sprite.svg#vk"></use>
-                  </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
-                  <svg class="socials__icon">
-                    <use xlink:href="assets/img/sprite.svg#github"></use>
-                  </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="#">
-                  <svg class="socials__icon">
-                    <use xlink:href="assets/img/sprite.svg#in"></use>
-                  </svg></a></li>
-            </ul>
-      </div>
-      <div class="footer__item footer__contacts">
-            <ul class="contacts-footer">
-              <li class="contacts-footer__item"><a class="contacts-footer__link" href="skype:la.esperanza">la.esperanza</a></li>
-              <li class="contacts-footer__item"><a class="contacts-footer__link" href="mailto:166507@gmail.com">166507@gmail.com</a></li>
-              <li class="contacts-footer__item"><a class="contacts-footer__link" href="tel:+79258647651">+7 925 864 76 51</a></li>
-              <li class="contacts-footer__item"><a class="contacts-footer__link" href="">Москва, ул. Саратовская, д. 8/1</a></li>
-            </ul>
-      </div>
-    </footer>
+      </section>
+      <!-- footer-->
+      <footer class="footer">
+        <div class="footer__item footer__copyright">
+          <div class="copyright">
+            <div class="copyright__about">Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</div>
+            <div class="copyright__author">© Тишук Надежда <br /> Создано с любовью в LoftSchool | 2016</div>
+          </div>
+        </div>
+        <div class="footer__item footer__links">
+              <ul class="navigate-footer" id="">
+                <li class="navigate-footer__item"><a class="navigate-footer__link" href="works.html">Мои работы</a></li>
+                <li class="navigate-footer__item"><a class="navigate-footer__link" href="blog.html">Блог</a></li>
+                <li class="navigate-footer__item"><a class="navigate-footer__link" href="about.html">Обо мне</a></li>
+                <li class="navigate-footer__item"><a class="navigate-footer__link" href="index.html">Авторизация</a></li>
+              </ul>
+              <ul class="socials socials-footer">
+                <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
+                    <svg class="socials__icon">
+                      <use xlink:href="assets/img/sprite.svg#vk"></use>
+                    </svg></a></li>
+                <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
+                    <svg class="socials__icon">
+                      <use xlink:href="assets/img/sprite.svg#github"></use>
+                    </svg></a></li>
+                <li class="socials__item"><a class="socials__link" href="#">
+                    <svg class="socials__icon">
+                      <use xlink:href="assets/img/sprite.svg#in"></use>
+                    </svg></a></li>
+              </ul>
+        </div>
+        <div class="footer__item footer__contacts">
+              <ul class="contacts-footer">
+                <li class="contacts-footer__item"><a class="contacts-footer__link" href="skype:la.esperanza">la.esperanza</a></li>
+                <li class="contacts-footer__item"><a class="contacts-footer__link" href="mailto:166507@gmail.com">166507@gmail.com</a></li>
+                <li class="contacts-footer__item"><a class="contacts-footer__link" href="tel:+79258647651">+7 925 864 76 51</a></li>
+                <li class="contacts-footer__item"><a class="contacts-footer__link" href="">Москва, ул. Саратовская, д. 8/1</a></li>
+              </ul>
+        </div>
+      </footer>
+    </div>
     <!-- scripts-->
     <script src="assets/js/svg4everybody.min.js" defer></script>
     <script src="assets/js/foundation.js" defer></script>

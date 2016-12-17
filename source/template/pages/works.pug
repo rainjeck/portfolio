@@ -14,16 +14,26 @@ block content
 		// slider
 		.slider__container
 			ul.slider__items
-				li.slider__item
+				li.slider__item.active
 					.myworks
 						.myworks__description
-							.myworks__name Сайт школы онлайн образования
-							.myworks__tech HTML , CSS, JAVASCRIPT
-							a.myworks__link(href="#") Посмотреть сайт
+							.myworks__name Сайт гида по Флоренции
+							.myworks__tech HTML , CSS, CMS GetSimple
+							a.myworks__link(href="http://florenceguide.ru", target="_blank") Посмотреть сайт
 								svg.myworks__link__icon
 									use(xlink:href="assets/img/sprite.svg#link")
 						.myworks__image
 							img.myworks__image__item(src="assets/img/slider/florenceguide.png")
+				li.slider__item
+					.myworks
+						.myworks__description
+							.myworks__name Фан-сайт
+							.myworks__tech HTML , CSS, CMS GetSimple
+							a.myworks__link(href="http://v-meladze.ru", target="_blank") Посмотреть сайт
+								svg.myworks__link__icon
+									use(xlink:href="assets/img/sprite.svg#link")
+						.myworks__image
+							img.myworks__image__item(src="assets/img/slider/vmeladze.png")
 			button.slider__btn.slider__btn-prev
 				svg.slider__btn__icon
 					use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
@@ -31,62 +41,59 @@ block content
 				svg.slider__btn__icon
 					use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
 			ul.slider__dots__items
-				li.slider__dots__item
-					button.slider__dots__btn
-				li.slider__dots__item
-					button.slider__dots__btn
-				li.slider__dots__item
-					button.slider__dots__btn
 
 	// works quotes
-	section.section.section-quote
+	section.section.section-quotes
 		.container
 			+titleIcon('h2','title-big','about_header','Что обо мне <br/> говорят')
-		.quotes__items
-			.quotes__item
-				.quotes__content
-					| Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-				.quotes__author
-					.quotes__author__avatar
-						img.quotes__author__img(src="assets/img/kovalchuk.jpg")
-					.quotes__author__item
-						span.quotes__author__name Ковальчук Дмитрий
-						span.quotes__author__desc основатель Loftschool
-			.quotes__item
-				.quotes__content
-					| Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!
-				.quotes__author
-					.quotes__author__avatar
-						img.quotes__author__img(src="assets/img/saharov.jpg")
-					.quotes__author__item
-						span.quotes__author__name Зар Захаров
-						span.quotes__author__desc преподаватель
+			.quotes__items
+				.quotes__item
+					.quotes__content
+						| Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+					.quotes__author
+						.quotes__author__avatar
+							img.quotes__author__img(src="assets/img/kovalchuk.jpg")
+						.quotes__author__item
+							span.quotes__author__name Ковальчук Дмитрий
+							span.quotes__author__desc основатель Loftschool
+				.quotes__item
+					.quotes__content
+						| Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!
+					.quotes__author
+						.quotes__author__avatar
+							img.quotes__author__img(src="assets/img/saharov.jpg")
+						.quotes__author__item
+							span.quotes__author__name Зар Захаров
+							span.quotes__author__desc преподаватель
 
-	// section mailme
-	section.section.section-mailme
-		.blur__background
-			img.blur__img(src="assets/img/sandFooter.jpg")
-		.window__box.blur__wrapper
-			.blur__form
-			.window-mailme
-				+title('div','title-md','Связаться со мной')
-				form.form.form-mail
-					.form__text
-						input.form__text__input(type="text", placeholder="Имя", id="mailName")
-					.form__text
-						input.form__text__input(type="text", placeholder="E-mail", id="mailMail")
-					.form__text
-						textarea.form__text__input.form__textarea(placeholder="Ваше сообщение")
-				.window__menu
-					ul.window__menu__list
-						li.window__menu__item
-							a.window__menu__link#flipreturn(href="#") Отправить
-						li.window__menu__item
-							a.window__menu__link(href="#") Очистить
+		// section mailme
+		.section-mailme
+			.blur__background
+				img.blur__img(src="assets/img/sandFooter.jpg")
+			.window__box.blur__wrapper
+				.blur__form
+				.window-mailme
+					+title('div','title-md','Связаться со мной')
+					form#mailForm.form.form-mail(form="mailForm", method="post")
+						.form__text
+							label(for="mailName").form__label Имя
+							input.form__text__input(type="text", placeholder="Имя", id="mailName")
+						.form__text
+							label(for="mailMail").form__label E-mail
+							input.form__text__input(type="text", placeholder="E-mail", id="mailMail")
+						.form__text
+							label(for="mailMessage").form__label Сообщение
+							textarea.form__text__input.form__textarea(placeholder="Ваше сообщение", id="mailMessage")
+					.window__menu
+						ul.window__menu__list
+							li.window__menu__item
+								input#submitBtn.window__menu__link(type="submit", value="Отправить", form="mailForm")
+							li.window__menu__item
+								input.window__menu__link(type="reset", form="mailForm", value="Очистить")
 
-		.arrow__top
-			a.arrow__top__link(href="#top")
-				svg.arrow__top__icon
-					use(xlink:href="assets/img/sprite.svg#arrow_down")
+			.arrow__top
+				a.arrow__top__link(href="#top")
+					svg.arrow__top__icon
+						use(xlink:href="assets/img/sprite.svg#arrow_down")
 
 	include ../common/_footer

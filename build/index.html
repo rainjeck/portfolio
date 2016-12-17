@@ -9,6 +9,9 @@
     <!--meta(content="width=device-width" name="viewport")-->
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
     <link rel="stylesheet" href="assets/fonts/roboto.css">
     <link rel="stylesheet" href="assets/fonts/sansus.css">
     <link rel="stylesheet" href="assets/css/foundation.css">
@@ -16,9 +19,16 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
+    <!-- preloader-->
+    <div class="preloader">
+      <div class="preloader__spinner">
+        <div class="preloader__animate"><span class="preloader__animate_circle preloader__animate_sm"></span><span class="preloader__animate_circle preloader__animate_md"></span><span class="preloader__animate_circle preloader__animate_lg"></span></div>
+        <div class="preloader__percents">0</div>
+      </div>
+    </div>
     <div class="desert"></div>
     <div class="welcome__wrap">
-      <div class="welcome__login"><a class="login__link" id="auth" href="#">Авторизоваться</a></div>
+      <div class="welcome__login"><a class="login__link flip-btn" href="#">Авторизоваться</a></div>
       <div class="welcome__window">
         <div class="window__box">
           <div class="flipcontainer" id="flip">
@@ -53,29 +63,29 @@
               </div>
               <!-- .welcome-->
               <!-- login-->
-              <div class="login box back">
+              <div class="window__box login back">
                 <div class="box__title">
                   <div class="box__title__text">Авторизуйтесь</div>
                 </div>
-                <form class="form">
+                <form class="form" id="form" name="loginForm" method="post" action="ind.php">
                   <div class="form__text_icon">
-                    <input class="form__text__input" type="text" placeholder="Логин" id="auth-login">
-                    <label class="form__text__label" for="auth-login">
+                    <input class="form__text__input" type="text" placeholder="Логин" id="auth-login" name="auth-login">
+                    <label class="form__text__label" for="auth-login">Логин
                       <svg class="form__icon icon__svg-login">
                         <use xlink:href="assets/img/sprite.svg#login"></use>
                       </svg>
                     </label>
                   </div>
                   <div class="form__text_icon">
-                    <input class="form__text__input" type="text" placeholder="Пароль" id="auth-pass">
-                    <label class="form__text__label" for="auth-pass">
+                    <input class="form__text__input" type="password" placeholder="Пароль" id="auth-pass" name="auth-pass">
+                    <label class="form__text__label" for="auth-pass">Пароль
                       <svg class="form__icon icon__svg-password">
                         <use xlink:href="assets/img/sprite.svg#password"></use>
                       </svg>
                     </label>
                   </div>
                   <div class="form__check">
-                    <input class="form__check__input" type="checkbox" id="auth-check">
+                    <input class="form__check__input" type="checkbox" id="auth-check" name="auth-check">
                     <label class="form__check__label" for="auth-check">Я человек<span class="form__check__style"></span>
                       <svg class="form__icon icon__svg-check">
                         <use xlink:href="assets/img/sprite.svg#check"></use>
@@ -94,8 +104,10 @@
                 </form>
                 <div class="window__menu">
                   <ul class="window__menu__list">
-                    <li class="window__menu__item"><a class="window__menu__link" id="flipreturn" href="#">На главную</a></li>
-                    <li class="window__menu__item"><a class="window__menu__link" href="#">Войти</a></li>
+                    <li class="window__menu__item"><a class="window__menu__link flip-btn-return" href="#">На главную</a></li>
+                    <li class="window__menu__item">
+                      <input class="window__menu__link" id="submitBtn" type="submit" value="Войти" form="form">
+                    </li>
                   </ul>
                 </div>
               </div>

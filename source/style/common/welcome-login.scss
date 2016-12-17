@@ -59,11 +59,13 @@
 }
 
 
-.login {
+.window__box.login {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
+  background-color: rgba(215, 191, 155, 0.6);
+  padding-top: 30px;
   //display: none;
 }
 
@@ -78,6 +80,10 @@
     color: #cc8820;
     transition: 0.5s;
   }
+}
+
+.hide {
+  visibility: hidden;
 }
 
 

@@ -11,6 +11,7 @@
 		padding: 0 10px;
 		display: flex;
 		flex-direction: row;
+		position: relative;
 		@include phone {
 			flex-direction: column;
 		}

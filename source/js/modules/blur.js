@@ -1,11 +1,10 @@
-var blur = (function () {
-	var wrapper = document.querySelector('.blur__wrapper'),
-		form = document.querySelector('.blur__form');
+var blur = function () {
+	var wrapper = doc.querySelector('.blur__wrapper'),
+		form = doc.querySelector('.blur__form');
 
-	return {
-		set: function() {
+	return function() {
 			if (wrapper, form) {
-				var imgWidth = document.querySelector('.blur__background').offsetWidth,
+				var imgWidth = doc.querySelector('.blur__background').offsetWidth,
 					posLeft = -wrapper.offsetLeft,
 					posTop = -wrapper.offsetTop,
 					blurCSS = form.style;
@@ -14,11 +13,12 @@ var blur = (function () {
 				blurCSS.backgroundPosition = posLeft + 'px ' + posTop + 'px';
 			}
 		}
-	}
-}());
+};
 
-blur.set();
+var makeBlur = blur();
+
+makeBlur();
 
 window.onresize = function () {
-	blur.set();
+	makeBlur();
 };

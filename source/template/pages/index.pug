@@ -4,10 +4,19 @@ block variables
 	- var title = 'Тишук Надежда - front-end developer'
 
 block content
+	// preloader
+	.preloader
+		.preloader__spinner
+			.preloader__animate
+				span.preloader__animate_circle.preloader__animate_sm
+				span.preloader__animate_circle.preloader__animate_md
+				span.preloader__animate_circle.preloader__animate_lg
+			.preloader__percents 0
+
 	.desert
 	.welcome__wrap
 		.welcome__login
-			a.login__link#auth(href="#") Авторизоваться
+			a.login__link.flip-btn(href="#") Авторизоваться
 		.welcome__window
 			.window__box
 				.flipcontainer#flip
@@ -31,22 +40,22 @@ block content
 									+windowmenuItems('Блог','blog.html')
 						// .welcome
 						// login
-						.login.box.back
+						.window__box.login.back
 							.box__title
 								.box__title__text Авторизуйтесь
-							form.form
+							form#form.form(name="loginForm", method="post", action="ind.php")
 								.form__text_icon
-									input.form__text__input(type="text", placeholder="Логин", id="auth-login")
-									label.form__text__label(for="auth-login")
+									input.form__text__input(type="text", placeholder="Логин", id="auth-login", name="auth-login")
+									label.form__text__label(for="auth-login") Логин
 										svg(class="form__icon icon__svg-login")
 											use(xlink:href="assets/img/sprite.svg#login")
 								.form__text_icon
-									input.form__text__input(type="text", placeholder="Пароль", id="auth-pass")
-									label.form__text__label(for="auth-pass")
+									input.form__text__input(type="password", placeholder="Пароль", id="auth-pass", name="auth-pass")
+									label.form__text__label(for="auth-pass") Пароль
 										svg(class="form__icon icon__svg-password")
 											use(xlink:href="assets/img/sprite.svg#password")
 								.form__check
-									input.form__check__input(type="checkbox", id="auth-check")
+									input.form__check__input(type="checkbox", id="auth-check", name="auth-check")
 									label.form__check__label(for="auth-check") Я человек
 										span.form__check__style
 										svg(class="form__icon icon__svg-check")
@@ -66,9 +75,9 @@ block content
 							.window__menu
 								ul.window__menu__list
 									li.window__menu__item
-										a.window__menu__link#flipreturn(href="#") На главную
+										a.window__menu__link.flip-btn-return(href="#") На главную
 									li.window__menu__item
-										a.window__menu__link(href="#") Войти
+										input#submitBtn.window__menu__link(type="submit", value="Войти", form="form")
 
 		.welcome__footer
 			| © Тишук Надежда | создано с любовью в LoftSchool | 2016

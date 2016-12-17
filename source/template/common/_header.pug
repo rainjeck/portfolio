@@ -1,5 +1,7 @@
 a.pageanchor#top
-nav.navigate
+nav.navigate#navigate
+	//.navigate__left.nav-animate
+	//.navigate__right.nav-animate
 	+navMenu('navTop','navigate-top')
 // header
 if tempName == 'About'
@@ -8,5 +10,5 @@ if tempName == 'About'
 else
 	header.header.header-page
 		+headerPage
-	
+
 a.pageanchor(id="screen")
