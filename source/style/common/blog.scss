@@ -116,7 +116,7 @@
 			padding: 0 24px;
 		}
 		@include phone {
-			padding: 0 10px;
+			padding: 0 15px;
 		}
 	}
 	&__post{
@@ -155,21 +155,23 @@
 		position: absolute;
 		top: 50%;
 		margin-top: -20px;
-		right: -8px;
+		right: -12px;
 		border-radius: 50%;
 		z-index: 10;
 		cursor: pointer;
 	}
 }
 
-.js-showMenu {
-	transform:translateX(0);
-	box-shadow: 5px 0 5px 0 #cccccc;
-	display: flex;
-}
-
 .js-moveLeft {
 	position: absolute;
-	left: 284px;
-	right: -284px;
+	//left: 284px;
+	//right: -284px;
+	animation: moveLeft 0.25s ease 1 forwards;
+}
+
+.js-showMenu {
+	//transform: translateX(0);
+	box-shadow: 5px 0 5px 0 #cccccc;
+	display: flex;
+	animation: showBlogMenu 0.25s ease 1 forwards;
 }

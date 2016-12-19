@@ -55,3 +55,25 @@
 		opacity: 0;
 	}
 }
+
+
+// анимация для мобильного меню блога
+@keyframes showBlogMenu {
+	0% {
+		transform: translateX(-284px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveLeft {
+	0% {
+		left: 0;
+		right: 0;
+	}
+	100% {
+		left: 284px;
+		right: -284px;
+	}
+}

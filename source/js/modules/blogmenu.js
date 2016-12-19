@@ -1,9 +1,9 @@
 // навигация в блоге
 
 var checkSection = (function (){
-	return {
-		init: function() {
-			$('.blog__post').each(function(i, el){
+	// private
+	var followBlogLink = function(){
+		$('.blog__post').each(function(i, el){
 				var $this = $(this),
 				topEdge = $this.offset().top - 70,
 				bottomEdge = topEdge + $this.height(),
@@ -17,6 +17,12 @@ var checkSection = (function (){
 						.siblings().removeClass('active');
 				}
 			});
+	};
+
+	// public
+	return {
+		init: function() {
+			followBlogLink();
 		}
 	}
 }());
