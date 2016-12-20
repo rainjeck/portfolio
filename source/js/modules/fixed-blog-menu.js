@@ -34,13 +34,7 @@ var fixedBlogMenu = (function () {
 	return {
 		fixedmenu: function() {
 			if ( $('.blog__nav').length ) {
-				$(window).scroll(function(event) {
 					moveMenu();
-				});
-
-				$(window).resize(function(event) {
-					moveMenu();
-				});
 			}
 		},
 
@@ -54,7 +48,12 @@ var fixedBlogMenu = (function () {
 }()); // end main function
 
 $(document).ready(function() {
-	fixedBlogMenu.fixedmenu();
+	$(window).scroll(function(event) {
+		fixedBlogMenu.fixedmenu();
+	});
+	$(window).resize(function(event) {
+		fixedBlogMenu.fixedmenu();
+	});
 	fixedBlogMenu.openMenu();
 });
 

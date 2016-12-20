@@ -2,10 +2,10 @@
 
 var checkSection = (function (){
 	// private
-	var followBlogLink = function(){
+	var followBlogLink = function(edge){
 		$('.blog__post').each(function(i, el){
 				var $this = $(this),
-				topEdge = $this.offset().top - 70,
+				topEdge = $this.offset().top - edge,
 				bottomEdge = topEdge + $this.height(),
 				wScroll = $(window).scrollTop();
 
@@ -22,7 +22,12 @@ var checkSection = (function (){
 	// public
 	return {
 		init: function() {
-			followBlogLink();
+			var wWidth = $(window).width();
+			if ( wWidth > 768 ) {
+				followBlogLink(70);
+			} else {
+				followBlogLink(200);
+			}
 		}
 	}
 }());

@@ -67,7 +67,7 @@
                 <div class="box__title">
                   <div class="box__title__text">Авторизуйтесь</div>
                 </div>
-                <form class="form" id="form" name="loginForm" method="post" action="ind.php">
+                <form class="form" id="loginForm" name="loginForm">
                   <div class="form__text_icon">
                     <input class="form__text__input" type="text" placeholder="Логин" id="auth-login" name="auth-login">
                     <label class="form__text__label" for="auth-login">Логин
@@ -84,29 +84,31 @@
                       </svg>
                     </label>
                   </div>
-                  <div class="form__check">
-                    <input class="form__check__input" type="checkbox" id="auth-check" name="auth-check">
-                    <label class="form__check__label" for="auth-check">Я человек<span class="form__check__style"></span>
-                      <svg class="form__icon icon__svg-check">
-                        <use xlink:href="assets/img/sprite.svg#check"></use>
-                      </svg>
-                    </label>
-                  </div>
-                  <div class="form__robot">Вы точно не робот?</div>
-                  <div class="form__radiogroup">
-                    <label class="form__radiogroup__label">
-                      <input class="form__radiogroup__radio" type="radio" name="form__radiogroup"><span class="form__radiogroup__style"></span>Да
-                    </label>
-                    <label class="form__radiogroup__label">
-                      <input class="form__radiogroup__radio" type="radio" name="form__radiogroup"><span class="form__radiogroup__style"></span>Не уверен
-                    </label>
+                  <div class="form__checks">
+                    <div class="form__check">
+                      <input class="form__check__input" type="checkbox" id="auth-check" name="auth-check">
+                      <label class="form__check__label" for="auth-check">Я человек<span class="form__check__style"></span>
+                        <svg class="form__icon icon__svg-check">
+                          <use xlink:href="assets/img/sprite.svg#check"></use>
+                        </svg>
+                      </label>
+                    </div>
+                    <div class="form__robot">Вы точно не робот?</div>
+                    <div class="form__radiogroup">
+                      <label class="form__radiogroup__label">
+                        <input class="form__radiogroup__radio" type="radio" name="form__radiogroup"><span class="form__radiogroup__style"></span>Да
+                      </label>
+                      <label class="form__radiogroup__label">
+                        <input class="form__radiogroup__radio" type="radio" name="form__radiogroup"><span class="form__radiogroup__style"></span>Не уверен
+                      </label>
+                    </div>
                   </div>
                 </form>
                 <div class="window__menu">
                   <ul class="window__menu__list">
                     <li class="window__menu__item"><a class="window__menu__link flip-btn-return" href="#">На главную</a></li>
                     <li class="window__menu__item">
-                      <input class="window__menu__link" id="submitBtn" type="submit" value="Войти" form="form">
+                      <input class="window__menu__link" id="submitBtn" type="submit" value="Войти" form="loginForm">
                     </li>
                   </ul>
                 </div>

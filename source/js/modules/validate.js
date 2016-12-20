@@ -1,79 +1,102 @@
-var formValidate = ( function() {
+(function(){
+	var formValidate = {
+		doit: function(){
+			this.listeners();
+		},
 
-	var form = $('form'),
-		valid = true;
+		listeners: function(){
+			$('#mailForm').on('submit', formValidate.mailme);
+			$('#loginForm').on('submit', formValidate.loginValid);
+		},
 
-	var validate = function(e) {
-		var inputs = form.find('input, textarea');
+		loginValid: function(e){
+			e.preventDefault();
+			var form = $(this);
+			if ( formValidate.valid(form) === false ) return false;
 
-		$.each(inputs, function(index, val) {
-			var input = $(val),
+			console.log('come in');
+		},
+
+		mailme: function(e){
+			e.preventDefault();
+			var form = $(this);
+			if ( formValidate.valid(form) === false ) return false;
+
+			var formdata = form.serialize();
+
+			console.log(formdata);
+			$.ajax({
+				url: 'assets/php/mail-process.php',
+				type: 'POST',
+				data: formdata
+			})
+			.done(function(msg) {
+				if (msg === 'OK') {
+					console.log('OK');
+					form.trigger("reset");
+				} else {
+					$('input#mailMail').parents('.form__text').addClass('error');
+					$('<span class="tooltip">' + msg + '</span>').appendTo('.error');
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+
+		},
+
+		valid: function(form){
+			var inputs = form.find('input, textarea'),
+				checks = form.find('input:checkbox, input:radio'),
+				checksOk = form.find('input:checked'),
+				valid = true;
+
+			$.each(inputs, function(index, val) {
+				var input = $(val),
 				val = input.val(),
-				formGroup = input.parent(),
+				formGroup = input.parents('.form__text, .form__text_icon'),
 				label = formGroup.find('label').text().toLowerCase(),
 				textError = 'Вы не ввели ' + label,
-				tooltip = $('<span class="tooltip">' + textError + '</span>'),
-				tooltipRobot = $('<span class="tooltip">Роботам тут не место</span>');
+				tooltip = $('<span class="tooltip">' + textError + '</span>');
 
-			 if( val.length === 0 ) {
-				formGroup.addClass('error');
-				formGroup.find('.tooltip').remove();
-				tooltip.appendTo(formGroup);
-				input.on('focus', function(){
+				if (val.length === 0){
+					formGroup.addClass('error');
 					formGroup.find('.tooltip').remove();
-				});
-				input.on('keydown', function(){
-					formGroup.removeClass('error');
-				});
-				valid = false;
-
-			 } // if
-			 else{
-				formGroup.removeClass('error');
-				formGroup.find('.tooltip').remove();
-
-				if($("form input[type='radio']").is(':checked') && $("form input[type='checkbox']").is(':checked')) {
-					$('.form__radiogroup').find('.tooltip').remove();
-					$("form input[type='radio'], form input[type='checkbox']").on('click', function() {
-						$('.form__radiogroup').find('.tooltip').remove();
+					tooltip.appendTo(formGroup);
+					input.on('focus', function(){
+						formGroup.find('.tooltip').remove();
 					});
+					input.on('keydown', function(){
+						formGroup.removeClass('error');
+					});
+					valid = false;
 				} else {
-					$('.form__radiogroup').find('.tooltip').remove();
-					tooltipRobot.appendTo($('.form__radiogroup'));
+					formGroup.removeClass('error');
+					formGroup.find('.tooltip').remove();
+				};
+			});
+
+			var checkGroup = $('.form__checks'),
+				tooltip = $('<span class="tooltip">Роботам тут не место</span>');
+
+			if (checks.length > 0) {
+
+				if (checksOk.length < 2) {
+					console.log('check someone');
+					checkGroup.find('.tooltip').remove();
+					tooltip.appendTo(checkGroup);
+					valid = false;
+				} else {
+					checkGroup.find('.tooltip').remove();
 				}
-			} // else
-
-			if($("form input[type='radio']").is(':checked') && $("form input[type='checkbox']").is(':checked')) {
-				$('.form__radiogroup').find('.tooltip').remove();
-				$("form input[type='radio'], form input[type='checkbox']").on('click', function() {
-					$('.form__radiogroup').find('.tooltip').remove();
-				});
-				valid = true;
-			} else {
-				$('.form__radiogroup').find('.tooltip').remove();
-				tooltipRobot.appendTo($('.form__radiogroup'));
 			}
-		}); // each
-		return valid;
-	};
-
-	var startValidate = function(e) {
-		e.preventDefault();
-		validate();
-		if (valid === false) return false;
-
-		console.log('go ajax');
-	}
-
-	var submitForm = function(e) {
-		form.on('submit', startValidate);
-	};
-
-	return {
-		init: function() {
-			submitForm();
+			return valid;
 		}
-	}
-}());
 
-formValidate.init();
+	}
+
+	formValidate.doit();
+}());

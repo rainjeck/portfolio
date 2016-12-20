@@ -74,16 +74,16 @@ block content
 				.blur__form
 				.window-mailme
 					+title('div','title-md','Связаться со мной')
-					form#mailForm.form.form-mail(form="mailForm", method="post")
+					form#mailForm.form.form-mail(form="mailForm")
 						.form__text
 							label(for="mailName").form__label Имя
-							input.form__text__input(type="text", placeholder="Имя", id="mailName")
+							input.form__text__input(type="text", placeholder="Имя", id="mailName", name="name")
 						.form__text
 							label(for="mailMail").form__label E-mail
-							input.form__text__input(type="text", placeholder="E-mail", id="mailMail")
+							input.form__text__input(type="text", placeholder="E-mail", id="mailMail", name="email")
 						.form__text
 							label(for="mailMessage").form__label Сообщение
-							textarea.form__text__input.form__textarea(placeholder="Ваше сообщение", id="mailMessage")
+							textarea.form__text__input.form__textarea(placeholder="Ваше сообщение", name="message", id="mailMessage")
 					.window__menu
 						ul.window__menu__list
 							li.window__menu__item

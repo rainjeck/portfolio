@@ -11,6 +11,7 @@ module.exports = [
   './gulp/tasks/js.process.js',
   './gulp/tasks/js.copy.js',
   './gulp/tasks/js.lint.js',
+  './gulp/tasks/php.copy.js',
   './gulp/tasks/copy.image.js',
   './gulp/tasks/sprite.svg.js',
   './gulp/tasks/sprite.png.js',
