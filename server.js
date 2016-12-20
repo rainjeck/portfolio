@@ -8,8 +8,20 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.set('views', __dirname + '/source/template/pages');
 app.set('view engine', 'pug');
 
-app.get('/', function(req, res) {
-	res.render('source/template/pages/index');
+app.get(['/', '/index*'], function(req, res) {
+	res.render('index.pug');
+});
+
+app.get('/works*', function(req, res) {
+	res.render('works.pug');
+});
+
+app.get('/about*', function(req, res) {
+	res.render('about.pug');
+});
+
+app.get('/blog*', function(req, res) {
+	res.render('blog.pug');
 });
 
 app.use(function(req, res, next) {
@@ -18,5 +30,5 @@ app.use(function(req, res, next) {
 });
 
 
-app.listen(8080);
-console.log('Приложение запущено! Смотрите на http://localhost:8080');
+app.listen(6060);
+console.log('Приложение запущено!');
