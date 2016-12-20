@@ -7,7 +7,6 @@ var fixedBlogMenu = (function () {
 			console.log(wWidth);
 			var menuWidth = $('.blog__nav__items').width(),
 			wScroll = $(window).scrollTop(),
-			//blogNav = $('.blog__nav'),
 			offset = $('.blog__nav').offset(),
 			menu = $('.blog__nav__items');
 

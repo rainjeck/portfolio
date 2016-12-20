@@ -1,0 +1,30 @@
+extends ../_template
+
+block variables
+	- var title = 'Тишук Надежда - front-end developer'
+
+block content
+	.desert
+	.welcome__wrap
+		.welcome__login
+		.welcome__window
+			.window__box
+				.flipcontainer#flip
+					.flipper
+						.welcome.front
+							.userprofile
+								.userprofile__name Ошибка 404
+								.userprofile__prof Такой старницы не существует
+
+							.window__menu
+								ul.window__menu__list
+									mixin windowmenuItems (name,href)
+										li.window__menu__item
+											a.window__menu__link(href=href)= name
+									+windowmenuItems('Мои работы','works.html')
+									+windowmenuItems('Обо мне','about.html')
+									+windowmenuItems('Блог','blog.html')
+						// .welcome
+
+		.welcome__footer
+			| © Тишук Надежда | создано с любовью в LoftSchool | 2016
