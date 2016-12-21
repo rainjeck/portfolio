@@ -142,7 +142,7 @@
           <div class="blur__form"></div>
           <div class="window-mailme">
                 <div class="title"><span class="title-md">Связаться со мной</span></div>
-            <form class="form form-mail" id="mailForm" form="mailForm">
+            <form class="form form-mail" id="mailForm" form="mailForm" method="post" action="/send">
               <div class="form__text">
                 <label class="form__label" for="mailName">Имя</label>
                 <input class="form__text__input" type="text" placeholder="Имя" id="mailName" name="name">
@@ -156,6 +156,15 @@
                 <textarea class="form__text__input form__textarea" placeholder="Ваше сообщение" name="message" id="mailMessage"></textarea>
               </div>
             </form>
+            <div class="form__succes">
+              <div class="form__succes__header">Ваше сообщение отправлено</div>
+              <p>Спасибо за ваш интерес к моей работе.</p>
+              <p>Я свяжусь с вами в ближайшее время.</p>
+            </div>
+            <div class="form__error">
+              <p>Что-то пошло не так.</p>
+              <p>Обновите страницу и отправьте сообщение снова.</p>
+            </div>
             <div class="window__menu">
               <ul class="window__menu__list">
                 <li class="window__menu__item">

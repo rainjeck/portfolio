@@ -74,7 +74,7 @@ block content
 				.blur__form
 				.window-mailme
 					+title('div','title-md','Связаться со мной')
-					form#mailForm.form.form-mail(form="mailForm")
+					form#mailForm.form.form-mail(form="mailForm", method="post", action="/send")
 						.form__text
 							label(for="mailName").form__label Имя
 							input.form__text__input(type="text", placeholder="Имя", id="mailName", name="name")
@@ -84,6 +84,13 @@ block content
 						.form__text
 							label(for="mailMessage").form__label Сообщение
 							textarea.form__text__input.form__textarea(placeholder="Ваше сообщение", name="message", id="mailMessage")
+					.form__succes
+						.form__succes__header Ваше сообщение отправлено
+						p Спасибо за ваш интерес к моей работе.
+						p Я свяжусь с вами в ближайшее время.
+					.form__error
+						p Что-то пошло не так.
+						p Обновите страницу и отправьте сообщение снова.
 					.window__menu
 						ul.window__menu__list
 							li.window__menu__item

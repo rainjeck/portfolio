@@ -442,6 +442,25 @@
 	}
 }
 
+.form__succes {
+	position: relative;
+	display: none;
+	color: #373e42;
+	text-align: center;
+
+	&__header {
+		color: #e7a731;
+		font-size: 21px;
+		font-weight: bold;
+	}
+}
+.form__error {
+	position: relative;
+	display: none;
+	color: #e44845;
+	text-align: center;
+}
+
 /* ---------- WINDOW ---------- */
 .window {
 	&__box {
