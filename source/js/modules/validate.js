@@ -22,29 +22,45 @@
 			var form = $(this);
 			if ( formValidate.valid(form) === false ) return false;
 
-			var formdata = form.serialize();
-
-			console.log(formdata);
-			$.ajax({
-				url: 'assets/php/mail-process.php',
-				type: 'POST',
-				data: formdata
-			})
-			.done(function(msg) {
-				if (msg === 'OK') {
-					console.log('OK');
-					form.trigger("reset");
+			var from,email,message;
+			var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
+			from=$("#mailName").val();
+			email=$("#mailMail").val();
+			message=$("#mailMessage").val();
+			if(email != ''){
+				if(email.search(pattern) == 0){
+					$("#mailMessage").text("Sending E-mail...Please wait");
+					$.get("./send",{from:from,email:email,message:message},function(data){
+						if(data=="sent") {
+							$("#mailForm").html("<div>Email is been sent at "+from+" . Please check inbox !</div>");
+						}
+					});
 				} else {
 					$('input#mailMail').parents('.form__text').addClass('error');
-					$('<span class="tooltip">' + msg + '</span>').appendTo('.error');
+					$('<span class="tooltip">Некорректрый email</span>').appendTo('.error');
 				}
-			})
-			.fail(function() {
-				console.log("error");
-			})
-			.always(function() {
-				console.log("complete");
-			});
+			}
+			//var formdata = form.serialize();
+			// $.ajax({
+			// 	url: 'assets/php/mail-process.php',
+			// 	type: 'POST',
+			// 	data: formdata
+			// })
+			// .done(function(msg) {
+			// 	if (msg === 'OK') {
+			// 		console.log('OK');
+			// 		form.trigger("reset");
+			// 	} else {
+			// 		$('input#mailMail').parents('.form__text').addClass('error');
+			// 		$('<span class="tooltip">' + msg + '</span>').appendTo('.error');
+			// 	}
+			// })
+			// .fail(function() {
+			// 	console.log("error");
+			// })
+			// .always(function() {
+			// 	console.log("complete");
+			// });
 
 		},
 
