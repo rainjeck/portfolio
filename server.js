@@ -38,10 +38,10 @@ app.post('/send',function(req,res){
 	});
 
 	var mailOptions = {
-		from: 'My Site <mysite@site.ru>',
-		to: '166507@gmail.com',
-		subject: 'Mail from my site',
-		text: 'You have new mail from: ' + req.body.name + 'email: ' + req.body.email + ' and message ' + req.body.message
+		from: '',
+		to: '',
+		subject: '',
+		text: req.body.name+' '+req.body.email+' '+req.body.message
 	 }
 
 	console.log(mailOptions);
