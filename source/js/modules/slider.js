@@ -98,8 +98,6 @@ var slider = (function(){
 	} // return
 }());
 
-$(document).ready(function($) {
-	if ($('.slider__container')) {
+if ($('.slider__container')) {
 		slider.init();
-	}
-});
+}
