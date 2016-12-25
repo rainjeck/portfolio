@@ -27,11 +27,15 @@ var parallax = (function () {
 		// init
 		init: function(wScroll) {
 			// двигаем 'bg' в зависимости от 'wScroll' и задаем коэффициет (чем он больше, тем медленнее двигается)
-
-			this.move(bg, wScroll, 60);
+			if (bg) {
+				this.move(bg, wScroll, 60);
+			}
 			if (sectionText) {
-			this.move(sectionText, wScroll, 30); }
-			this.move(user, wScroll, 50);
+				this.move(sectionText, wScroll, 30);
+			}
+			if (user) {
+				this.move(user, wScroll, 50);
+			}
 		}
 	}
 }());

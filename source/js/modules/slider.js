@@ -2,7 +2,8 @@ var slider = (function(){
 	return {
 		init: function(){
 
-			var _this = this;
+			var _this = this,
+				sliderItemActive = $('.slider__item').first().addClass('active');
 
 			// добавляем точки
 			_this.makeDots();
@@ -35,6 +36,21 @@ var slider = (function(){
 					}
 				}
 			});
+
+			//клик по точкам
+			$('.slider__dots__items').on('click', '.slider__dots__item', function(e){
+				e.preventDefault();
+				var $this = $(this),
+					dotClick = $this.index(),
+					slide = $('.slider__item'),
+					activeItem = slide.filter('.active');
+
+					if (activeItem.index() < dotClick) {
+						_this.moveSlide(slide.eq(dotClick));
+					} else {
+						_this.moveSlide(slide.eq(dotClick));
+					}
+			})
 		},
 
 		// двигаем слайды

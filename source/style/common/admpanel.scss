@@ -1,0 +1,100 @@
+/* ---------- ADMIN PANEL ---------- */
+
+.admpanel {
+	&__wrapper {
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 30px;
+		background: #e7a731;
+	}
+
+	&__title {
+		color: #fff;
+		font-size: 28px;
+	}
+
+	&__backlink {
+		&__link {
+			color: #fff;
+			border-bottom: 1px solid #fff;
+		}
+	}
+
+	&__tabs {
+		margin-bottom: 50px;
+
+		&__item {
+			display: inline-block;
+		}
+
+	}
+
+	&__content {
+		padding: 30px;
+
+		&__title {
+			font-size: 21px;
+			color: #5d5a55;
+			margin: 0 0 45px 0;
+			padding: 0;
+		}
+
+		&__subtitle {
+			color: #5d5a55;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__form {
+
+		.form_group_input, .form_group_textarea {
+			margin-bottom: 20px;
+			overflow: hidden;
+		}
+
+		.form_group_input {
+			max-width: 300px;
+			min-width: 250px;
+		}
+
+		.form_group_textarea {
+			max-width: 500px;
+			min-width: 250px;
+		}
+
+		&__input, &__textarea {
+			border: 1px solid #fff;
+			outline: none;
+			border-radius: 4px;
+			background: #fff;
+			padding: 16px 20px;
+		}
+
+		&__input {
+			width: 100%;
+		}
+
+		&__textarea {
+			width: 100%;
+			height: 165px;
+		}
+
+	}
+
+	&__btn_save {
+		border: none;
+		outline: none;
+		background: #e7a731;
+		padding: 15px 20px;
+		border-radius: 4px;
+		color: #fff;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

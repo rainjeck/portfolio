@@ -3,9 +3,13 @@ var path = require('path');
 var http = require('http');
 var fs = require('fs');
 var pug = require('pug');
+var mongoose = require('mongoose');
 var nodemailer = require("nodemailer");
 var bodyParser = require('body-parser');
 var router = express.Router();
+
+mongoose.connect('mongodb://localhost/test');
+var blogPost = mongoose.model('blogPost', { postTitle: String, postDate: String, postContent: String });
 
 var app = express();
 
@@ -57,10 +61,33 @@ app.post('/send',function(req,res){
 	 })
 });
 
+// сохраняем пост
+app.post('/savepost',function(req,res){
+	console.log(req.body);
+	var post = new blogPost (req.body);
+	post.save(function (err) {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log(post);
+		}
+	});
+});
+
+// покажем посты
+app.get('/showpost',function(req,res){
+	blogPost.find({postTitle: 'sdfsf'}, function(err,posts){
+		if (err) return console.error(err);
+		console.log(posts);
+		//res.send(posts);
+		res.render('auth.pug', {posts: posts});
+	});
+});
+
 app.use(function(req, res, next) {
   res.status(404);
   res.render('error.pug');
 });
 
 app.listen(6060);
-console.log('Приложение запущено!');
+console.log('Приложение запущено! :6060');

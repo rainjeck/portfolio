@@ -14,26 +14,7 @@ block content
 		// slider
 		.slider__container
 			ul.slider__items
-				li.slider__item.active
-					.myworks
-						.myworks__description
-							.myworks__name Сайт гида по Флоренции
-							.myworks__tech HTML , CSS, CMS GetSimple
-							a.myworks__link(href="http://florenceguide.ru", target="_blank") Посмотреть сайт
-								svg.myworks__link__icon
-									use(xlink:href="assets/img/sprite.svg#link")
-						.myworks__image
-							img.myworks__image__item(src="assets/img/slider/florenceguide.png")
-				li.slider__item
-					.myworks
-						.myworks__description
-							.myworks__name Фан-сайт
-							.myworks__tech HTML , CSS, CMS GetSimple
-							a.myworks__link(href="http://v-meladze.ru", target="_blank") Посмотреть сайт
-								svg.myworks__link__icon
-									use(xlink:href="assets/img/sprite.svg#link")
-						.myworks__image
-							img.myworks__image__item(src="assets/img/slider/vmeladze.png")
+				+slider
 			button.slider__btn.slider__btn-prev
 				svg.slider__btn__icon
 					use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
@@ -99,7 +80,7 @@ block content
 								input.window__menu__link(type="reset", form="mailForm", value="Очистить")
 
 			.arrow__top
-				a.arrow__top__link(href="#top")
+				button#arrowUp.arrow__top__btn
 					svg.arrow__top__icon
 						use(xlink:href="assets/img/sprite.svg#arrow_down")
 

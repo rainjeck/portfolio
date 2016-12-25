@@ -1,0 +1,32 @@
+extends ../_template
+
+block variables
+	- var title = 'Запись в блог - Тишук Надежда - front-end developer'
+	- var tempName = 'blogPost'
+
+block content
+	.admpanel__wrapper
+		.admpanel__header
+			.admpanel__title Панель администрирования
+			.admpanel__backlink
+				a.admpanel__backlink__link(href="#") Вернуться на сайт
+		ul.admpanel__tabs
+			li.admpanel__tabs__item Tab 1
+			li.admpanel__tabs__item Tab 2
+			li.admpanel__tabs__item Tab 3
+		.admpanel__content
+			h1.admpanel__content__title Страница "Блог"
+			.admpanel__content__subtitle Добавить запись
+			form#addPost.admpanel__form
+				.form_group_input
+					input.admpanel__form__input(type="text", placeholder="Название", name="postTitle")
+				.form_group_input
+					input.admpanel__form__input(type="text", placeholder="Дата", name="postDate")
+				.form_group_textarea
+					textarea.admpanel__form__textarea(type="text", placeholder="Содержание", name="postContent")
+			button#addPostBtn(form="addPost").admpanel__btn_save Сохранить
+
+			//- each post in posts
+			//- 	li Название #{post.postTitle}
+			//- 	li= post.postDate
+			//- 	li= post.postContent

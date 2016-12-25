@@ -3,6 +3,24 @@
 		{name: 'vk', href: 'https://vk.com/tishukn'},
 		{name: 'github', href: 'https://github.com/rainjeck'},
 		{name: 'in', href: '#'}]
+-
+	var slideItems = [
+		{name:'Сайт гида по Флоренции', tech: 'HTML , CSS, CMS GetSimple', link: 'http://florenceguide.ru', img: 'assets/img/slider/florenceguide.png'},
+		{name:'Фан-сайт', tech: 'HTML , CSS, CMS GetSimple', link: 'http://v-meladze.ru', img: 'assets/img/slider/vmeladze.png'},
+		{name:'Сайт Жанны Бадоевой', tech: 'HTML , CSS, CMS MODx', link: 'http://zhannabadoeva.com', img: 'assets/img/slider/zhannabadoeva.png'},]
+
+mixin slider
+	each item in slideItems
+		li.slider__item
+			.myworks
+				.myworks__description
+					.myworks__name #{item.name}
+					.myworks__tech #{item.tech}
+					a.myworks__link(href= item.link, target="_blank") Посмотреть сайт
+						svg.myworks__link__icon
+							use(xlink:href="assets/img/sprite.svg#link")
+				.myworks__image
+					img.myworks__image__item(src= item.img )
 
 //- social icons
 mixin socials (id)
@@ -49,6 +67,7 @@ mixin contactsIcon (className)
 					use(xlink:href='assets/img/sprite.svg#' + item.icon)
 				a(class= className + '__link', href= item.href)= item.name
 
+//- title
 mixin titleIcon (tagName,className,iconName,name)
 	#{tagName}(class="title")
 		span(class= className)!= name
@@ -59,6 +78,7 @@ mixin title (tagName,className,name)
 	#{tagName}(class="title")
 		span(class= className)!= name
 
+//- skills
 mixin skill (skillsType)
 	.myskills__item
 		svg.myskills__item__icon(viewBox="0 0 110 110",preserveAspectRatio="none")
@@ -66,6 +86,7 @@ mixin skill (skillsType)
 			circle(r="45" cx="55" cy="55" class="sector")
 		span.myskills__item__type!= skillsType
 
+//- header
 mixin headerPage
 	.header__picture
 		img(src="assets/img/sand.jpg")
@@ -82,7 +103,7 @@ mixin headerPage
 				img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
 			.userprofile__name Тишук Надежда
 			.userprofile__prof Front-End Developer
-	a.arrow__down(href="#screen")
+	button#arrowDown.arrow__down
 		svg(class="arrow__down__icon")
 			use(xlink:href="assets/img/sprite.svg#arrow_down")
 

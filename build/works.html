@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/css/app.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body><a class="pageanchor" id="top"></a>
+  <body>
     <nav class="navigate" id="navigate">
       <!--.navigate__left.nav-animate-->
       <!--.navigate__right.nav-animate-->
@@ -60,11 +60,13 @@
               <div class="userprofile__name">Тишук Надежда</div>
               <div class="userprofile__prof">Front-End Developer</div>
             </div>
-          </div><a class="arrow__down" href="#screen">
+          </div>
+          <button class="arrow__down" id="arrowDown">
             <svg class="arrow__down__icon">
               <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
-            </svg></a>
-    </header><a class="pageanchor" id="screen"></a>
+            </svg>
+          </button>
+    </header>
     <section class="section section-myworks">
           <h1 class="title"><span class="title-big">Мои работы
               <svg class="title__icon" preserveAspectRatio="none">
@@ -73,30 +75,42 @@
       <!-- slider-->
       <div class="slider__container">
         <ul class="slider__items">
-          <li class="slider__item active">
-            <div class="myworks">
-              <div class="myworks__description">
-                <div class="myworks__name">Сайт гида по Флоренции</div>
-                <div class="myworks__tech">HTML , CSS, CMS GetSimple</div><a class="myworks__link" href="http://florenceguide.ru" target="_blank">Посмотреть сайт
-                  <svg class="myworks__link__icon">
-                    <use xlink:href="assets/img/sprite.svg#link"></use>
-                  </svg></a>
-              </div>
-              <div class="myworks__image"><img class="myworks__image__item" src="assets/img/slider/florenceguide.png"></div>
-            </div>
-          </li>
-          <li class="slider__item">
-            <div class="myworks">
-              <div class="myworks__description">
-                <div class="myworks__name">Фан-сайт</div>
-                <div class="myworks__tech">HTML , CSS, CMS GetSimple</div><a class="myworks__link" href="http://v-meladze.ru" target="_blank">Посмотреть сайт
-                  <svg class="myworks__link__icon">
-                    <use xlink:href="assets/img/sprite.svg#link"></use>
-                  </svg></a>
-              </div>
-              <div class="myworks__image"><img class="myworks__image__item" src="assets/img/slider/vmeladze.png"></div>
-            </div>
-          </li>
+              <li class="slider__item">
+                <div class="myworks">
+                  <div class="myworks__description">
+                    <div class="myworks__name">Сайт гида по Флоренции</div>
+                    <div class="myworks__tech">HTML , CSS, CMS GetSimple</div><a class="myworks__link" href="http://florenceguide.ru" target="_blank">Посмотреть сайт
+                      <svg class="myworks__link__icon">
+                        <use xlink:href="assets/img/sprite.svg#link"></use>
+                      </svg></a>
+                  </div>
+                  <div class="myworks__image"><img class="myworks__image__item" src="assets/img/slider/florenceguide.png"></div>
+                </div>
+              </li>
+              <li class="slider__item">
+                <div class="myworks">
+                  <div class="myworks__description">
+                    <div class="myworks__name">Фан-сайт</div>
+                    <div class="myworks__tech">HTML , CSS, CMS GetSimple</div><a class="myworks__link" href="http://v-meladze.ru" target="_blank">Посмотреть сайт
+                      <svg class="myworks__link__icon">
+                        <use xlink:href="assets/img/sprite.svg#link"></use>
+                      </svg></a>
+                  </div>
+                  <div class="myworks__image"><img class="myworks__image__item" src="assets/img/slider/vmeladze.png"></div>
+                </div>
+              </li>
+              <li class="slider__item">
+                <div class="myworks">
+                  <div class="myworks__description">
+                    <div class="myworks__name">Сайт Жанны Бадоевой</div>
+                    <div class="myworks__tech">HTML , CSS, CMS MODx</div><a class="myworks__link" href="http://zhannabadoeva.com" target="_blank">Посмотреть сайт
+                      <svg class="myworks__link__icon">
+                        <use xlink:href="assets/img/sprite.svg#link"></use>
+                      </svg></a>
+                  </div>
+                  <div class="myworks__image"><img class="myworks__image__item" src="assets/img/slider/zhannabadoeva.png"></div>
+                </div>
+              </li>
         </ul>
         <button class="slider__btn slider__btn-prev">
           <svg class="slider__btn__icon">
@@ -177,10 +191,13 @@
             </div>
           </div>
         </div>
-        <div class="arrow__top"><a class="arrow__top__link" href="#top">
+        <div class="arrow__top">
+          <button class="arrow__top__btn" id="arrowUp">
             <svg class="arrow__top__icon">
               <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
-            </svg></a></div>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
     <!-- footer-->
