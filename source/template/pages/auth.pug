@@ -26,7 +26,15 @@ block content
 					textarea.admpanel__form__textarea(type="text", placeholder="Содержание", name="postContent")
 			button#addPostBtn(form="addPost").admpanel__btn_save Сохранить
 
-			//- each post in posts
-			//- 	li Название #{post.postTitle}
-			//- 	li= post.postDate
-			//- 	li= post.postContent
+			.admpanel__done__wrapper
+				.admpanel__done
+					.admpanel__done__text
+					button#admDoneBtn.admpanel__done__btn Закрыть
+
+			form#deletePost.admpanel__form
+				.form_group_input
+					input.admpanel__form__input(type="text", placeholder="id", name="id")
+			button#deletePostBtn(form="deletePost").admpanel__btn_save Удалить
+
+			#posts
+				+blogPosts

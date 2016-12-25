@@ -98,3 +98,43 @@
 		}
 	}
 }
+
+/* ---------- Done Window ---------- */
+.admpanel__done {
+	background: #fff;
+	border-radius: 4px;
+	width: 280px;
+	padding: 20px;
+	text-align: center;
+	box-shadow: -1px 0 10px 1px #595959;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	&__text {
+		margin-bottom: 20px;
+	}
+
+	&__btn {
+		border: 0;
+		outline: 0;
+		background: #e7a731;
+		padding: 13px 20px;
+		border-radius: 4px;
+		color: #fff;
+
+		&:hover {
+			background: darken(#e7a731, 10%);
+			cursor: pointer;
+		}
+	}
+
+	&__wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+	}
+}

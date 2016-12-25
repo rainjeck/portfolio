@@ -8,17 +8,17 @@ var nodemailer = require("nodemailer");
 var bodyParser = require('body-parser');
 var router = express.Router();
 
-mongoose.connect('mongodb://localhost/test');
-var blogPost = mongoose.model('blogPost', { postTitle: String, postDate: String, postContent: String });
-
 var app = express();
-
 var sourceFiles = '/source/template/pages';
 
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+mongoose.connect('mongodb://localhost/test');
+
+var blogPost = mongoose.model('blogPost', { postTitle: String, postDate: String, postContent: String });
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.set('views', __dirname + sourceFiles);
@@ -30,6 +30,7 @@ app.get(['/', '/index.html'], function(req, res) {
 
 app.get('/:name.html', function(req,res){
 	res.render(req.params.name + '.pug');
+	console.log(req.params);
 });
 
 app.post('/send',function(req,res){
@@ -70,18 +71,27 @@ app.post('/savepost',function(req,res){
 			console.log(err);
 		} else {
 			console.log(post);
+			res.json({success : "Updated Successfully", status : 200});
+			res.end();
 		}
 	});
 });
 
-// покажем посты
+// покажем посты после отправки нового
 app.get('/showpost',function(req,res){
-	blogPost.find({postTitle: 'sdfsf'}, function(err,posts){
+	blogPost.find(function(err,posts){
 		if (err) return console.error(err);
-		console.log(posts);
-		//res.send(posts);
-		res.render('auth.pug', {posts: posts});
+		res.render('../extends/_blogposts.pug', {posts: posts});
+		res.end();
 	});
+});
+
+// delete post
+app.post('/delete', function (req,res) {
+	var id = req.body.id;
+	blogPost.findOneAndRemove(id).exec();
+	res.json({success : "Updated Successfully", status : 200});
+	res.end();
 });
 
 app.use(function(req, res, next) {
@@ -90,4 +100,4 @@ app.use(function(req, res, next) {
 });
 
 app.listen(6060);
-console.log('Приложение запущено! :6060');
+console.log('Приложение запущено! Port :6060');
