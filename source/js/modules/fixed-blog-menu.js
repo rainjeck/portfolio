@@ -4,7 +4,6 @@ var fixedBlogMenu = (function () {
 		var wWidth = $(window).width();
 
 		if ( wWidth > 768 ) {
-			console.log(wWidth);
 			var menuWidth = $('.blog__nav__items').width(),
 			wScroll = $(window).scrollTop(),
 			offset = $('.blog__nav').offset(),

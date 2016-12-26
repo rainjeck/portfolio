@@ -9,8 +9,16 @@
 		listeners: function() {
 			$('#addPost').on('submit', addPost.addPostInBlog);
 			$('#deletePost').on('submit', addPost.deletePost);
-			addPost.showPosts();
 			$('#admDoneBtn').on('click', addPost.closeDoneWin);
+			$(document).ready(function() {
+				if ( $("div").is("#admPostList") ){
+					addPost.showPosts();
+				};
+				if ( $("div").is("#blogPage") ){
+					addPost.blogPagePosts();
+					addPost.blogNav();
+				};
+			});
 		},
 
 		closeDoneWin: function (e) {
@@ -22,17 +30,52 @@
 		},
 
 		showPosts: function(){
-			$.get('/showpost', function(data) {
-				$('#posts').empty().append(data);
+			$.ajax({
+				url: '/showpost',
+				type: 'GET',
+				dataType: 'html',
+				success: function(data){
+					$('#posts').empty().append(data);
+				}
 			});
+		},
+
+		blogPagePosts: function(){
+			$.ajax({
+				url: '/blogpage',
+				type: 'GET',
+				dataType: 'html',
+				success: function(data){
+					$('#posts').empty().append(data);
+				}
+			});
+		},
+
+		blogNav: function(){
+			$.ajax({
+				url: '/blogmenu',
+				type: 'GET',
+				dataType: 'html',
+				success: function(data){
+					$('#blogNav').empty().append(data);
+				}
+			});
+
 		},
 
 		addPostInBlog: function(e){
 			e.preventDefault();
 			var form = $(this),
-				inputs = $(this).find('input').val();
+				inputs = $(this).find('input').val(),
+				textarea = $(this).find('textarea').val(),
+				myLineBreak = textarea.replace(/\n\r?/g, '<br />');
 			if (inputs.length > 0) {
-				var dataForm = $(this).serializeArray();
+				//var dataForm = $(this).serializeArray();
+				var dataForm = {
+					postTitle: $(this).find('input[name=postTitle]').val(),
+					postDate: $(this).find('input[name=postDate]').val(),
+					postContent: myLineBreak
+				}
 				$.ajax({
 					url: '/savepost',
 					type: 'POST',

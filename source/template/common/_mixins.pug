@@ -113,11 +113,3 @@ mixin blogItem (name,href)
 		a.blog__nav__link(href= href)= name
 
 - var posts = []
-//- mongo blog
-mixin blogPosts
-	each post in posts
-		ul
-			li= post._id
-			li Название #{post.postTitle}
-			li= post.postDate
-			li= post.postContent

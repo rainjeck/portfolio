@@ -2,14 +2,14 @@ extends ../_template
 
 block variables
 	- var title = 'Запись в блог - Тишук Надежда - front-end developer'
-	- var tempName = 'blogPost'
+	- var tempName = 'adm-blog'
 
 block content
-	.admpanel__wrapper
+	.admpanel__wrapper#admPostList
 		.admpanel__header
 			.admpanel__title Панель администрирования
 			.admpanel__backlink
-				a.admpanel__backlink__link(href="#") Вернуться на сайт
+				a.admpanel__backlink__link(href="/") Вернуться на сайт
 		ul.admpanel__tabs
 			li.admpanel__tabs__item Tab 1
 			li.admpanel__tabs__item Tab 2
@@ -36,5 +36,5 @@ block content
 					input.admpanel__form__input(type="text", placeholder="id", name="id")
 			button#deletePostBtn(form="deletePost").admpanel__btn_save Удалить
 
+			- var posts = []
 			#posts
-				+blogPosts
