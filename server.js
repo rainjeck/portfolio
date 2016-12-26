@@ -36,13 +36,9 @@ app.get(['/', '/index.html'], function(req, res) {
 	res.render('index.pug');
 });
 
-app.get('/auth.html', isAuth, function (req,res) {
-	res.render('auth.pug', {});
-})
-
-// app.get('/:name.html', function(req,res){
-// 	res.render(req.params.name + '.pug');
-// });
+app.get('/:name.html', function(req,res){
+	res.render(req.params.name + '.pug');
+});
 
 app.use(session({
 	secret: 'secret',
