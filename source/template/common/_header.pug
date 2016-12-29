@@ -1,11 +1,50 @@
-nav.navigate#navigate
-	//.navigate__left.nav-animate
-	//.navigate__right.nav-animate
-	+navMenu('navTop','navigate-top')
-// header
-if tempName == 'About'
-	header.header.header-page.header-about
-		+headerPage
-else
-	header.header.header-page
-		+headerPage
+mixin header (classBottom)
+  a.pageanchor(id="top")
+  header.header
+    .header__bg
+      img(src="assets/img/sand.jpg")
+    .header__icon
+      svg(class="header__svg", preserveAspectRatio="none meet")
+        use(xlink:href="assets/img/sprite.svg#portfolio_header")
+    .header__top
+      .header__socials
+        +socials('socials-header')
+      .header__menu
+        button.hamburger
+          span.hamburger__line
+        nav.nav
+          +menuList('nav', 'navigation')
+    .header__middle
+      .user
+        .user__pic
+          img.user__img(src="assets/img/myCoolAvatar.jpg" alt="web developer", width="100", height="100")
+        h1.user__name
+          | Тишук Надежда
+        h2.user__prof
+          | Front-End Developer
+    .header__bottom(class= classBottom)
+      a#arrowDown.arrow(href="#screen")
+        svg(class="arrow__icon")
+          use(xlink:href="assets/img/sprite.svg#arrow_down")
+  a.pageanchor(id="screen")
+
+mixin headerBlog
+  header.header.header-blog
+    .header__bg
+      img(src="assets/img/sand.jpg")
+    .header__top
+      .header__socials
+        +socials('socials-header')
+      .header__menu
+        button.hamburger
+          span.hamburger__line
+        nav.nav
+          +menuList('nav', 'navigation')
+    .header__middle
+      .user
+        .user__pic
+          img.user__img(src="assets/img/myCoolAvatar.jpg" alt="web developer", width="100", height="100")
+        +titleWithIcon('div', 'title-big title-light title-header', 'blog_header', 'Блог')
+        .user__prof
+          | Статьи, которые я написала
+    .header__bottom(class= classBottom)

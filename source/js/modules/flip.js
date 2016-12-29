@@ -1,32 +1,32 @@
-var flipEffect = (function() {
-	var flipBtn = $('.flip-btn'),
-		flipReturn = $('.flip-btn-return'),
-		container = $('.flipcontainer');
+(function () {
+  // flip panel on welcome page
+  var flipPanel = {
 
-	return {
-		init: function () {
-			flipBtn.on('click', function(e){
-				e.preventDefault();
-				container.toggleClass('flip');
-				flipBtn.toggleClass('hide');
-				$('.tooltip').remove();
-				$('.form').find('.error').removeClass("error");
-				$('form')[0].reset();
-			});
-			flipReturn.on('click', function(e){
-				e.preventDefault();
-				container.toggleClass('flip');
-				flipBtn.toggleClass('hide');
-			});
-			// переворачиваем форму по клику вне формы
-			jDoc.mouseup(function (e) {
-				if (container.has(e.target).length === 0){
-					container.removeClass('flip');
-					flipBtn.removeClass('hide');
-				}
-		});
-	}
-};
-}());
+    init: function() {
+      if ( document.querySelector('.flip-button') ) {
+        this.listeners();
+      }
 
-flipEffect.init();
+    },
+
+    listeners: function () {
+      document.querySelector('.flip-button').addEventListener('click', flipPanel.flippingPanel);
+      document.querySelector('.flip-return').addEventListener('click', flipPanel.flippingReturn);
+    },
+
+    flippingPanel: function (e) {
+      e.preventDefault();
+      document.forms["loginForm"].reset();
+      document.querySelector('.flip-container').classList.add('flip');
+      document.querySelector('.flip-button').classList.add('hide');
+    },
+
+    flippingReturn: function (e) {
+      e.preventDefault();
+      document.querySelector('.flip-container').classList.remove('flip');
+      document.querySelector('.flip-button').classList.remove('hide');
+    }
+  }
+
+  flipPanel.init();
+}() );

@@ -1,0 +1,260 @@
+/*
+ * Form
+*/
+
+.form {
+  display: block;
+  width: 100%;
+
+  &__fildset {
+    display: block;
+    border: 0;
+    padding: 0 20px;
+  }
+
+  &__group {
+    position: relative;
+  }
+
+  /*
+   * Input Text
+  */
+
+  .form__group {
+    margin-bottom: 20px;
+  }
+
+  .form__group-input {
+      padding-left: 45px;
+  }
+
+  &__label {
+    font-size: 0;
+    display: none;
+  }
+
+  &__label-text {
+    font-size: 0;
+    width: 45px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f0efe9;
+    border-radius: 4px 0 0 4px;
+  }
+
+  &__icon-text {
+    width: 15px;
+    height: 17px;
+    fill: #c4cbcd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: (-17px/2);
+    margin-left: (-15px/2);
+  }
+
+  &__input-text {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    padding: 12px 19px 13px;
+    border-radius: 4px;
+    font-size: 16px;
+
+    @include placeholder {
+      color: rgba(#000000, 0.5);
+    }
+
+    &:focus {
+      border-color: #e7a731;
+
+      @include placeholder {
+        color: transparent;
+        transition: 0.5s;
+      }
+
+      & + label > .form__icon {
+        fill: #e7a731;
+      }
+    }
+  }
+
+  &__input-label {
+    border-radius: 0 4px 4px 0;
+  }
+
+  /*
+   * Input Checkbox
+  */
+
+  .form__group-checkbox {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  &__label-checkbox {
+    color: rgba(#ffffff, 0.8);
+    padding: 4px 0 0 30px;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__input-checkbox {
+    display: none;
+  }
+
+  &__checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    position: absolute;
+    top: 3px;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__icon-checkbox {
+    width: 13px;
+    height: 12px;
+    fill: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: (-12px/2);
+    margin-left: (-13px/2);
+  }
+
+  &__input-checkbox {
+    &:checked + .form__checkbox {
+      background: #e7a731;
+      border-color: #e7a731;
+    }
+  }
+
+  /*
+   * Input Radio
+  */
+
+  .form__group-radio {
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  &__text {
+    color: rgba(#ffffff, 0.8);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__label-radio {
+    display: inline-block;
+    margin: 0 20px;
+    color: rgba(#ffffff, 0.8);
+    padding: 3px 0 2px 30px;
+    position: relative;
+  }
+
+  &__radio {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    outline: none;
+    border-radius: 50%;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__input-radio {
+    display: none;
+    &:checked + .form__radio {
+      background: #e7a731;
+      border: 6px solid #ffffff;
+      transition: 0.5s;
+    }
+  }
+
+  /*
+   * Textarea
+  */
+  &__textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    min-height: 140px;
+    padding: 20px;
+    border: 1px solid #ffffff;
+
+    @include placeholder {
+      color: rgba(#000000, 0.5);
+    }
+
+    &:focus {
+      border-color: #e7a731;
+
+      @include placeholder {
+        color: transparent;
+        transition: 0.5s;
+      }
+
+    }
+  }
+
+// end form
+}
+
+/*
+ * Validate
+*/
+
+.error {
+
+  .form__input-text,
+  .form__textarea {
+    border-color: #e44845;
+  }
+
+  .form__icon-text {
+    fill: #e44845;
+  }
+}
+
+.form__tooltip {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 115%);
+  background: #e44845;
+  padding: 15px 20px;
+  border-radius: 4px;
+  white-space: nowrap;
+  color: #fff;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    border-color: transparent transparent #e44845 transparent;
+    border-style: solid;
+    border-width: 8px;
+    top: -15px;
+    left: 50%;
+    margin-left: -8px;
+  }
+}

@@ -1,79 +1,87 @@
 /* ---------- ANIMATIONS ---------- */
 
 // USE: animation: navanimate 1s ease 1 forwards;
-// анимация для открытия меню
-@keyframes navanimate {
-	0% {
-		width: 0;
-	}
-	100% {
-		width: 50%;
-	}
-}
 
-// анимация для spinner при загрузке
+/*
+ * Spinner
+*/
+
 @keyframes spin {
-	0% {
-		transform: rotate(0deg)
-	}
-	100% {
-		transform: rotate(360deg)
-	}
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
 }
 
-// анимация для появления ссылок в меню
+/*
+ * Navigation Menu
+*/
+
+@keyframes navanimate {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
 @keyframes linkbomp {
-	0% {
-		transform: scale(0)
-	}
-	90% {
-		transform: scale(0);
-	}
-	100% {
-		transform: scale(1);
-	}
+  0% {
+    transform: scale(0)
+  }
+  90% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-// анимация для слайдера
+/*
+ * Slider
+*/
 
-// показываем
 @keyframes showSlider {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-// скрываем
 @keyframes hideSlider {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
+/*
+ * Blog
+*/
 
-// анимация для мобильного меню блога
 @keyframes showBlogMenu {
-	0% {
-		transform: translateX(-284px);
-	}
-	100% {
-		transform: translateX(0);
-	}
+  0% {
+    transform: translateX(-284px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes moveLeft {
-	0% {
-		left: 0;
-		right: 0;
-	}
-	100% {
-		left: 284px;
-		right: -284px;
-	}
+  0% {
+    left: 0;
+    right: 0;
+  }
+  100% {
+    left: 284px;
+    right: -284px;
+  }
 }

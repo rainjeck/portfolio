@@ -1,108 +1,124 @@
 (function(){
-	var formValidate = {
-		doit: function(){
-			this.listeners();
-		},
+  var formValidate = {
 
-		listeners: function(){
-			$('#mailForm').on('submit', formValidate.mailme);
-			$('#loginForm').on('submit', formValidate.loginValid);
-		},
+    doit: function() {
+      this.listeners();
+    },
 
-		loginValid: function(e){
-			e.preventDefault();
-			var form = $(this);
-			if ( formValidate.valid(form) === false ) return false;
+    listeners: function() {
+      $('#mailForm').on('submit', formValidate.sendMail);
+      $('#loginForm').on('submit', formValidate.loginValid);
+      $('.form-reset').on('click', formValidate.clearForm);
+    },
 
-			console.log('come in');
-		},
+    loginValid: function(e) {
+      e.preventDefault();
+      var form = $(this);
+      if ( formValidate.valid(form) === false ) return false;
 
-		mailme: function(e){
-			e.preventDefault();
-			var form = $(this);
-			if ( formValidate.valid(form) === false ) return false;
+      console.log('come in');
+    },
 
-			var from,email,message,data;
-			var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
-			from=$("#mailName").val();
-			email=$("#mailMail").val();
-			message=$("#mailMessage").val();
-			data = form.serialize();
-			if(email != ''){
-				if(email.search(pattern) == 0){
-					$.ajax({
-						url: '/send',
-						type: 'POST',
-						data: data
-					})
-					.done(function() {
-						console.log("success");
-						form.slideUp(200);
-						$('.window__menu').hide();
-						$('.form__succes').show();
-					})
-					.fail(function() {
-						console.log("error");
-						form.slideUp(200);
-						$('.window__menu').hide();
-						$('.form__error').show();
-					})
-				} else {
-					$('input#mailMail').parents('.form__text').addClass('error');
-					$('<span class="tooltip">Некорректрый email</span>').appendTo('.error');
-				}
-			}
-		},
+    sendMail: function(e) {
+      e.preventDefault();
+      var form = $(this);
+      if ( formValidate.valid(form) === false ) return false;
 
-		valid: function(form){
-			var inputs = form.find('input, textarea'),
-				checks = form.find('input:checkbox, input:radio'),
-				checksOk = form.find('input:checked'),
-				valid = true;
+      var
+        from,email,message,data,
+        pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i,
+        from=$("#mailName").val(),
+        email=$("#mailEmail").val(),
+        message=$("#mailMessage").val(),
+        data = form.serialize();
 
-			$.each(inputs, function(index, val) {
-				var input = $(val),
-				val = input.val(),
-				formGroup = input.parents('.form__text, .form__text_icon'),
-				label = formGroup.find('label').text().toLowerCase(),
-				textError = 'Вы не ввели ' + label,
-				tooltip = $('<span class="tooltip">' + textError + '</span>');
+      if( email != '' ) {
+        if( email.search(pattern) == 0  ) {
+          $.ajax({
+            url: '/send',
+            type: 'POST',
+            data: data
+          })
+          .done(function() {
+            console.log("success");
+            form.slideUp(200);
+            $('.window__menu').hide();
+            $('.form__succes').show();
+          })
+          .fail(function() {
+            console.log("error");
+            form.slideUp(200);
+            $('.window__menu').hide();
+            $('.form__error').show();
+          })
+        } else {
+          $('input#mailEmail').parents('.form__group').addClass('error');
+          $('<span class="form__tooltip">Некорректрый email</span>').appendTo('.error');
+        }
+      }
+    },
 
-				if (val.length === 0){
-					formGroup.addClass('error');
-					formGroup.find('.tooltip').remove();
-					tooltip.appendTo(formGroup);
-					input.on('focus', function(){
-						formGroup.find('.tooltip').remove();
-					});
-					input.on('keydown', function(){
-						formGroup.removeClass('error');
-					});
-					valid = false;
-				} else {
-					formGroup.removeClass('error');
-					formGroup.find('.tooltip').remove();
-				};
-			});
+    valid: function(form) {
+      var
+        inputs = form.find('input, textarea'),
+        checks = form.find('input:checkbox, input:radio'),
+        checked = form.find('input:checked'),
+        valid = true;
 
-			var checkGroup = $('.form__checks'),
-				tooltip = $('<span class="tooltip">Роботам тут не место</span>');
+      $.each(inputs, function(index, val) {
+        var
+          input = $(val),
+          val = input.val(),
+          formGroup = input.parents('.form__group'),
+          label = formGroup.find('label').text().toLowerCase(),
+          textError = 'Вы не ввели ' + label,
+          tooltip = $('<span class="form__tooltip">' + textError + '</span>');
 
-			if (checks.length > 0) {
+        if ( val.length === 0 ) {
+          formGroup.addClass('error');
+          formGroup.find('.form__tooltip').remove();
+          tooltip.appendTo(formGroup);
+          input.on('focus', function(){
+            formGroup.find('.form__tooltip').remove();
+          });
+          input.on('keydown', function() {
+            formGroup.removeClass('error');
+          });
+          valid = false;
+        } else {
+          formGroup.removeClass('error');
+          formGroup.find('.form__tooltip').remove();
+        };
+      });
 
-				if (checksOk.length < 2) {
-					console.log('check someone');
-					checkGroup.find('.tooltip').remove();
-					tooltip.appendTo(checkGroup);
-					valid = false;
-				} else {
-					checkGroup.find('.tooltip').remove();
-				}
-			}
-			return valid;
-		}
+      var
+        checkGroup = $('.form__group-radio'),
+        tooltip = $('<span class="form__tooltip">Роботам тут не место</span>');
 
-	}
+      if ( checks.length > 0 ) {
 
-	formValidate.doit();
+        if ( checked.length < 2 ) {
+          checkGroup.find('.form__tooltip').remove();
+          tooltip.appendTo(checkGroup);
+          valid = false;
+          checks.on('click', function(){
+            checkGroup.find('.form__tooltip').remove();
+          });
+        } else {
+          checkGroup.find('.form__tooltip').remove();
+        }
+      }
+      return valid;
+    },
+
+    clearForm: function (e) {
+      e.preventDefault();
+      $('.form__tooltip').remove();
+      $('.form__group').removeClass('error');
+      $('form')[0].reset();
+    }
+
+  }
+
+  formValidate.doit();
 }());

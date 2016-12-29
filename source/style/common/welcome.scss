@@ -1,0 +1,290 @@
+/*
+ * Welcome page
+*/
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background: #f8e9d2;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url(../img/sand.jpg) bottom left;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    width: (3056px*2);
+    z-index: 0;
+    animation: moving-desert 240s linear infinite;
+  }
+
+  &__top {
+    text-align: right;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    top: 0;
+
+    @include phone {
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+
+  &__middle {
+    text-align: center;
+    position: relative;
+    padding: 86px 0 58px;
+  }
+
+  &__bottom {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__profile {
+    padding-top: 40px;
+  }
+
+  &__login {
+    padding-top: 33px;
+  }
+
+
+  &__footer {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 40px;
+  }
+
+// end welcome
+}
+
+/*
+ * Desert Animation
+*/
+
+@keyframes moving-desert {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    transform: translate3d(-3056px,0,0);
+  }
+}
+
+
+
+/*
+ * Login Link
+*/
+
+.login__link {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 13px 27px;
+  color: #ffffff;
+
+  &:hover {
+    background: #ffffff;
+    color: #cc8820;
+    transition: 0.5s;
+  }
+
+  &.hide {
+    visibility: hidden;
+  }
+}
+
+/*
+ * Panel
+*/
+
+.panel {
+  display: inline-block;
+  width: 100%;
+  background-color: rgba(#d7bf9b, 0.6);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+
+  @include phone {
+    width: 95%;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    align-self: center;
+    flex: 1 1 100%;
+    text-align: center;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 2px;
+      background-color: #e2c68c;
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 15px 5px;
+    background-color: #e5a630;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #ce8a21;
+      transition: 0.5s;
+    }
+  }
+
+// end panel
+}
+
+/*
+ * User
+*/
+
+.user {
+  padding: 0 10px;
+  position: relative;
+  z-index: 10;
+
+  &__pic {
+    width: 141px;
+    height: 141px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__name {
+    color: #ffffff;
+    font-size: 28px;
+    font-family: $RobotoMedium, 'Arial', sans-serif;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  &__prof {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+// end user
+}
+
+/*
+ * Socials
+*/
+
+.socials-profile {
+  margin-bottom: 33px;
+}
+
+/*
+ * Login title
+*/
+
+.title-login {
+  margin-bottom: 34px;
+}
+
+/*
+ * Flip
+*/
+
+.flip {
+  margin: 0 auto;
+  width: 380px;
+  min-width: 200px;
+
+  @include phone {
+    width: 95%;
+  }
+}
+
+.flip-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  min-height: 420px;
+
+  &.flip{
+    .flip-back {
+      transform: rotateY(0deg);
+    }
+    .flip-front {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-front,
+.flip-back {
+  backface-visibility: hidden;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.flip-back {
+  transform: rotateY(-180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}

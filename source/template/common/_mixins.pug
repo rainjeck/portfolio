@@ -1,115 +1,93 @@
 -
-	var socialsLinks = [
-		{name: 'vk', href: 'https://vk.com/tishukn'},
-		{name: 'github', href: 'https://github.com/rainjeck'},
-		{name: 'in', href: '#'}]
+  var socialsLinks = [
+    {name: 'vk', href: 'https://vk.com/tishukn'},
+    {name: 'github', href: 'https://github.com/rainjeck'},
+    {name: 'in', href: '#'}]
 -
-	var slideItems = [
-		{name:'Сайт гида по Флоренции', tech: 'HTML , CSS, CMS GetSimple', link: 'http://florenceguide.ru', img: 'assets/img/slider/florenceguide.png'},
-		{name:'Фан-сайт', tech: 'HTML , CSS, CMS GetSimple', link: 'http://v-meladze.ru', img: 'assets/img/slider/vmeladze.png'},
-		{name:'Сайт Жанны Бадоевой', tech: 'HTML , CSS, CMS MODx', link: 'http://zhannabadoeva.com', img: 'assets/img/slider/zhannabadoeva.png'},]
+  var slideItems = [
+    {name:'Сайт гида по Флоренции', tech: 'HTML , CSS, CMS GetSimple', link: 'http://florenceguide.ru', img: 'assets/img/slider/florenceguide.png'},
+    {name:'Фан-сайт', tech: 'HTML , CSS, CMS GetSimple', link: 'http://v-meladze.ru', img: 'assets/img/slider/vmeladze.png'},
+    {name:'Сайт Жанны Бадоевой', tech: 'HTML , CSS, CMS MODx', link: 'http://zhannabadoeva.com', img: 'assets/img/slider/zhannabadoeva.png'},]
 
+-
+  var navLinks = [
+    {name:'Мои работы', href:'works.html'},
+    {name:'Блог', href:'blog.html'},
+    {name:'Обо мне', href:'about.html'},
+    {name:'Авторизация', href:'index.html'}]
+
+-
+  var contactsLinks = [
+    {name:'la.esperanza', href:'skype:la.esperanza', icon:'skype'},
+    {name:'166507@gmail.com', href:'mailto:166507@gmail.com',icon:'envelope2'},
+    {name:'+7 925 864 76 51', href:'tel:+79258647651',icon:'phone2'},
+    {name:'Москва, ул. Саратовская, д. 8/1', href:'',icon:'map_marker'}]
+
+//- Slider Items
 mixin slider
-	each item in slideItems
-		li.slider__item
-			.myworks
-				.myworks__description
-					.myworks__name #{item.name}
-					.myworks__tech #{item.tech}
-					a.myworks__link(href= item.link, target="_blank") Посмотреть сайт
-						svg.myworks__link__icon
-							use(xlink:href="assets/img/sprite.svg#link")
-				.myworks__image
-					img.myworks__image__item(src= item.img )
+  each item in slideItems
+    li.slider__item
+      .myworks
+        .myworks__description
+          .myworks__name #{item.name}
+          .myworks__tech #{item.tech}
+          a.myworks__link(href= item.link, target="_blank") Посмотреть сайт
+            svg.myworks__link__icon
+              use(xlink:href="assets/img/sprite.svg#link")
+        .myworks__image
+          img.myworks__image__item(src= item.img )
 
-//- social icons
-mixin socials (id)
-	ul.socials(class= id)
-		for item in socialsLinks
-			li.socials__item
-				a.socials__link(href= item.href)
-					svg.socials__icon
-						use(xlink:href="assets/img/sprite.svg#" + item.name)
+//- Socials List
+mixin socials (className)
+  ul.socials(class= className)
+    each item in socialsLinks
+      li.socials__item
+        a.socials__link(href= item.href)
+          svg.socials__icon
+            use(xlink:href="assets/img/sprite.svg#" + item.name)
 
-//- nav
--
-	var navLinks = [
-		{name:'Мои работы', href:'works.html'},
-		{name:'Блог', href:'blog.html'},
-		{name:'Обо мне', href:'about.html'},
-		{name:'Авторизация', href:'index.html'}]
-
-mixin navMenu (id, className)
-	ul(class= className, id= id)
-		for item in navLinks
-			li(class= className + '__item')
-				a(class= className + '__link', href= item.href)= item.name
+//- Navigate List
+mixin menuList (id, className)
+  ul(class= className, id= id)
+    each item in navLinks
+      li(class= className + '__item')
+        a(class= className + '__link', href= item.href)= item.name
 
 //- contacts
--
-	var contactsLinks = [
-		{name:'la.esperanza', href:'skype:la.esperanza', icon:'skype'},
-		{name:'166507@gmail.com', href:'mailto:166507@gmail.com',icon:'envelope2'},
-		{name:'+7 925 864 76 51', href:'tel:+79258647651',icon:'phone2'},
-		{name:'Москва, ул. Саратовская, д. 8/1', href:'',icon:'map_marker'}]
+mixin contactsList (className)
+  ul(class= className)
+    each item in contactsLinks
+      li(class= className + '__item')
+        a(class= className + '__link', href= item.href)= item.name
 
-mixin contacts (className)
-	ul(class= className)
-		for item in contactsLinks
-			li(class= className + '__item')
-				a(class= className + '__link', href= item.href)= item.name
-
-mixin contactsIcon (className)
-	ul(class= className)
-		for item in contactsLinks
-			li(class= className + '__item')
-				svg(class= className + '__icon')
-					use(xlink:href='assets/img/sprite.svg#' + item.icon)
-				a(class= className + '__link', href= item.href)= item.name
+mixin contactsListWithIcon (className)
+  ul(class= className)
+    each item in contactsLinks
+      li(class= className + '__item')
+        svg(class= className + '__icon')
+          use(xlink:href='assets/img/sprite.svg#' + item.icon)
+        a(class= className + '__link', href= item.href)= item.name
 
 //- title
-mixin titleIcon (tagName,className,iconName,name)
-	#{tagName}(class="title")
-		span(class= className)!= name
-			svg.title__icon(preserveAspectRatio="none")
-				use(xlink:href='assets/img/sprite.svg#' + iconName)
-
 mixin title (tagName,className,name)
-	#{tagName}(class="title")
-		span(class= className)!= name
+  #{tagName}(class="title")
+    span(class= className)!= name
 
-//- skills
-mixin skill (skillsType)
-	.myskills__item
-		svg.myskills__item__icon(viewBox="0 0 110 110",preserveAspectRatio="none")
-			circle(r="45" cx="55" cy="55")
-			circle(r="45" cx="55" cy="55" class="sector")
-		span.myskills__item__type!= skillsType
+mixin titleWithIcon (tagName,className,iconName,name)
+  #{tagName}(class="title")
+    span(class= className)!= name
+      svg.title__icon(preserveAspectRatio="none")
+        use(xlink:href='assets/img/sprite.svg#' + iconName)
 
-//- header
-mixin headerPage
-	.header__picture
-		img(src="assets/img/sand.jpg")
-	.header__socials
-			+socials('socials-top')
-	button.hamburger__icon#togglenav menu
-		span.hamburger__icon__line
-	.header__icon.header__icon-parallax
-		svg(class="header__icon__svg", preserveAspectRatio="none meet")
-			use(xlink:href="assets/img/sprite.svg#portfolio_header")
-	.header__user
-		.userprofile.userprofile-page
-			.userprofile__pic
-				img.userprofile__img(src="assets/img/myCoolAvatar.jpg")
-			.userprofile__name Тишук Надежда
-			.userprofile__prof Front-End Developer
-	a#arrowDown.arrow__down(href="#")
-		svg(class="arrow__down__icon")
-			use(xlink:href="assets/img/sprite.svg#arrow_down")
+//- Skills List
+mixin skill (skillType, long)
+  .skill__item
+    svg.skill__icon
+      circle(r="45", cx="35", cy="55", transform="rotate(-90, 45, 45)")
+      circle(r="45", cx="35", cy="55", transform="rotate(-90, 45, 45)", stroke-dashoffset= long, class="sector")
+    span.skill__type!= skillType
 
 //- blog list
 mixin blogItem (name,href)
-	li.blog__nav__item
-		a.blog__nav__link(href= href)= name
-
-- var posts = []
+  li.blog-nav__item
+    a.blog-nav__link(href= href)= name

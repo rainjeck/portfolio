@@ -18,53 +18,55 @@
     <link rel="stylesheet" href="assets/css/app.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body>
-    <nav class="navigate" id="navigate">
-      <!--.navigate__left.nav-animate-->
-      <!--.navigate__right.nav-animate-->
-          <ul class="navigate-top" id="navTop">
-            <li class="navigate-top__item"><a class="navigate-top__link" href="works.html">Мои работы</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="blog.html">Блог</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="about.html">Обо мне</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="index.html">Авторизация</a></li>
-          </ul>
-    </nav>
-    <!-- header-->
-    <header class="header header-page">
-          <div class="header__picture"><img src="assets/img/sand.jpg"></div>
-          <div class="header__socials">
-                <ul class="socials socials-top">
-                  <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
-                      <svg class="socials__icon">
-                        <use xlink:href="assets/img/sprite.svg#vk"></use>
-                      </svg></a></li>
-                  <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
-                      <svg class="socials__icon">
-                        <use xlink:href="assets/img/sprite.svg#github"></use>
-                      </svg></a></li>
-                  <li class="socials__item"><a class="socials__link" href="#">
-                      <svg class="socials__icon">
-                        <use xlink:href="assets/img/sprite.svg#in"></use>
-                      </svg></a></li>
-                </ul>
-          </div>
-          <button class="hamburger__icon" id="togglenav">menu<span class="hamburger__icon__line"></span></button>
-          <div class="header__icon header__icon-parallax">
-            <svg class="header__icon__svg" preserveAspectRatio="none meet">
+  <body><a class="pageanchor" id="top"></a>
+        <header class="header">
+          <div class="header__bg"><img src="assets/img/sand.jpg"></div>
+          <div class="header__icon">
+            <svg class="header__svg" preserveAspectRatio="none meet">
               <use xlink:href="assets/img/sprite.svg#portfolio_header"></use>
             </svg>
           </div>
-          <div class="header__user">
-            <div class="userprofile userprofile-page">
-              <div class="userprofile__pic"><img class="userprofile__img" src="assets/img/myCoolAvatar.jpg"></div>
-              <div class="userprofile__name">Тишук Надежда</div>
-              <div class="userprofile__prof">Front-End Developer</div>
+          <div class="header__top">
+            <div class="header__socials">
+                  <ul class="socials socials-header">
+                    <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
+                        <svg class="socials__icon">
+                          <use xlink:href="assets/img/sprite.svg#vk"></use>
+                        </svg></a></li>
+                    <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
+                        <svg class="socials__icon">
+                          <use xlink:href="assets/img/sprite.svg#github"></use>
+                        </svg></a></li>
+                    <li class="socials__item"><a class="socials__link" href="#">
+                        <svg class="socials__icon">
+                          <use xlink:href="assets/img/sprite.svg#in"></use>
+                        </svg></a></li>
+                  </ul>
             </div>
-          </div><a class="arrow__down" id="arrowDown" href="#">
-            <svg class="arrow__down__icon">
-              <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
-            </svg></a>
-    </header>
+            <div class="header__menu">
+              <button class="hamburger"><span class="hamburger__line"></span></button>
+              <nav class="nav">
+                    <ul class="navigation" id="nav">
+                      <li class="navigation__item"><a class="navigation__link" href="works.html">Мои работы</a></li>
+                      <li class="navigation__item"><a class="navigation__link" href="blog.html">Блог</a></li>
+                      <li class="navigation__item"><a class="navigation__link" href="about.html">Обо мне</a></li>
+                      <li class="navigation__item"><a class="navigation__link" href="index.html">Авторизация</a></li>
+                    </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="header__middle">
+            <div class="user">
+              <div class="user__pic"><img class="user__img" src="assets/img/myCoolAvatar.jpg" alt="web developer" width="100" height="100"></div>
+              <h1 class="user__name">Тишук Надежда</h1>
+              <h2 class="user__prof">Front-End Developer</h2>
+            </div>
+          </div>
+          <div class="header__bottom"><a class="arrow" id="arrowDown" href="#screen">
+              <svg class="arrow__icon">
+                <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
+              </svg></a></div>
+        </header><a class="pageanchor" id="screen"></a>
     <section class="section section-myworks">
           <h1 class="title"><span class="title-big">Мои работы
               <svg class="title__icon" preserveAspectRatio="none">
@@ -111,16 +113,16 @@
               </li>
         </ul>
         <button class="slider__btn slider__btn-prev">
-          <svg class="slider__btn__icon">
+          <svg class="slider__btn-icon">
             <use xlink:href="assets/img/sprite.svg#portf_arrow_down"></use>
           </svg>
         </button>
         <button class="slider__btn slider__btn-next">
-          <svg class="slider__btn__icon">
+          <svg class="slider__btn-icon">
             <use xlink:href="assets/img/sprite.svg#portf_arrow_down"></use>
           </svg>
         </button>
-        <ul class="slider__dots__items"></ul>
+        <ul class="slider__dots"></ul>
       </div>
     </section>
     <!-- works quotes-->
@@ -133,16 +135,16 @@
         <div class="quotes__items">
           <div class="quotes__item">
             <div class="quotes__content">Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
-            <div class="quotes__author">
-              <div class="quotes__author__avatar"><img class="quotes__author__img" src="assets/img/kovalchuk.jpg"></div>
-              <div class="quotes__author__item"><span class="quotes__author__name">Ковальчук Дмитрий</span><span class="quotes__author__desc">основатель Loftschool</span></div>
+            <div class="author">
+              <div class="author__avatar"><img class="author__img" src="assets/img/kovalchuk.jpg"></div>
+              <div class="author__item"><span class="author__name">Ковальчук Дмитрий</span><span class="author__desc">основатель Loftschool</span></div>
             </div>
           </div>
           <div class="quotes__item">
             <div class="quotes__content">Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!</div>
-            <div class="quotes__author">
-              <div class="quotes__author__avatar"><img class="quotes__author__img" src="assets/img/saharov.jpg"></div>
-              <div class="quotes__author__item"><span class="quotes__author__name">Зар Захаров</span><span class="quotes__author__desc">преподаватель</span></div>
+            <div class="author">
+              <div class="author__avatar"><img class="author__img" src="assets/img/saharov.jpg"></div>
+              <div class="author__item"><span class="author__name">Зар Захаров</span><span class="author__desc">преподаватель</span></div>
             </div>
           </div>
         </div>
@@ -150,46 +152,37 @@
       <!-- section mailme-->
       <div class="section-mailme">
         <div class="blur__background"><img class="blur__img" src="assets/img/sandFooter.jpg"></div>
-        <div class="window__box blur__wrapper">
+        <div class="panel panel-sendmail blur__wrapper">
           <div class="blur__form"></div>
-          <div class="window-mailme">
-                <div class="title"><span class="title-md">Связаться со мной</span></div>
-            <form class="form form-mail" id="mailForm" form="mailForm" method="post" action="/send">
-              <div class="form__text">
+              <div class="title"><span class="title-medium title-sendmail">Связаться со мной</span></div>
+          <form class="form" id="mailForm">
+            <fildset class="form__fildset">
+              <div class="form__group">
+                <input class="form__input-text" type="text" name="mailName" id="mailName" placeholder="Имя">
                 <label class="form__label" for="mailName">Имя</label>
-                <input class="form__text__input" type="text" placeholder="Имя" id="mailName" name="name">
               </div>
-              <div class="form__text">
-                <label class="form__label" for="mailMail">E-mail</label>
-                <input class="form__text__input" type="text" placeholder="E-mail" id="mailMail" name="email">
+              <div class="form__group">
+                <input class="form__input-text" type="text" name="mailEmail" id="mailEmail" placeholder="E-mail">
+                <label class="form__label" for="mailEmail">E-mail</label>
               </div>
-              <div class="form__text">
+              <div class="form__group">
+                <textarea class="form__textarea" name="mailMessage" id="mailMessage" placeholder="Ваше сообщение"></textarea>
                 <label class="form__label" for="mailMessage">Сообщение</label>
-                <textarea class="form__text__input form__textarea" placeholder="Ваше сообщение" name="message" id="mailMessage"></textarea>
               </div>
-            </form>
-            <div class="form__succes">
-              <div class="form__succes__header">Ваше сообщение отправлено</div>
-              <p>Спасибо за ваш интерес к моей работе.</p>
-              <p>Я свяжусь с вами в ближайшее время.</p>
-            </div>
-            <div class="form__error">
-              <p>Что-то пошло не так.</p>
-              <p>Обновите страницу и отправьте сообщение снова.</p>
-            </div>
-            <div class="window__menu">
-              <ul class="window__menu__list">
-                <li class="window__menu__item">
-                  <input class="window__menu__link" id="submitBtn" type="submit" value="Отправить" form="mailForm">
+            </fildset>
+            <div class="panel__menu">
+              <ul class="panel__list">
+                <li class="panel__item">
+                  <button class="panel__link form__submit">Отправить</button>
                 </li>
-                <li class="window__menu__item">
-                  <input class="window__menu__link" type="reset" form="mailForm" value="Очистить">
+                <li class="panel__item">
+                  <input class="panel__link form__submit" type="reset" value="Очистить">
                 </li>
               </ul>
             </div>
-          </div>
+          </form>
         </div>
-        <div class="arrow__top"><a class="arrow__top__btn" id="arrowUp" href="#">
+        <div class="arrow__top"><a class="arrow__top__btn" id="arrowUp" href="#top">
             <svg class="arrow__top__icon">
               <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
             </svg></a></div>

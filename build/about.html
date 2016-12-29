@@ -18,63 +18,65 @@
     <link rel="stylesheet" href="assets/css/app.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body>
-    <nav class="navigate" id="navigate">
-      <!--.navigate__left.nav-animate-->
-      <!--.navigate__right.nav-animate-->
-          <ul class="navigate-top" id="navTop">
-            <li class="navigate-top__item"><a class="navigate-top__link" href="works.html">Мои работы</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="blog.html">Блог</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="about.html">Обо мне</a></li>
-            <li class="navigate-top__item"><a class="navigate-top__link" href="index.html">Авторизация</a></li>
-          </ul>
-    </nav>
-    <!-- header-->
-    <header class="header header-page header-about">
-          <div class="header__picture"><img src="assets/img/sand.jpg"></div>
-          <div class="header__socials">
-                <ul class="socials socials-top">
-                  <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
-                      <svg class="socials__icon">
-                        <use xlink:href="assets/img/sprite.svg#vk"></use>
-                      </svg></a></li>
-                  <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
-                      <svg class="socials__icon">
-                        <use xlink:href="assets/img/sprite.svg#github"></use>
-                      </svg></a></li>
-                  <li class="socials__item"><a class="socials__link" href="#">
-                      <svg class="socials__icon">
-                        <use xlink:href="assets/img/sprite.svg#in"></use>
-                      </svg></a></li>
-                </ul>
-          </div>
-          <button class="hamburger__icon" id="togglenav">menu<span class="hamburger__icon__line"></span></button>
-          <div class="header__icon header__icon-parallax">
-            <svg class="header__icon__svg" preserveAspectRatio="none meet">
+  <body><a class="pageanchor" id="top"></a>
+        <header class="header">
+          <div class="header__bg"><img src="assets/img/sand.jpg"></div>
+          <div class="header__icon">
+            <svg class="header__svg" preserveAspectRatio="none meet">
               <use xlink:href="assets/img/sprite.svg#portfolio_header"></use>
             </svg>
           </div>
-          <div class="header__user">
-            <div class="userprofile userprofile-page">
-              <div class="userprofile__pic"><img class="userprofile__img" src="assets/img/myCoolAvatar.jpg"></div>
-              <div class="userprofile__name">Тишук Надежда</div>
-              <div class="userprofile__prof">Front-End Developer</div>
+          <div class="header__top">
+            <div class="header__socials">
+                  <ul class="socials socials-header">
+                    <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
+                        <svg class="socials__icon">
+                          <use xlink:href="assets/img/sprite.svg#vk"></use>
+                        </svg></a></li>
+                    <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
+                        <svg class="socials__icon">
+                          <use xlink:href="assets/img/sprite.svg#github"></use>
+                        </svg></a></li>
+                    <li class="socials__item"><a class="socials__link" href="#">
+                        <svg class="socials__icon">
+                          <use xlink:href="assets/img/sprite.svg#in"></use>
+                        </svg></a></li>
+                  </ul>
             </div>
-          </div><a class="arrow__down" id="arrowDown" href="#">
-            <svg class="arrow__down__icon">
-              <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
-            </svg></a>
-    </header>
+            <div class="header__menu">
+              <button class="hamburger"><span class="hamburger__line"></span></button>
+              <nav class="nav">
+                    <ul class="navigation" id="nav">
+                      <li class="navigation__item"><a class="navigation__link" href="works.html">Мои работы</a></li>
+                      <li class="navigation__item"><a class="navigation__link" href="blog.html">Блог</a></li>
+                      <li class="navigation__item"><a class="navigation__link" href="about.html">Обо мне</a></li>
+                      <li class="navigation__item"><a class="navigation__link" href="index.html">Авторизация</a></li>
+                    </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="header__middle">
+            <div class="user">
+              <div class="user__pic"><img class="user__img" src="assets/img/myCoolAvatar.jpg" alt="web developer" width="100" height="100"></div>
+              <h1 class="user__name">Тишук Надежда</h1>
+              <h2 class="user__prof">Front-End Developer</h2>
+            </div>
+          </div>
+          <div class="header__bottom header__bottom-about"><a class="arrow" id="arrowDown" href="#screen">
+              <svg class="arrow__icon">
+                <use xlink:href="assets/img/sprite.svg#arrow_down"></use>
+              </svg></a></div>
+        </header><a class="pageanchor" id="screen"></a>
     <section class="section section-about">
       <div class="aboutme__items">
         <div class="aboutme__item aboutme__item-leftbox">
           <div class="aboutme__item-left">
-                <h1 class="title"><span class="title-big">Обо мне
+                <h1 class="title"><span class="title-big title-about">Обо мне
                     <svg class="title__icon" preserveAspectRatio="none">
                       <use xlink:href="assets/img/sprite.svg#about_header"></use>
                     </svg></span></h1>
             <div class="aboutme__pic"><img class="aboutme__img" src="assets/img/myCoolAvatar.jpg"></div>
-                <h3 class="title"><span class="title-md">Кто я</span></h3>
+                <h3 class="title"><span class="title-medium">Кто я</span></h3>
             <div class="aboutme__content">
               <p>Я веб разработчик из Москвы. Мне 31 год. Я занимаюсь разработкой современных сайтов. Мне нравится делать интересные и современные проекты.</p>
               <p>Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!</p>
@@ -83,83 +85,83 @@
         </div>
         <div class="aboutme__item aboutme__item-rightbox">
           <div class="aboutme__item-right">
-                <h3 class="title"><span class="title-md">Чем я могу быть <br/> вам полезна</span></h3>
+                <h3 class="title"><span class="title-medium">Чем я могу быть <br/> вам полезна</span></h3>
             <div class="aboutme__content">
               <p>Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
             </div>
-            <div class="skills__items">
+            <div class="skills">
               <div class="skills__item">
                 <div class="skills__name">Frontend</div>
-                <div class="myskills__items">
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">HTML 5</span>
+                <div class="skill">
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="56"></circle>
+                        </svg><span class="skill__type">HTML 5</span>
                       </div>
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">CSS 3</span>
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="56"></circle>
+                        </svg><span class="skill__type">CSS 3</span>
                       </div>
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">JavaScript <br/> & jQuery</span>
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="142"></circle>
+                        </svg><span class="skill__type">JavaScript <br/> & jQuery</span>
                       </div>
                 </div>
               </div>
-              <div class="skills__item">
+              <div class="skills">
                 <div class="skills__name">Backend</div>
-                <div class="myskills__items">
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">PHP</span>
+                <div class="skill__list">
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="254"></circle>
+                        </svg><span class="skill__type">PHP</span>
                       </div>
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">mySQL</span>
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="254"></circle>
+                        </svg><span class="skill__type">mySQL</span>
                       </div>
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">Node.js <br />& npm</span>
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="198"></circle>
+                        </svg><span class="skill__type">Node.js <br />& npm</span>
                       </div>
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">Mongo.db</span>
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="226"></circle>
+                        </svg><span class="skill__type">Mongo.db</span>
                       </div>
                 </div>
               </div>
-              <div class="skills__item">
+              <div class="skills">
                 <div class="skills__name">Workflow</div>
-                <div class="myskills__items">
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">Git</span>
+                <div class="skill__list">
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="113"></circle>
+                        </svg><span class="skill__type">Git</span>
                       </div>
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">Gulp</span>
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="113"></circle>
+                        </svg><span class="skill__type">Gulp</span>
                       </div>
-                      <div class="myskills__item">
-                        <svg class="myskills__item__icon" viewBox="0 0 110 110" preserveAspectRatio="none">
-                          <circle r="45" cx="55" cy="55"></circle>
-                          <circle class="sector" r="45" cx="55" cy="55"></circle>
-                        </svg><span class="myskills__item__type">Bower</span>
+                      <div class="skill__item">
+                        <svg class="skill__icon">
+                          <circle r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)"></circle>
+                          <circle class="sector" r="45" cx="35" cy="55" transform="rotate(-90, 45, 45)" stroke-dashoffset="84"></circle>
+                        </svg><span class="skill__type">Bower</span>
                       </div>
                 </div>
               </div>
@@ -172,27 +174,27 @@
     <script src="assets/js/googlemap.js"></script>
     <section class="map">
       <div class="window__box window__box-about">
-            <div class="title"><span class="title-md">Контакты</span></div>
-            <ul class="window__contacts">
-              <li class="window__contacts__item">
-                <svg class="window__contacts__icon">
+            <div class="title"><span class="title-medium title-contacts">Контакты</span></div>
+            <ul class="panel__contacts">
+              <li class="panel__contacts__item">
+                <svg class="panel__contacts__icon">
                   <use xlink:href="assets/img/sprite.svg#skype"></use>
-                </svg><a class="window__contacts__link" href="skype:la.esperanza">la.esperanza</a>
+                </svg><a class="panel__contacts__link" href="skype:la.esperanza">la.esperanza</a>
               </li>
-              <li class="window__contacts__item">
-                <svg class="window__contacts__icon">
+              <li class="panel__contacts__item">
+                <svg class="panel__contacts__icon">
                   <use xlink:href="assets/img/sprite.svg#envelope2"></use>
-                </svg><a class="window__contacts__link" href="mailto:166507@gmail.com">166507@gmail.com</a>
+                </svg><a class="panel__contacts__link" href="mailto:166507@gmail.com">166507@gmail.com</a>
               </li>
-              <li class="window__contacts__item">
-                <svg class="window__contacts__icon">
+              <li class="panel__contacts__item">
+                <svg class="panel__contacts__icon">
                   <use xlink:href="assets/img/sprite.svg#phone2"></use>
-                </svg><a class="window__contacts__link" href="tel:+79258647651">+7 925 864 76 51</a>
+                </svg><a class="panel__contacts__link" href="tel:+79258647651">+7 925 864 76 51</a>
               </li>
-              <li class="window__contacts__item">
-                <svg class="window__contacts__icon">
+              <li class="panel__contacts__item">
+                <svg class="panel__contacts__icon">
                   <use xlink:href="assets/img/sprite.svg#map_marker"></use>
-                </svg><a class="window__contacts__link" href="">Москва, ул. Саратовская, д. 8/1</a>
+                </svg><a class="panel__contacts__link" href="">Москва, ул. Саратовская, д. 8/1</a>
               </li>
             </ul>
       </div>

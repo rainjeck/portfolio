@@ -1,87 +1,86 @@
 extends ../_template
 
 block variables
-	- var title = 'Мои работы - Тишук Надежда - front-end developer'
-	- var tempName = 'Works'
+  - var title = 'Мои работы - Тишук Надежда - front-end developer'
+  - var tempName = 'Works'
 
 block content
-	include ../common/_mixins.pug
-	include ../common/_header
+  include ../common/_mixins.pug
+  include ../common/_header.pug
 
-	section.section.section-myworks
-		+titleIcon('h1','title-big','works_header','Мои работы')
+  +header
 
-		// slider
-		.slider__container
-			ul.slider__items
-				+slider
-			button.slider__btn.slider__btn-prev
-				svg.slider__btn__icon
-					use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
-			button.slider__btn.slider__btn-next
-				svg.slider__btn__icon
-					use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
-			ul.slider__dots__items
+  section.section.section-myworks
+    +titleWithIcon('h1','title-big','works_header','Мои работы')
 
-	// works quotes
-	section.section.section-quotes
-		.container
-			+titleIcon('h2','title-big','about_header','Что обо мне <br/> говорят')
-			.quotes__items
-				.quotes__item
-					.quotes__content
-						| Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-					.quotes__author
-						.quotes__author__avatar
-							img.quotes__author__img(src="assets/img/kovalchuk.jpg")
-						.quotes__author__item
-							span.quotes__author__name Ковальчук Дмитрий
-							span.quotes__author__desc основатель Loftschool
-				.quotes__item
-					.quotes__content
-						| Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!
-					.quotes__author
-						.quotes__author__avatar
-							img.quotes__author__img(src="assets/img/saharov.jpg")
-						.quotes__author__item
-							span.quotes__author__name Зар Захаров
-							span.quotes__author__desc преподаватель
+    // slider
+    .slider__container
+      ul.slider__items
+        +slider
+      button.slider__btn.slider__btn-prev
+        svg.slider__btn-icon
+          use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
+      button.slider__btn.slider__btn-next
+        svg.slider__btn-icon
+          use(xlink:href="assets/img/sprite.svg#portf_arrow_down")
+      ul.slider__dots
 
-		// section mailme
-		.section-mailme
-			.blur__background
-				img.blur__img(src="assets/img/sandFooter.jpg")
-			.window__box.blur__wrapper
-				.blur__form
-				.window-mailme
-					+title('div','title-md','Связаться со мной')
-					form#mailForm.form.form-mail(form="mailForm", method="post", action="/send")
-						.form__text
-							label(for="mailName").form__label Имя
-							input.form__text__input(type="text", placeholder="Имя", id="mailName", name="name")
-						.form__text
-							label(for="mailMail").form__label E-mail
-							input.form__text__input(type="text", placeholder="E-mail", id="mailMail", name="email")
-						.form__text
-							label(for="mailMessage").form__label Сообщение
-							textarea.form__text__input.form__textarea(placeholder="Ваше сообщение", name="message", id="mailMessage")
-					.form__succes
-						.form__succes__header Ваше сообщение отправлено
-						p Спасибо за ваш интерес к моей работе.
-						p Я свяжусь с вами в ближайшее время.
-					.form__error
-						p Что-то пошло не так.
-						p Обновите страницу и отправьте сообщение снова.
-					.window__menu
-						ul.window__menu__list
-							li.window__menu__item
-								input#submitBtn.window__menu__link(type="submit", value="Отправить", form="mailForm")
-							li.window__menu__item
-								input.window__menu__link(type="reset", form="mailForm", value="Очистить")
+  // works quotes
+  section.section.section-quotes
+    .container
+      +titleWithIcon('h2','title-big','about_header','Что обо мне <br/> говорят')
+      .quotes__items
+        .quotes__item
+          .quotes__content
+            | Эта девчонка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .author
+            .author__avatar
+              img.author__img(src="assets/img/kovalchuk.jpg")
+            .author__item
+              span.author__name Ковальчук Дмитрий
+              span.author__desc основатель Loftschool
+        .quotes__item
+          .quotes__content
+            | Этот код выдержет любые испытания. Только пожалуйста, не загружаете сайт на слишком старых браузерах!
+          .author
+            .author__avatar
+              img.author__img(src="assets/img/saharov.jpg")
+            .author__item
+              span.author__name Зар Захаров
+              span.author__desc преподаватель
 
-			.arrow__top
-				a#arrowUp.arrow__top__btn(href="#")
-					svg.arrow__top__icon
-						use(xlink:href="assets/img/sprite.svg#arrow_down")
+    // section mailme
+    .section-mailme
+      .blur__background
+        img.blur__img(src="assets/img/sandFooter.jpg")
+      .panel.panel-sendmail.blur__wrapper
+        .blur__form
+        +title('div','title-medium title-sendmail','Связаться со мной')
 
-	include ../common/_footer
+        form#mailForm.form
+          fildset.form__fildset
+            .form__group
+              input.form__input-text(type='text', name='mailName', id="mailName", placeholder="Имя")
+              label.form__label(for='mailName')
+                | Имя
+            .form__group
+              input.form__input-text(type='text', name='mailEmail', id="mailEmail", placeholder="E-mail")
+              label.form__label(for='mailEmail')
+                | E-mail
+            .form__group
+              textarea.form__textarea(name="mailMessage", id="mailMessage", placeholder="Ваше сообщение")
+              label.form__label(for="mailMessage")
+                | Сообщение
+          .panel__menu
+            ul.panel__list
+              li.panel__item
+                button.panel__link.form__submit Отправить
+              li.panel__item
+                input.panel__link.form__submit(type="reset", value="Очистить")
+
+      .arrow__top
+        a#arrowUp.arrow__top__btn(href="#top")
+          svg.arrow__top__icon
+            use(xlink:href="assets/img/sprite.svg#arrow_down")
+
+  include ../common/_footer

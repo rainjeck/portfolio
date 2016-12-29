@@ -1,58 +1,60 @@
 extends ../_template
 
 block variables
-	- var title = 'Обо мне - Тишук Надежда - front-end developer'
-	- var tempName = 'About'
+  - var title = 'Обо мне - Тишук Надежда - front-end developer'
+  - var tempName = 'About'
 
 block content
-	include ../common/_mixins.pug
-	include ../common/_header
+  include ../common/_mixins.pug
+  include ../common/_header
 
-	section.section.section-about
-		.aboutme__items
-			.aboutme__item.aboutme__item-leftbox
-				.aboutme__item-left
-					+titleIcon('h1','title-big','about_header','Обо мне')
-					.aboutme__pic
-						img.aboutme__img(src="assets/img/myCoolAvatar.jpg")
-					+title('h3','title-md','Кто я')
-					.aboutme__content
-						p Я веб разработчик из Москвы. Мне 31 год. Я занимаюсь разработкой современных сайтов. Мне нравится делать интересные и современные проекты.
-						p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-			.aboutme__item.aboutme__item-rightbox
-				.aboutme__item-right
-					+title('h3','title-md','Чем я могу быть <br/> вам полезна')
-					.aboutme__content
-						p Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.
-					.skills__items
-						.skills__item
-							.skills__name Frontend
-							.myskills__items
-								+skill('HTML 5')
-								+skill('CSS 3')
-								+skill('JavaScript <br/> & jQuery')
+  +header('header__bottom-about')
 
-						.skills__item
-							.skills__name Backend
-							.myskills__items
-								+skill('PHP')
-								+skill('mySQL')
-								+skill('Node.js <br />& npm')
-								+skill('Mongo.db')
+  section.section.section-about
+    .aboutme__items
+      .aboutme__item.aboutme__item-leftbox
+        .aboutme__item-left
+          +titleWithIcon('h1','title-big title-about','about_header','Обо мне')
+          .aboutme__pic
+            img.aboutme__img(src="assets/img/myCoolAvatar.jpg")
+          +title('h3','title-medium','Кто я')
+          .aboutme__content
+            p Я веб разработчик из Москвы. Мне 31 год. Я занимаюсь разработкой современных сайтов. Мне нравится делать интересные и современные проекты.
+            p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      .aboutme__item.aboutme__item-rightbox
+        .aboutme__item-right
+          +title('h3','title-medium','Чем я могу быть <br/> вам полезна')
+          .aboutme__content
+            p Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.
+          .skills
+            .skills__item
+              .skills__name Frontend
+              .skill
+                +skill('HTML 5', '56')
+                +skill('CSS 3', '56')
+                +skill('JavaScript <br/> & jQuery', '142')
 
-						.skills__item
-							.skills__name Workflow
-							.myskills__items
-								+skill('Git')
-								+skill('Gulp')
-								+skill('Bower')
+            .skills
+              .skills__name Backend
+              .skill__list
+                +skill('PHP', '254')
+                +skill('mySQL', '254')
+                +skill('Node.js <br />& npm', '198')
+                +skill('Mongo.db', '226')
 
-	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTDF_xuWIbXOZmzXH4Ud6Hw6zv1qrbcD0")
-	script(src="assets/js/googlemap.js")
-	section.map
-		.window__box.window__box-about
-			+title('div','title-md','Контакты')
-			+contactsIcon('window__contacts')
-		#map
+            .skills
+              .skills__name Workflow
+              .skill__list
+                +skill('Git', '113')
+                +skill('Gulp', '113')
+                +skill('Bower', '84')
 
-	include ../common/_footer
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTDF_xuWIbXOZmzXH4Ud6Hw6zv1qrbcD0")
+  script(src="assets/js/googlemap.js")
+  section.map
+    .window__box.window__box-about
+      +title('div','title-medium title-contacts','Контакты')
+      +contactsListWithIcon('panel__contacts')
+    #map
+
+  include ../common/_footer

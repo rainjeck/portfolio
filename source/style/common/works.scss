@@ -1,83 +1,125 @@
-/* ---------- WORKS SECTION ---------- */
+/*
+ * Works
+*/
+
 .section-myworks {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 
-/* ---------- QUOTES ---------- */
+.section-quotes {
+  background: #f0e6d2;
+  background: #F1E6D2;
+}
+
+.section-mailme {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #F1E6D2;
+}
+
+/*
+ * Quotes
+*/
+
 .quotes{
-	&__items{
-		max-width: 820px;
-		margin: 0 auto 70px;
-		padding: 0 10px;
-		display: flex;
-		flex-direction: row;
-		position: relative;
-		@include phone {
-			flex-direction: column;
-		}
-	}
-	&__item{
-		flex: 1;
-		padding: 0 10px;
-		display: flex;
-		flex-direction: column;
-		align-content: space-between;
-		justify-content: space-between;
-		align-self: flex-start;
-		@include phone {
-			margin-bottom: 30px;
-		}
-		&:before{
-			content: "";
-			display: block;
-			width: 35px;
-			height: 27px;
-			background: url(../img/sprite.png) no-repeat -244px 0px;
-			background-size: 597px 27px;
-			@include phone {
-				margin: 0 auto;
-			}
-		}
-	}
+  &__items{
+    max-width: 820px;
+    margin: 0 auto 70px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    @include phone {
+      flex-direction: column;
+    }
+  }
+  &__item{
+    flex: 1;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    align-self: flex-start;
+    @include phone {
+      margin-bottom: 30px;
+    }
+    &:before{
+      content: "";
+      display: block;
+      width: 35px;
+      height: 27px;
+      background: url(../img/sprite.png) no-repeat -244px 0px;
+      background-size: 597px 27px;
+      @include phone {
+        margin: 0 auto;
+      }
+    }
+  }
 
-	&__content{
-		padding: 60px 0 30px;
-		line-height: 26px;
-		@include phone {
-			padding: 20px 0;
-		}
-	}
+  &__content{
+    padding: 60px 0 30px;
+    line-height: 26px;
+    @include phone {
+      padding: 20px 0;
+    }
+  }
+}
 
-	&__author{
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		align-content: center;
+.author{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
 
-		&__avatar{
-			width: 77px;
-			height: 77px;
-			border-radius: 50%;
-			overflow: hidden;
-			margin-right: 20px;
-			align-self: center;
-			flex-basis: 77px;
-		}
-		&__img{
-			width: 100%;
-			min-height: 100%;
-		}
+  &__avatar{
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    align-self: center;
+    flex-basis: 77px;
+  }
+  &__img{
+    width: 100%;
+    min-height: 100%;
+  }
 
-		&__item{
-			flex-basis: calc(100% - 77px);
-			color: #cd8920;
-		}
-		&__name{
-			display: block;
-			font-weight: bold;
-		}
-		&__desc{
-			display: block;
-		}
-	}
+  &__item{
+    flex-basis: calc(100% - 77px);
+    color: #cd8920;
+  }
+  &__name{
+    display: block;
+    font-weight: bold;
+  }
+  &__desc{
+    display: block;
+  }
+}
+
+/*
+ * Title Send Mail
+*/
+.title-sendmail {
+  margin-bottom: 30px;
+}
+
+/*
+ * Panel
+*/
+.panel-sendmail {
+  width: 380px;
+  padding-top: 38px;
+  margin: 0 auto;
+
+  @include phone {
+    width: 95%;
+  }
 }

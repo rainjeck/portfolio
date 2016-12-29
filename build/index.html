@@ -26,99 +26,101 @@
         <div class="preloader__percents">0</div>
       </div>
     </div>
-    <div class="desert"></div>
-    <div class="welcome__wrap">
-      <div class="welcome__login"><a class="login__link flip-btn" href="#">Авторизоваться</a></div>
-      <div class="welcome__window">
-        <div class="window__box">
-          <div class="flipcontainer" id="flip">
+    <!-- welcome-->
+    <section class="welcome">
+      <div class="welcome__top"><a class="login__link flip-button form-reset" href="#">Авторизоваться</a></div>
+      <div class="welcome__middle">
+        <!-- profile panel-->
+        <div class="flip">
+          <div class="flip-container">
             <div class="flipper">
-              <div class="welcome front">
-                <div class="userprofile">
-                  <div class="userprofile__pic"><img class="userprofile__img" src="assets/img/myCoolAvatar.jpg"></div>
-                  <div class="userprofile__name">Тишук Надежда</div>
-                  <div class="userprofile__prof">Front-End Developer</div>
-                </div>
-                    <ul class="socials socials-profile">
-                      <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
-                          <svg class="socials__icon">
-                            <use xlink:href="assets/img/sprite.svg#vk"></use>
-                          </svg></a></li>
-                      <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
-                          <svg class="socials__icon">
-                            <use xlink:href="assets/img/sprite.svg#github"></use>
-                          </svg></a></li>
-                      <li class="socials__item"><a class="socials__link" href="#">
-                          <svg class="socials__icon">
-                            <use xlink:href="assets/img/sprite.svg#in"></use>
-                          </svg></a></li>
-                    </ul>
-                <div class="window__menu">
-                  <ul class="window__menu__list">
-                                        <li class="window__menu__item"><a class="window__menu__link" href="works.html">Мои работы</a></li>
-                                        <li class="window__menu__item"><a class="window__menu__link" href="about.html">Обо мне</a></li>
-                                        <li class="window__menu__item"><a class="window__menu__link" href="blog.html">Блог</a></li>
+              <div class="panel flip-front">
+                <div class="welcome__profile">
+                  <div class="user">
+                    <div class="user__pic"><img class="user__img" src="assets/img/myCoolAvatar.jpg" alt="web developer" width="100" height="100"></div>
+                    <h1 class="user__name">Тишук Надежда</h1>
+                    <h2 class="user__prof">Front-End Developer</h2>
+                  </div>
+                      <ul class="socials socials-profile">
+                        <li class="socials__item"><a class="socials__link" href="https://vk.com/tishukn">
+                            <svg class="socials__icon">
+                              <use xlink:href="assets/img/sprite.svg#vk"></use>
+                            </svg></a></li>
+                        <li class="socials__item"><a class="socials__link" href="https://github.com/rainjeck">
+                            <svg class="socials__icon">
+                              <use xlink:href="assets/img/sprite.svg#github"></use>
+                            </svg></a></li>
+                        <li class="socials__item"><a class="socials__link" href="#">
+                            <svg class="socials__icon">
+                              <use xlink:href="assets/img/sprite.svg#in"></use>
+                            </svg></a></li>
+                      </ul>
+                  <ul class="panel__list">
+                    <li class="panel__item"><a class="panel__link" href="works.html">Мои работы</a></li>
+                    <li class="panel__item"><a class="panel__link" href="about.html">Обо мне</a></li>
+                    <li class="panel__item"><a class="panel__link" href="blog.html">Блог</a></li>
                   </ul>
                 </div>
               </div>
-              <!-- .welcome-->
-              <!-- login-->
-              <div class="window__box login back">
-                <div class="window__title">
-                  <div class="window__title__text">Авторизуйтесь</div>
-                </div>
-                <form class="form" id="loginForm" name="loginForm">
-                  <div class="form__text_icon">
-                    <input class="form__text__input" type="text" placeholder="Логин" id="auth-login" name="username">
-                    <label class="form__text__label" for="auth-login">Логин
-                      <svg class="form__icon icon__svg-login">
-                        <use xlink:href="assets/img/sprite.svg#login"></use>
-                      </svg>
-                    </label>
-                  </div>
-                  <div class="form__text_icon">
-                    <input class="form__text__input" type="password" placeholder="Пароль" id="auth-pass" name="password">
-                    <label class="form__text__label" for="auth-pass">Пароль
-                      <svg class="form__icon icon__svg-password">
-                        <use xlink:href="assets/img/sprite.svg#password"></use>
-                      </svg>
-                    </label>
-                  </div>
-                  <div class="form__checks">
-                    <div class="form__check">
-                      <input class="form__check__input" type="checkbox" id="auth-check" name="auth-check">
-                      <label class="form__check__label" for="auth-check">Я человек<span class="form__check__style"></span>
-                        <svg class="form__icon icon__svg-check">
-                          <use xlink:href="assets/img/sprite.svg#check"></use>
-                        </svg>
-                      </label>
+              <!-- login panel-->
+              <div class="panel flip-back">
+                <div class="welcome__login">
+                  <div class="title"><span class="title-medium title-light title-login">Авторизуйтесь</span></div>
+                  <form class="form" id="loginForm">
+                    <fildset class="form__fildset">
+                      <div class="form__group form__group-input">
+                        <input class="form__input-text form__input-label" type="text" name="username" id="username" placeholder="Логин">
+                        <label class="form__label-text" for="username">
+                          <svg class="form__icon-text">
+                            <use xlink:href="assets/img/sprite.svg#login"></use>
+                          </svg>Логин
+                        </label>
+                      </div>
+                      <div class="form__group form__group-input">
+                        <input class="form__input-text form__input-label" type="password" name="password" id="password" placeholder="Пароль">
+                        <label class="form__label-text" for="password">
+                          <svg class="form__icon-text icon__svg-password">
+                            <use xlink:href="assets/img/sprite.svg#password"></use>
+                          </svg>Пароль
+                        </label>
+                      </div>
+                      <div class="form__group form__group-checkbox">
+                        <label class="form__label-checkbox" for="human-check">
+                          <input class="form__input-checkbox" type="checkbox" name="human-check" id="human-check"><span class="form__checkbox">
+                            <svg class="form__icon-checkbox">
+                              <use xlink:href="assets/img/sprite.svg#check"></use>
+                            </svg></span>Я человек
+                        </label>
+                      </div>
+                      <div class="form__group form__group-radio">
+                        <div class="form__text">Вы точно не робот?</div>
+                        <label class="form__label-radio">
+                          <input class="form__input-radio" type="radio" name="catpcha"><span class="form__radio"></span>Да
+                        </label>
+                        <label class="form__label-radio">
+                          <input class="form__input-radio" type="radio" name="catpcha"><span class="form__radio"></span>Не уверен
+                        </label>
+                      </div>
+                    </fildset>
+                    <div class="panel__menu">
+                      <ul class="panel__list">
+                        <li class="panel__item"><a class="panel__link flip-return" href="#">На главную</a></li>
+                        <li class="panel__item">
+                          <button class="panel__link form__submit">Войти</button>
+                        </li>
+                      </ul>
                     </div>
-                    <div class="form__robot">Вы точно не робот?</div>
-                    <div class="form__radiogroup">
-                      <label class="form__radiogroup__label">
-                        <input class="form__radiogroup__radio" type="radio" name="form__radiogroup"><span class="form__radiogroup__style"></span>Да
-                      </label>
-                      <label class="form__radiogroup__label">
-                        <input class="form__radiogroup__radio" type="radio" name="form__radiogroup"><span class="form__radiogroup__style"></span>Не уверен
-                      </label>
-                    </div>
-                  </div>
-                </form>
-                <div class="window__menu">
-                  <ul class="window__menu__list">
-                    <li class="window__menu__item"><a class="window__menu__link flip-btn-return" href="#">На главную</a></li>
-                    <li class="window__menu__item">
-                      <input class="window__menu__link" id="submitBtn" type="submit" value="Войти" form="loginForm">
-                    </li>
-                  </ul>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="welcome__footer">© Тишук Надежда | создано с любовью в LoftSchool | 2016</div>
-    </div>
+      <div class="welcome__bottom">
+        <div class="welcome__footer">© Тишук Надежда | создано с любовью в LoftSchool | 2016</div>
+      </div>
+    </section>
     <!-- scripts-->
     <script src="assets/js/svg4everybody.min.js" defer></script>
     <script src="assets/js/foundation.js" defer></script>

@@ -1,26 +1,23 @@
-var showMenu =(function() {
-	var menuBtn = $('#togglenav'),
-			menu = 	$('#navigate'),
-			menuItem = $('.navigate-top__link'),
-			html = $('html'),
-			animate = $('.nav-animate');
+(function () {
+  var showMenu = {
 
-	var openMenu = function(){
-		menuBtn.on('click', function(e) {
-			menu.toggle(0, function(){
-				menu.toggleClass('navigate-show');
-				menuBtn.toggleClass('hamburger__icon-close');
-				html.toggleClass('hideScroll');
-				$('.navigate-top').addClass('navigate-top-animate');
-			});
-		});
-	};
+    init: function () {
+      this.listeners();
+    },
 
-	return {
-		init: function() {
-			openMenu();
-		}
-	}
-} () );
+    listeners: function () {
+      $('.hamburger').on('click', showMenu.openMenu);
+    },
 
-showMenu.init();
+    openMenu: function (e) {
+      e.preventDefault();
+      $('.navigation').toggleClass('navigation-open');
+      console.log('click');
+      $('.hamburger').toggleClass('hamburger-cross');
+      $('html').toggleClass('hide-scroll');
+      $('body').toggleClass('hide-scroll');
+    }
+  }
+
+  showMenu.init();
+}());

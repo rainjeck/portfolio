@@ -1,45 +1,81 @@
+/*
+ * Clearfix
+*/
+
 .clearfix {
-	&:before,
-	&:after {
-		content: "";
-		display: block;
-		clear: both;
-	}
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }
+
+/*
+ * Placeholder
+*/
 
 @mixin placeholder {
-	&::-webkit-input-placeholder {@content};
-	&:-moz-placeholder {@content};
-	&::-moz-placeholder {@content};
-	&:-ms-input-placeholder {@content};
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder {@content};
+  &::-moz-placeholder {@content};
+  &:-ms-input-placeholder {@content};
 }
 
+/*
+ * Decoration
+*/
+@mixin decoration {
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(../img/sprite.png) no-repeat 0 0;
+    background-size: 597px 27px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+/*
+ * Media Queryes
+*/
+
 @mixin desktop {
-	@media (max-width: 1200px) {
-		@content;
-	}
+  @media (max-width: 1200px) {
+    @content;
+  }
 }
 
 @mixin laptop {
-	@media (max-width: 992px) {
-		@content;
-	}
+  @media (max-width: 992px) {
+    @content;
+  }
 }
 
 @mixin tablet {
-	@media (max-width: 768px) {
-		@content;
-	}
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 @mixin phone {
-	@media (max-width: 480px) {
-		@content;
-	}
+  @media (max-width: 480px) {
+    @content;
+  }
 }
 
 @mixin small {
-	@media (max-width: 240px) {
-		@content;
-	}
+  @media (max-width: 240px) {
+    @content;
+  }
 }

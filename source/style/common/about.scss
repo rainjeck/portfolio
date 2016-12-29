@@ -1,160 +1,239 @@
-/* ---------- About Me Box ---------- */
+/*
+ * About
+*/
+
+.section-about {
+  padding: 0;
+}
+
 .aboutme{
 
-	&__items{
-		display: flex;
-		flex-direction: row;
-		@include laptop {
-			flex-direction: column;
-		}
-	}
-	&__item{
-		flex: 1;
-		padding: 0 40px;
-		@include phone {
-			padding: 0;
-		}
+  &__items {
+    display: flex;
+    flex-direction: row;
 
-		&-leftbox{
-			background: #efeee9;
-		}
-		&-rightbox{
-			background: #eeebdf;
-		}
+    @include laptop {
+      flex-direction: column;
+    }
 
-		&-left{
-			max-width: 600px;
-			margin-left: auto;
-			@include laptop {
-				padding: 40px 0 0;
-				margin: 0 auto;
-			}
-		}
-		&-right{
-			max-width: 600px;
-			margin-rigth: auto;
-			@include laptop {
-				padding: 40px 0 0;
-				margin: 0 auto;
-			}
-		}
-	}
+  }
 
-	&__content {
-		color: #5d5a55;
-		margin-bottom: 40px;
-		@include phone {
-			padding: 0 5px;
-		}
-	}
+  &__item {
+    flex: 1;
+    padding: 0 40px;
 
-	&__pic {
-		margin-bottom: 40px;
-	}
-	&__img {
-		max-width: 100%;
-	}
+    @include phone {
+      padding: 0;
+    }
+
+    &-leftbox {
+      background: #efeee9;
+    }
+
+    &-rightbox {
+      background: #eeebdf;
+    }
+
+    &-left {
+      max-width: 600px;
+      margin-left: auto;
+
+      @include laptop {
+        padding: 40px 0 0;
+        margin: 0 auto;
+      }
+
+    }
+
+    &-right {
+      max-width: 600px;
+      margin-rigth: auto;
+
+      @include laptop {
+        padding: 40px 0 0;
+        margin: 0 auto;
+      }
+
+    }
+
+  }
+
+  &__content {
+    color: #5d5a55;
+    margin-bottom: 40px;
+
+    @include phone {
+      padding: 0 5px;
+    }
+
+  }
+
+  &__pic {
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
 
 }
 
-.skills{
-	&__items{}
-	&__name{
-		font-size: 28px; // 28px
-		font-family: 'Roboto Medium', 'Arial', sans-serif;
-		margin-bottom: 20px;
-		@include laptop {
-			text-align: center;
-		}
-	}
+/*
+ * Skills
+*/
+
+.skills {
+  &__name {
+    font-size: 28px;
+    font-family: 'Roboto Medium', 'Arial', sans-serif;
+    margin-bottom: 20px;
+
+    @include laptop {
+      text-align: center;
+    }
+
+  }
+
 }
 
-// my skills
-.myskills{
-	&__items{
-		margin-bottom: 40px;
-		@include laptop {
-			text-align: center;
-		}
-	}
-	&__item{
-		display: inline-block;
-		position: relative;
-		margin: 0 40px 40px 0;
-		@include laptop {
-			margin: 0 20px 20px;
-		}
-		&:last-child{
-			margin: 0;
-			@include phone {
-				margin: 0 20px;
-			}
-		}
-		&__icon{
-			width: 125px;
-			height: 125px;
-			fill: none;
-			stroke-width: 20;
-			stroke: #dfdcd5;
-			@include phone {
-				width: 130px;
-				height: 130px;
-			}
-			& > .sector {
-				stroke-dasharray: 100 (2*35*3.1415);
-				transition: all 1s;
-				stroke: #e6ab3d;
-				transform: rotate(-90deg);
-				transform-origin: 50% 50%;
-			}
-		}
-		&__type{
-			color: #cd8920;
-			font-size: 12px; // 12px
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 100%;
-			left: 0;
-			text-align: center;
-		}
-	}
+.skill {
+  margin-bottom: 40px;
+
+  @include laptop {
+    text-align: center;
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin: 0 40px 40px 0;
+
+    @include laptop {
+      margin: 0 20px 20px;
+    }
+
+    &:last-child {
+      margin: 0;
+
+      @include phone {
+        margin: 0 20px;
+      }
+
+    }
+  }
+
+  $svg-long: (2*3.1415*45);
+
+  &__icon {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    fill: transparent;
+    stroke-width: 20px;
+    stroke: #dfdcd5;
+    stroke-dasharray: 283px;
+
+    @include phone {
+    }
+
+    & > .sector {
+      stroke: #e6ab3d;
+    }
+
+  }
+
+  &__type {
+    display: block;
+    color: #cd8920;
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
 }
 
-/* ---------- MAP ---------- */
+/*
+ * Panel contacts
+*/
+
+.title-contacts {
+  margin-bottom: 40px;
+}
+
+// contacts
+.panel__contacts {
+  padding: 0 10px; margin: 0;
+  list-style: none;
+
+  &__item {
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 26px;
+  }
+
+  &__link {
+    color: #5d5a55;
+
+    &:hover{
+    border-bottom: 1px solid #5d5a55;
+    }
+
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    fill: #e7a731;
+  }
+}
+
+/*
+ * Map
+*/
 
 .map {
-	position: relative;
-	min-height: 100vh;
-	overflow: hidden;
-}
-#map {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	@include phone {
-		position: relative;
-		height: 100vh;
-	}
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.window__box-about{
-	display: block;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 10;
-	background-color: rgba(#fff, 0.85);
-	border-radius: 4px;
-	padding: 30px;
-	@include phone {
-		position: static;
-		transform: none;
-		width: 100%;
-	}
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  @include phone {
+    position: relative;
+    height: 100vh;
+  }
+
+}
+
+.window__box-about {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: rgba(#fff, 0.85);
+  border-radius: 4px;
+  padding: 30px;
+
+  @include phone {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
 }
