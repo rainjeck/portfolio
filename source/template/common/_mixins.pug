@@ -80,11 +80,11 @@ mixin titleWithIcon (tagName,className,iconName,name)
         use(xlink:href='assets/img/sprite.svg#' + iconName)
 
 //- Skills List
-mixin skill (skillType, long)
+mixin skill (skillType, long, diameter)
   .skill__item
-    svg.skill__icon
-      circle(r="45", cx="35", cy="55", transform="rotate(-90, 45, 45)")
-      circle(r="45", cx="35", cy="55", transform="rotate(-90, 45, 45)", stroke-dashoffset= long, class="sector")
+    svg.skill__icon(stroke-dasharray= diameter)
+      circle(transform="rotate(-90, 45, 45)")
+      circle(transform="rotate(-90, 45, 45)", stroke-dashoffset= long, class="sector")
     span.skill__type!= skillType
 
 //- blog list

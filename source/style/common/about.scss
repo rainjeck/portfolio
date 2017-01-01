@@ -83,6 +83,10 @@
 */
 
 .skills {
+  @include tablet {
+    margin-bottom: 30px;
+  }
+
   &__name {
     font-size: 28px;
     font-family: 'Roboto Medium', 'Arial', sans-serif;
@@ -103,10 +107,18 @@
     text-align: center;
   }
 
+  &__list {
+    @include laptop {
+      text-align: center;
+    }
+  }
+
   &__item {
     display: inline-block;
     position: relative;
     margin: 0 40px 40px 0;
+    width: 110px;
+    height: 110px;
 
     @include laptop {
       margin: 0 20px 20px;
@@ -126,14 +138,21 @@
 
   &__icon {
     display: inline-block;
-    width: 110px;
-    height: 110px;
     fill: transparent;
     stroke-width: 20px;
     stroke: #dfdcd5;
-    stroke-dasharray: 283px;
+    width: 100%;
+    height: 100%;
+    //stroke-dasharray: 283px;
 
-    @include phone {
+    & circle {
+      r: 45px;
+      cx: 35px;
+      cy: 55px;
+
+      @include phone {
+        cx: 48px;
+      }
     }
 
     & > .sector {
